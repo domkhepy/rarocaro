@@ -1,0 +1,4 @@
+# ignorar o arquivo .env para noa ser enviado para git
+.env
+
+dom.js

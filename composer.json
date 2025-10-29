@@ -1,0 +1,16 @@
+{
+    "description": "Projecto de Monografia",
+    "authors": [
+        {
+            "name": "Domingos Joaquim valoi Jr",
+            "email": "domingosvaloi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Core\\": "core",
+            "App\\": "app"
+        }
+    },
+    "require": {}
+}
