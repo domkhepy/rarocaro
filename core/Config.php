@@ -34,9 +34,9 @@ abstract class Config
 
         //Credencias de acesso ao Banco de dados
         define('HOST', 'localhost');
-        define('USER', 'mutxato');
-        define('PASS', 'Mutxato@2025');
-        define('DBNAME', 'myrevoffice');
+        define('USER', 'root');
+        define('PASS', '');
+        define('DBNAME', 'rarocaro');
         define('PORT', 3306);
         
         

@@ -10,7 +10,7 @@ if (!defined('R4F5CC')) {
         <span class="navbar-toggler-icon"></span>
     </a>
 
-    <a class="navbar-brand" href="<?php echo URLADM ?>dashboard/index">Celke</a>
+    <a class="navbar-brand" href="<?php echo URLADM ?>dashboard/index">TouRaroTouCaro</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">

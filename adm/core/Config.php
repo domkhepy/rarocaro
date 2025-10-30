@@ -15,8 +15,8 @@ if(!defined('R4F5CC')){
 abstract class Config
 {
     protected function configAdm() {
-        define('URL', 'http://localhost/nuibrava.aviation/');
-        define('URLADM', 'http://localhost/nuibrava.aviation/adm/');
+        define('URL', 'http://localhost/rarocaro/');
+        define('URLADM', 'http://localhost/rarocaro/adm/');
         
         define('CONTROLLER', 'Login');
         define('METODO', 'index');
@@ -24,9 +24,9 @@ abstract class Config
         
         //Credencias de acesso ao Banco de dados
         define('HOST', 'localhost');
-        define('USER', 'myrevoffice');
-        define('PASS', 'Valoi001');
-        define('DBNAME', 'myrevoffice');
+        define('USER', 'root');
+        define('PASS', '');
+        define('DBNAME', 'rarocaro');
         define('PORT', 3306);
         
         define('EMAILADM', 'domingosvaloi@gmail.com');

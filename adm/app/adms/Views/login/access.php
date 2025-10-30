@@ -43,10 +43,6 @@ if (isset($this->dados['form'])) {
         <a href="<?php echo URLADM; ?>recover-password/index" class="text-decoration-none">Esqueceu a Senha</a>
     </p>
 
-    <p class="mt-2 mb-3 text-muted text-center">
-        Usuário: cesar@celke.com.br<br>
-        Senha: 123456a
-    </p>
 
 </form>
 
