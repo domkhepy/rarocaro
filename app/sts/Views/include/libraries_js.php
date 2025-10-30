@@ -9,5 +9,6 @@ if (!defined('48b5t9')) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?php echo URL."app/sts/assets/js/app.js";?>"></script>
   <script src="<?php echo URL."app/sts/assets/js/personalize.js";?>"></script>
+  <script src="<?php echo URL."app/sts/assets/js/tshirt.js";?>"></script>
 </body>
 </html>
