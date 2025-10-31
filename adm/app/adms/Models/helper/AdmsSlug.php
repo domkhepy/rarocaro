@@ -30,7 +30,7 @@ class AdmsSlug
 
         $this->formato['a'] = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]/?;:,\\\'<>°ºª';
         $this->formato['b'] = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';
-        $this->nome = strtr(utf8_decode($this->nome), utf8_decode($this->formato['a']), $this->formato['b']);
+        $this->nome = strtr(mb_convert_encoding($this->nome, 'ISO-8859-1', 'UTF-8'), mb_convert_encoding($this->formato['a'], 'ISO-8859-1', 'UTF-8'), $this->formato['b']);
         $this->nome = str_replace(" ", "-", $this->nome);
         $this->nome = str_replace(array('-----', '----', '---', '--'), '-', $this->nome);
         $this->nome = strtolower($this->nome);

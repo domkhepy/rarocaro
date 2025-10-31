@@ -9,9 +9,9 @@ if (!defined('48b5t9')) {
 /**
  * Models responsável em buscar os dados da página home
  *
- * @author Celke
+ * @author Domingos
  */
-class StsHome
+class StsHome 
 {
     /** @var array $data Recebe o registro do banco de dados */
     private array $data;
@@ -34,6 +34,7 @@ class StsHome
         $this->viewServ();
         $this->viewAction();
         $this->viewDet();
+        $this->listProducts();
         return $this->data;
     }
     
@@ -71,6 +72,14 @@ class StsHome
                 LIMIT :limit", "limit=1");
         $this->dataDet = $viewDet->getResult();
         $this->data['det'] = $this->dataDet[0];
+    }
+
+    private function listProducts() {
+        $viewDet = new \App\sts\Models\helper\StsRead();
+        $viewDet->fullRead("SELECT id, name, title, description, image, type
+                FROM sts_products");
+        $this->dataDet = $viewDet->getResult();
+        $this->data['products'] = $this->dataDet;
     }
 
 }

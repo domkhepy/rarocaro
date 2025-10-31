@@ -121,8 +121,8 @@ class AdmsEditProductImage
         //$uploadImg = new \App\adms\Models\helper\AdmsUpload();
         //$uploadImg->upload($this->diretorio, $this->dadosImage['tmp_name'], $this->nameImg);
 
-        $uploadImgRed = new \App\adms\Models\helper\AdmsUploadImgRed();
-        $uploadImgRed->upload($this->dadosImage, $this->diretorio, $this->nameImg, 300, 300);
+        $uploadImgRed = new \App\adms\Models\helper\AdmsUpload();
+        $uploadImgRed->upload( $this->diretorio,$this->dadosImage['tmp_name'], $this->nameImg);
 
         if ($uploadImgRed->getResultado()) {
             $this->edit();
