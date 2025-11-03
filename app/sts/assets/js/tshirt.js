@@ -100,7 +100,6 @@
     selected.setAttribute('width', 100 * scale);
     selected.setAttribute('height', 100 * scale);
   });
-  console.log(svg[0])
 
   // 🔸 Export SVG
   $('#btnExport').on('click', function(){

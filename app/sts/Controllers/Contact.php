@@ -9,9 +9,9 @@ if (!defined('48b5t9')) {
 /**
  * Controller da página de Contato
  *
- * @author Celke
+ * @author domingos
  */
-class Contato
+class Contact
 {
     /** @var array $data Recebe os dados que devem ser enviados para VIEW */
     private $data;

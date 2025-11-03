@@ -448,3 +448,43 @@ header nav a{
         float: right;
     }
 }
+
+
+ .social-icons {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--orange);
+            transform: translateY(-3px);
+        }
+        
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .contact-icon {
+            margin-right: 10px;
+            color: var(--orange);
+        }

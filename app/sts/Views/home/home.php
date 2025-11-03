@@ -62,8 +62,8 @@ if (!defined('48b5t9')) {
                         </div>-->
                     </div>
                     <div class="checkout">
-                        <button>ADD TO CART</button>
-                        <button>CHECKOUT</button>
+                       <!-- <button>ADD TO CART</button>-->
+                        <a href="">REQUESITAR</a>
                     </div>
                 </div>
             </div>

@@ -28,7 +28,6 @@ const btns = document.querySelectorAll('button');
     const currentColorName = document.getElementById('current-color-name');
     const teePath = document.getElementById('tee-path');
     const neckline = document.getElementById('neckline');
-    const neckSelect = document.getElementById('neck-select');
     const logoLayer = document.getElementById('logo');
     const logoImg = document.getElementById('logo-img');
     const fileInput = document.getElementById('file');
@@ -69,18 +68,7 @@ const btns = document.querySelectorAll('button');
       return l < 100;
     }
 
-    // neckline variants
-    const neckVariants = {
-      round: {d: "M150 60c12-8 32-8 44 0", strokeWidth:6, show:true},
-      v: {d: "M158 60 L200 92 L242 60", strokeWidth:8, show:true},
-      crew: {d: "M150 60c20-6 40-6 60 0", strokeWidth:4, show:true}
-    };
-
-    neckSelect.addEventListener('change', (e)=>{
-      const v = neckVariants[e.target.value] || neckVariants.round;
-      neckline.setAttribute('d', v.d);
-      neckline.setAttribute('stroke-width', v.strokeWidth);
-    });
+    
 
     // logo upload
     fileInput.addEventListener('change', (ev)=>{
