@@ -3,6 +3,7 @@ body{
     margin: 0;
     background-color: #F4F4F4;
     font-family: Poppins;
+    height: 100vh; 
 }
 
 
@@ -60,7 +61,7 @@ header nav a{
 .carousel{
     z-index: 0;
     position: relative;
-    height: 800px;
+    height: 100%;
     overflow: hidden;
     margin-top: -50px;
     padding-top: 50px;
@@ -415,7 +416,6 @@ header nav a{
 @media screen and (max-width: 767px){
     /* mobile */
     .carousel{
-        height: 600px;
         padding-top: 0px;
     }
     .carousel .list .item{
