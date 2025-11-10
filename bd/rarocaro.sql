@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 18-Mar-2021 às 00:01
--- Versão do servidor: 8.0.21
--- versão do PHP: 7.4.9
+-- Generation Time: Nov 10, 2025 at 10:28 PM
+-- Server version: 9.1.0
+-- PHP Version: 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `celke`
+-- Database: `rarocaro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_access_levels`
+-- Table structure for table `adms_access_levels`
 --
 
 DROP TABLE IF EXISTS `adms_access_levels`;
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `adms_access_levels` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_access_levels`
+-- Dumping data for table `adms_access_levels`
 --
 
 INSERT INTO `adms_access_levels` (`id`, `name`, `order_levels`, `created`, `modified`) VALUES
@@ -54,7 +54,7 @@ INSERT INTO `adms_access_levels` (`id`, `name`, `order_levels`, `created`, `modi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_colors`
+-- Table structure for table `adms_colors`
 --
 
 DROP TABLE IF EXISTS `adms_colors`;
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `adms_colors` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_colors`
+-- Dumping data for table `adms_colors`
 --
 
 INSERT INTO `adms_colors` (`id`, `name`, `color`, `created`, `modified`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `adms_colors` (`id`, `name`, `color`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_confs_emails`
+-- Table structure for table `adms_confs_emails`
 --
 
 DROP TABLE IF EXISTS `adms_confs_emails`;
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `adms_confs_emails` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_confs_emails`
+-- Dumping data for table `adms_confs_emails`
 --
 
 INSERT INTO `adms_confs_emails` (`id`, `title`, `name`, `email`, `host`, `username`, `password`, `smtpsecure`, `port`, `created`, `modified`) VALUES
@@ -115,7 +115,7 @@ INSERT INTO `adms_confs_emails` (`id`, `title`, `name`, `email`, `host`, `userna
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_groups_pgs`
+-- Table structure for table `adms_groups_pgs`
 --
 
 DROP TABLE IF EXISTS `adms_groups_pgs`;
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `adms_groups_pgs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_groups_pgs`
+-- Dumping data for table `adms_groups_pgs`
 --
 
 INSERT INTO `adms_groups_pgs` (`id`, `name`, `order_group_pg`, `created`, `modified`) VALUES
@@ -145,7 +145,7 @@ INSERT INTO `adms_groups_pgs` (`id`, `name`, `order_group_pg`, `created`, `modif
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_items_menus`
+-- Table structure for table `adms_items_menus`
 --
 
 DROP TABLE IF EXISTS `adms_items_menus`;
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `adms_items_menus` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_items_menus`
+-- Dumping data for table `adms_items_menus`
 --
 
 INSERT INTO `adms_items_menus` (`id`, `name`, `icon`, `order_item_menu`, `created`, `modified`) VALUES
@@ -174,7 +174,7 @@ INSERT INTO `adms_items_menus` (`id`, `name`, `icon`, `order_item_menu`, `create
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_levels_forms`
+-- Table structure for table `adms_levels_forms`
 --
 
 DROP TABLE IF EXISTS `adms_levels_forms`;
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `adms_levels_forms` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_levels_forms`
+-- Dumping data for table `adms_levels_forms`
 --
 
 INSERT INTO `adms_levels_forms` (`id`, `adms_access_level_id`, `created`, `modified`) VALUES
@@ -197,7 +197,7 @@ INSERT INTO `adms_levels_forms` (`id`, `adms_access_level_id`, `created`, `modif
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_levels_pages`
+-- Table structure for table `adms_levels_pages`
 --
 
 DROP TABLE IF EXISTS `adms_levels_pages`;
@@ -216,10 +216,10 @@ CREATE TABLE IF NOT EXISTS `adms_levels_pages` (
   KEY `fk_adms_levels_pages_adms_access_levels1_idx` (`adms_access_level_id`),
   KEY `fk_adms_levels_pages_adms_pages1_idx` (`adms_page_id`),
   KEY `adms_items_menu_id` (`adms_items_menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=833 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=881 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_levels_pages`
+-- Dumping data for table `adms_levels_pages`
 --
 
 INSERT INTO `adms_levels_pages` (`id`, `permission`, `order_level_page`, `print_menu`, `dropdown`, `adms_items_menu_id`, `adms_access_level_id`, `adms_page_id`, `created`, `modified`) VALUES
@@ -1047,12 +1047,60 @@ INSERT INTO `adms_levels_pages` (`id`, `permission`, `order_level_page`, `print_
 (829, 2, 103, 2, 2, NULL, 11, 104, '2021-03-17 23:50:41', NULL),
 (830, 2, 103, 2, 2, NULL, 13, 104, '2021-03-17 23:50:43', NULL),
 (831, 2, 103, 2, 2, NULL, 14, 104, '2021-03-17 23:50:45', NULL),
-(832, 2, 103, 2, 2, NULL, 15, 104, '2021-03-17 23:50:46', NULL);
+(832, 2, 103, 2, 2, NULL, 15, 104, '2021-03-17 23:50:46', NULL),
+(833, 1, 104, 2, 2, NULL, 1, 106, '2025-10-30 19:07:30', NULL),
+(834, 1, 105, 2, 2, NULL, 1, 107, '2025-10-30 19:07:30', NULL),
+(835, 1, 106, 2, 2, NULL, 1, 108, '2025-10-30 19:07:30', NULL),
+(836, 1, 107, 2, 2, NULL, 1, 109, '2025-10-30 19:07:30', NULL),
+(837, 1, 108, 1, 1, 2, 1, 111, '2025-10-30 19:07:30', '2025-10-30 20:09:40'),
+(838, 1, 109, 2, 2, NULL, 1, 112, '2025-10-30 19:07:30', NULL),
+(839, 2, 104, 2, 2, NULL, 2, 106, '2025-10-30 19:07:31', NULL),
+(840, 2, 105, 2, 2, NULL, 2, 107, '2025-10-30 19:07:31', NULL),
+(841, 2, 106, 2, 2, NULL, 2, 108, '2025-10-30 19:07:32', NULL),
+(842, 2, 107, 2, 2, NULL, 2, 109, '2025-10-30 19:07:32', NULL),
+(843, 2, 108, 2, 2, NULL, 2, 111, '2025-10-30 19:07:32', NULL),
+(844, 2, 109, 2, 2, NULL, 2, 112, '2025-10-30 19:07:32', NULL),
+(845, 2, 104, 2, 2, NULL, 3, 106, '2025-10-30 19:07:33', NULL),
+(846, 2, 105, 2, 2, NULL, 3, 107, '2025-10-30 19:07:33', NULL),
+(847, 2, 106, 2, 2, NULL, 3, 108, '2025-10-30 19:07:33', NULL),
+(848, 2, 107, 2, 2, NULL, 3, 109, '2025-10-30 19:07:33', NULL),
+(849, 2, 108, 2, 2, NULL, 3, 111, '2025-10-30 19:07:33', NULL),
+(850, 2, 109, 2, 2, NULL, 3, 112, '2025-10-30 19:07:33', NULL),
+(851, 2, 104, 2, 2, NULL, 4, 106, '2025-10-30 19:07:34', NULL),
+(852, 2, 105, 2, 2, NULL, 4, 107, '2025-10-30 19:07:34', NULL),
+(853, 2, 106, 2, 2, NULL, 4, 108, '2025-10-30 19:07:34', NULL),
+(854, 2, 107, 2, 2, NULL, 4, 109, '2025-10-30 19:07:34', NULL),
+(855, 2, 108, 2, 2, NULL, 4, 111, '2025-10-30 19:07:34', NULL),
+(856, 2, 109, 2, 2, NULL, 4, 112, '2025-10-30 19:07:34', NULL),
+(857, 2, 104, 2, 2, NULL, 11, 106, '2025-10-30 19:07:35', NULL),
+(858, 2, 105, 2, 2, NULL, 11, 107, '2025-10-30 19:07:35', NULL),
+(859, 2, 106, 2, 2, NULL, 11, 108, '2025-10-30 19:07:35', NULL),
+(860, 2, 107, 2, 2, NULL, 11, 109, '2025-10-30 19:07:35', NULL),
+(861, 2, 108, 2, 2, NULL, 11, 111, '2025-10-30 19:07:35', NULL),
+(862, 2, 109, 2, 2, NULL, 11, 112, '2025-10-30 19:07:35', NULL),
+(863, 2, 104, 2, 2, NULL, 13, 106, '2025-10-30 19:07:36', NULL),
+(864, 2, 105, 2, 2, NULL, 13, 107, '2025-10-30 19:07:36', NULL),
+(865, 2, 106, 2, 2, NULL, 13, 108, '2025-10-30 19:07:36', NULL),
+(866, 2, 107, 2, 2, NULL, 13, 109, '2025-10-30 19:07:36', NULL),
+(867, 2, 108, 2, 2, NULL, 13, 111, '2025-10-30 19:07:36', NULL),
+(868, 2, 109, 2, 2, NULL, 13, 112, '2025-10-30 19:07:36', NULL),
+(869, 2, 104, 2, 2, NULL, 14, 106, '2025-10-30 19:07:37', NULL),
+(870, 2, 105, 2, 2, NULL, 14, 107, '2025-10-30 19:07:38', NULL),
+(871, 2, 106, 2, 2, NULL, 14, 108, '2025-10-30 19:07:38', NULL),
+(872, 2, 107, 2, 2, NULL, 14, 109, '2025-10-30 19:07:38', NULL),
+(873, 2, 108, 2, 2, NULL, 14, 111, '2025-10-30 19:07:38', NULL),
+(874, 2, 109, 2, 2, NULL, 14, 112, '2025-10-30 19:07:38', NULL),
+(875, 2, 104, 2, 2, NULL, 15, 106, '2025-10-30 19:07:39', NULL),
+(876, 2, 105, 2, 2, NULL, 15, 107, '2025-10-30 19:07:39', NULL),
+(877, 2, 106, 2, 2, NULL, 15, 108, '2025-10-30 19:07:39', NULL),
+(878, 2, 107, 2, 2, NULL, 15, 109, '2025-10-30 19:07:39', NULL),
+(879, 2, 108, 2, 2, NULL, 15, 111, '2025-10-30 19:07:39', NULL),
+(880, 2, 109, 2, 2, NULL, 15, 112, '2025-10-30 19:07:39', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_pages`
+-- Table structure for table `adms_pages`
 --
 
 DROP TABLE IF EXISTS `adms_pages`;
@@ -1075,10 +1123,10 @@ CREATE TABLE IF NOT EXISTS `adms_pages` (
   KEY `adms_groups_pgs_id` (`adms_groups_pgs_id`),
   KEY `adms_sits_pgs_id` (`adms_sits_pgs_id`),
   KEY `adms_types_pgs_id` (`adms_types_pgs_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_pages`
+-- Dumping data for table `adms_pages`
 --
 
 INSERT INTO `adms_pages` (`id`, `controller`, `metodo`, `menu_controller`, `menu_metodo`, `name_page`, `publish`, `icon`, `obs`, `adms_sits_pgs_id`, `adms_types_pgs_id`, `adms_groups_pgs_id`, `created`, `modified`) VALUES
@@ -1184,12 +1232,18 @@ INSERT INTO `adms_pages` (`id`, `controller`, `metodo`, `menu_controller`, `menu
 (101, 'EditContactMsg', 'index', 'edit-contact-msg', 'index', 'Editar Mensagem de Contato', 2, '', '', 1, 2, 4, '2021-03-17 22:25:39', NULL),
 (102, 'DeleteContactMsg', 'index', 'delete-contact-msg', 'index', 'Apagar Mensagem de Contato', 2, '', '', 1, 2, 5, '2021-03-17 22:34:44', NULL),
 (103, 'ViewFooter', 'index', 'view-footer', 'index', 'Rodapé', 2, 'fas fa-asterisk', '', 1, 2, 2, '2021-03-17 23:18:07', '2021-03-17 23:20:50'),
-(104, 'EditFooter', 'index', 'edit-footer', 'index', 'Editar Rodapé', 2, '', '', 1, 2, 4, '2021-03-17 23:50:31', NULL);
+(104, 'EditFooter', 'index', 'edit-footer', 'index', 'Editar Rodapé', 2, '', '', 1, 2, 4, '2021-03-17 23:50:31', NULL),
+(106, 'AddProduct', 'index', 'add-product', 'index', 'Cadastrar Produto', 2, '', '', 1, 1, 3, '2025-09-28 13:26:00', '2025-09-28 13:26:24'),
+(107, 'EditProduct', 'index', 'edit-product', 'index', 'Editar Produto', 2, '', '', 1, 1, 3, '2025-09-28 13:27:44', NULL),
+(108, 'ViewProduct', 'index', 'view-product', 'index', 'Visualizar Produto', 2, '', '', 1, 1, 2, '2025-09-28 13:28:55', NULL),
+(109, 'DeleteProduct', 'index', 'delete-product', 'index', 'Apagar Produto', 2, '', '', 1, 1, 5, '2025-09-28 13:29:50', NULL),
+(111, 'ListProducts', 'index', 'list-products', 'index', 'Listar Produtos', 2, '', '', 1, 1, 1, '2025-09-28 13:32:20', NULL),
+(112, 'EditProductImage', 'index', 'edit-product-image', 'index', 'Editar Foto do Produto', 2, '', '', 1, 1, 4, '2020-11-17 22:22:40', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_sits_pgs`
+-- Table structure for table `adms_sits_pgs`
 --
 
 DROP TABLE IF EXISTS `adms_sits_pgs`;
@@ -1205,7 +1259,7 @@ CREATE TABLE IF NOT EXISTS `adms_sits_pgs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_sits_pgs`
+-- Dumping data for table `adms_sits_pgs`
 --
 
 INSERT INTO `adms_sits_pgs` (`id`, `name`, `adms_color_id`, `created`, `modified`) VALUES
@@ -1216,7 +1270,7 @@ INSERT INTO `adms_sits_pgs` (`id`, `name`, `adms_color_id`, `created`, `modified
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_sits_users`
+-- Table structure for table `adms_sits_users`
 --
 
 DROP TABLE IF EXISTS `adms_sits_users`;
@@ -1231,7 +1285,7 @@ CREATE TABLE IF NOT EXISTS `adms_sits_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_sits_users`
+-- Dumping data for table `adms_sits_users`
 --
 
 INSERT INTO `adms_sits_users` (`id`, `name`, `adms_color_id`, `created`, `modified`) VALUES
@@ -1244,7 +1298,7 @@ INSERT INTO `adms_sits_users` (`id`, `name`, `adms_color_id`, `created`, `modifi
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_types_pgs`
+-- Table structure for table `adms_types_pgs`
 --
 
 DROP TABLE IF EXISTS `adms_types_pgs`;
@@ -1260,7 +1314,7 @@ CREATE TABLE IF NOT EXISTS `adms_types_pgs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_types_pgs`
+-- Dumping data for table `adms_types_pgs`
 --
 
 INSERT INTO `adms_types_pgs` (`id`, `type`, `name`, `order_type_pg`, `obs`, `created`, `modified`) VALUES
@@ -1270,7 +1324,7 @@ INSERT INTO `adms_types_pgs` (`id`, `type`, `name`, `order_type_pg`, `obs`, `cre
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_users`
+-- Table structure for table `adms_users`
 --
 
 DROP TABLE IF EXISTS `adms_users`;
@@ -1296,30 +1350,17 @@ CREATE TABLE IF NOT EXISTS `adms_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `adms_users`
+-- Dumping data for table `adms_users`
 --
 
 INSERT INTO `adms_users` (`id`, `name`, `nickname`, `email`, `username`, `password`, `recover_password`, `conf_email`, `adms_sits_user_id`, `image`, `adms_access_level_id`, `created`, `modified`) VALUES
-(1, 'Cesar Szpak', 'Cesar', 'cesar@celke.com.br', 'cesar@celke.com.br', '$2y$10$yvl03fVlcqDnDlzMpYJ/9eEBCDGm.xx2R0ZdRnfGidDTdg84dO7Q.', NULL, NULL, 1, 'logo-define-500x500-v3.jpg', 1, '2020-09-07 22:24:19', '2020-11-22 19:00:58'),
-(2, 'Cesar1', '', 'cesar1@celke.com.br', 'cesar1@celke.com.br', '$2y$10$W6kwDUoKrB/kJWR/aDMdLOG5wtoANHNIP3XSguXFNnZx6oykRDDq2', NULL, NULL, 1, 'acao-cao-ficcao.jpg', 2, '2020-09-07 22:25:36', '2020-09-21 21:31:31'),
-(3, 'Cesar2', NULL, 'cesar2@celke.com.br', 'cesar2@celke.com.br', '$2y$10$fAKzGkTGhvmxIo9klCQ1WeL71uS5Phn9nHn3fGSuBYfa01j2thshi', NULL, '$2y$10$Sen3fdmGIj5WvWFU3v1/9eRYnyaBjbu.YbbRvGOR.IEkog7E9AbSy', 3, 'acao-cao-ficcao.jpg', 4, '2020-09-07 22:27:14', '2020-09-20 20:01:23'),
-(4, 'Cesar3', '', 'cesar3@celke.com.br', 'cesar3@celke.com.br', '$2y$10$mOWZ9yZ98bcxPb29iK7MAO3s0SWiDvPDURbeiM.qTRRgFh/GGmKJS', NULL, NULL, 1, NULL, 3, '2020-09-07 22:49:25', '2020-11-22 19:01:13'),
-(5, 'Cesar4', NULL, 'cesar4@celke.com.br', 'cesar4@celke.com.br', '$2y$10$T0ll77V8FqaC2lvo5pHiduWUu8zVtPhnLakrL9QX5VU4yWAdVg6ge', NULL, NULL, 1, NULL, 2, '2020-09-07 22:52:42', '2020-09-14 16:50:57'),
-(8, 'Cesar 5', 'Cesar 5', 'cesar5@celke.com.br', 'cesar5@celke.com.br', '$2y$10$T0ll77V8FqaC2lvo5pHiduWUu8zVtPhnLakrL9QX5VU4yWAdVg6ge', NULL, NULL, 4, NULL, 4, '2020-09-07 22:54:23', '2020-09-30 23:31:31'),
-(9, 'Cesar6', NULL, 'cesar6@celke.com.br', 'cesar6@celke.com.br', '$2y$10$shLdEnUJa9WSCZL5oqSDdenbZBTG61j6SAsrhTsn0JUGaN8l.kaom', NULL, NULL, 1, 'logo-define-500x500-v3.jpg', 4, '2020-09-07 22:57:35', '2020-09-29 19:13:39'),
-(10, 'Cesar7', NULL, 'cesar7@celke.com.br', 'cesar7@celke.com.br', '$2y$10$6oQU6cldguhbvYgMuyigQ.tCho61pA8NI5GSYfoMWsGcyxP3aTMr.', NULL, NULL, 5, 'logo-define-500x500-v3.jpg', 4, '2020-09-07 23:15:28', '2020-09-29 19:09:37'),
-(18, 'Cesar 8', NULL, 'cesar8@celke.com.br', 'cesar8@celke.com.br', '$2y$10$dsvwN11p3L6.YacCq8g0HusSnX1zxLwQdpAyKnDb6nFvM0KusNMhq', NULL, '$2y$10$A7i4n3U0.KX74ZrJUF0PsuLVFr6Jk.yg8jTyvjytfsI69Ptv9Pj/m', 2, NULL, 4, '2020-09-30 12:27:45', NULL),
-(19, 'Cesar', NULL, 'cesar9@celke.com.br', 'cesar9@celke.com.br', '$2y$10$JDNWN5jE.k2/yGvAEBu5lOUAFWMUUMOtzML.gHlb/Dj2I3s5mgEc2', NULL, '$2y$10$k465Ob2NFetTOi6rPC1WNer.dC8czrU7hL3wilmZX/sm6gjsTbLpy', 3, NULL, 4, '2020-10-20 14:55:09', NULL),
-(22, 'Cesar 10', '', 'cesar10@celke.com.br', 'cesar10@celke.com.br', '$2y$10$H4b3oo9bhhGQTCYmOu8eIeUbgaEMUCLAvJoOQVxmfnSgUxeQFji.u', NULL, '$2y$10$LCaLBCEbHc1fgq30xUIZvONZYlUJdItsQE9WlOIXNcJcO.792581K', 1, NULL, 11, '2020-10-29 14:12:50', '2020-10-29 14:19:56'),
-(23, 'Cesar 11', NULL, 'cesar11@celke.com.br', 'cesar11@celke.com.br', '$2y$10$zhCqUlS6/XIU3ViVFMhg/eCl.4n8fVjlQyAuBuIU7N/6zGyXiXh9i', NULL, '$2y$10$vPbu68S9uEslbRo4nLUcI.CQ8U9jKh9oi9p1l8d8CtpdCK.BVnhAC', 3, NULL, 4, '2020-11-02 13:53:06', NULL),
-(24, 'Cesar 12', NULL, 'cesar12@celke.com.br', 'cesar12@celke.com.br', '$2y$10$DIGYDQ/OP0sU0E4r7Gq6NOKB9OnJIQoRtst.StbYTDcmH/TAxqzpW', NULL, '$2y$10$Q/2y0cR/YIhfLNlskkxZVO9yKfa2vmhFIog/8EocjAd2d3ZuT70Qu', 3, NULL, 4, '2020-11-02 14:03:05', NULL),
-(25, 'Cesar 13', NULL, 'cesar13@celke.com.br', 'cesar13@celke.com.br', '$2y$10$rxcYSvDhJ0h.SNpGlzhufOI6wjuT82I6wURYhWvu4608IKjDizt6W', NULL, '$2y$10$X3fibj.VH2io5j2ir80yzey5n6iccptyhBqKHuFwNp4N.Eelc.pkm', 3, NULL, 3, '2020-11-02 14:03:53', NULL),
-(26, 'Cesar 14', '', 'cesar14@celke.com.br', 'cesar14@celke.com.br', '$2y$10$0D.bIxxtp75FIrCy8nLfj.m0dsxlnYMsyci4tdODjrGwwStomf4Fy', NULL, '$2y$10$RwTOXL7CclQI60SoaDbgcevv6l1h1S69U7vqi3Omz6fUHN/bQbAV2', 1, NULL, 15, '2020-11-02 14:05:49', '2020-11-22 18:32:59');
+(1, 'Dom Khepy', 'Dom', 'domkhepy@gmail.com', 'domkhepy', '$2y$10$yvl03fVlcqDnDlzMpYJ/9eEBCDGm.xx2R0ZdRnfGidDTdg84dO7Q.', NULL, NULL, 1, 'logo-define-500x500-v3.jpg', 1, '2020-09-07 22:24:19', '2020-11-22 19:00:58'),
+(2, 'Domingos', '', 'domingos@gmail.com', 'domingos@gmail.com', '$2y$10$W6kwDUoKrB/kJWR/aDMdLOG5wtoANHNIP3XSguXFNnZx6oykRDDq2', NULL, NULL, 1, 'acao-cao-ficcao.jpg', 2, '2020-09-07 22:25:36', '2020-09-21 21:31:31');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_abouts_companies`
+-- Table structure for table `sts_abouts_companies`
 --
 
 DROP TABLE IF EXISTS `sts_abouts_companies`;
@@ -1335,7 +1376,7 @@ CREATE TABLE IF NOT EXISTS `sts_abouts_companies` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_abouts_companies`
+-- Dumping data for table `sts_abouts_companies`
 --
 
 INSERT INTO `sts_abouts_companies` (`id`, `title`, `description`, `image`, `sts_situation_id`, `created`, `modified`) VALUES
@@ -1347,7 +1388,7 @@ INSERT INTO `sts_abouts_companies` (`id`, `title`, `description`, `image`, `sts_
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_contacts`
+-- Table structure for table `sts_contacts`
 --
 
 DROP TABLE IF EXISTS `sts_contacts`;
@@ -1365,7 +1406,7 @@ CREATE TABLE IF NOT EXISTS `sts_contacts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_contacts`
+-- Dumping data for table `sts_contacts`
 --
 
 INSERT INTO `sts_contacts` (`id`, `title_opening_hours`, `opening_hours`, `title_address`, `address`, `address_two`, `phone`, `created`, `modified`) VALUES
@@ -1374,7 +1415,7 @@ INSERT INTO `sts_contacts` (`id`, `title_opening_hours`, `opening_hours`, `title
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_contacts_msgs`
+-- Table structure for table `sts_contacts_msgs`
 --
 
 DROP TABLE IF EXISTS `sts_contacts_msgs`;
@@ -1387,21 +1428,24 @@ CREATE TABLE IF NOT EXISTS `sts_contacts_msgs` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_contacts_msgs`
+-- Dumping data for table `sts_contacts_msgs`
 --
 
 INSERT INTO `sts_contacts_msgs` (`id`, `name`, `email`, `subject`, `content`, `created`, `modified`) VALUES
 (1, 'Cesar', 'cesar@celke.com.br', 'Escrever 1', 'Escrever 1', '2020-08-18 19:20:46', NULL),
 (2, 'Cesar1', 'cesar1@celke.com.br', 'Assunto 1', 'Conteúdo 1', '2020-08-23 20:14:35', NULL),
-(3, 'Cesar2', 'cesar2@celke.com.br', 'Assunto 2', 'Conteúdo 2', '2020-08-23 20:17:23', NULL);
+(3, 'Cesar2', 'cesar2@celke.com.br', 'Assunto 2', 'Conteúdo 2', '2020-08-23 20:17:23', NULL),
+(5, 'Domingos Valoi Jr', 'domkhepy@gmail.com', 'Noticia do dia', 'asds', '2025-11-03 03:20:47', NULL),
+(6, 'Domingos Valoi Jr', 'domkhepy@gmail.com', 'Noticia do dia', 'asds', '2025-11-03 03:21:09', NULL),
+(7, 'Domingos Valoi Jr', 'domkhepy@gmail.com', 'Noticia do dia', 'asds', '2025-11-03 03:21:19', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_footers`
+-- Table structure for table `sts_footers`
 --
 
 DROP TABLE IF EXISTS `sts_footers`;
@@ -1429,7 +1473,7 @@ CREATE TABLE IF NOT EXISTS `sts_footers` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_footers`
+-- Dumping data for table `sts_footers`
 --
 
 INSERT INTO `sts_footers` (`id`, `title_site`, `title_contact`, `phone`, `address`, `url_address`, `cnpj`, `url_cnpj`, `title_social_networks`, `txt_one_social_networks`, `link_one_social_networks`, `txt_two_social_networks`, `link_two_social_networks`, `txt_three_social_networks`, `link_three_social_networks`, `txt_four_social_networks`, `link_four_social_networks`, `created`, `modified`) VALUES
@@ -1438,7 +1482,7 @@ INSERT INTO `sts_footers` (`id`, `title_site`, `title_contact`, `phone`, `addres
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_homes_actions`
+-- Table structure for table `sts_homes_actions`
 --
 
 DROP TABLE IF EXISTS `sts_homes_actions`;
@@ -1456,7 +1500,7 @@ CREATE TABLE IF NOT EXISTS `sts_homes_actions` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_homes_actions`
+-- Dumping data for table `sts_homes_actions`
 --
 
 INSERT INTO `sts_homes_actions` (`id`, `title_action`, `subtitle_action`, `description_action`, `link_btn_action`, `txt_btn_action`, `image`, `created`, `modified`) VALUES
@@ -1465,7 +1509,7 @@ INSERT INTO `sts_homes_actions` (`id`, `title_action`, `subtitle_action`, `descr
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_homes_dets`
+-- Table structure for table `sts_homes_dets`
 --
 
 DROP TABLE IF EXISTS `sts_homes_dets`;
@@ -1481,7 +1525,7 @@ CREATE TABLE IF NOT EXISTS `sts_homes_dets` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_homes_dets`
+-- Dumping data for table `sts_homes_dets`
 --
 
 INSERT INTO `sts_homes_dets` (`id`, `title_det`, `subtitle_det`, `description_det`, `image`, `created`, `modified`) VALUES
@@ -1490,7 +1534,7 @@ INSERT INTO `sts_homes_dets` (`id`, `title_det`, `subtitle_det`, `description_de
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_homes_servs`
+-- Table structure for table `sts_homes_servs`
 --
 
 DROP TABLE IF EXISTS `sts_homes_servs`;
@@ -1513,7 +1557,7 @@ CREATE TABLE IF NOT EXISTS `sts_homes_servs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_homes_servs`
+-- Dumping data for table `sts_homes_servs`
 --
 
 INSERT INTO `sts_homes_servs` (`id`, `title_serv`, `description_serv`, `icone_um_serv`, `titulo_um_serv`, `description_um_serv`, `icone_dois_serv`, `titulo_dois_serv`, `description_dois_serv`, `icone_tres_serv`, `titulo_tres_serv`, `description_tres_serv`, `created`, `modified`) VALUES
@@ -1522,7 +1566,7 @@ INSERT INTO `sts_homes_servs` (`id`, `title_serv`, `description_serv`, `icone_um
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_homes_tops`
+-- Table structure for table `sts_homes_tops`
 --
 
 DROP TABLE IF EXISTS `sts_homes_tops`;
@@ -1539,24 +1583,143 @@ CREATE TABLE IF NOT EXISTS `sts_homes_tops` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `sts_homes_tops`
+-- Dumping data for table `sts_homes_tops`
 --
 
 INSERT INTO `sts_homes_tops` (`id`, `title_top`, `description_top`, `link_btn_top`, `txt_btn_top`, `image`, `created`, `modified`) VALUES
 (1, 'Temos a solução que a sua empresa precisa!', 'Aenean fermentum sapien sed dolor elementum tincidunt et.', 'http://localhost/celke/contato', 'Contato', 'topo.jpg', '2020-07-23 00:00:00', '2021-03-15 23:53:17');
 
+-- --------------------------------------------------------
+
 --
--- Restrições para despejos de tabelas
+-- Table structure for table `sts_products`
+--
+
+DROP TABLE IF EXISTS `sts_products`;
+CREATE TABLE IF NOT EXISTS `sts_products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` double NOT NULL,
+  `image` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_products`
+--
+
+INSERT INTO `sts_products` (`id`, `product_id`, `name`, `title`, `description`, `type`, `price`, `image`, `created`, `modified`) VALUES
+(2, 'P309971072624', 'Camiseta fixe a', 'asdasd 4a', 'amazingaa', 'asd 2', 100.5, 'edm.png', '2025-10-30 19:53:04', '2025-10-30 20:57:01'),
+(3, 'P309971072625', 'Nike t-shirt', 'asddlaksnd', 'Gestão de imagem e marca pessoal, estratégias de visibilidade e conexão com patrocinadores e parceiros comerciais.', 'E-commerce Seller', 200, '1750860231436-765624432-removebg-preview.png', '2025-10-30 20:53:46', '2025-10-30 20:57:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_requests`
+--
+
+DROP TABLE IF EXISTS `sts_requests`;
+CREATE TABLE IF NOT EXISTS `sts_requests` (
+  `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_users_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_quantity` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_requests`
+--
+
+INSERT INTO `sts_requests` (`id`, `sts_users_id`, `total_quantity`, `created`, `modified`) VALUES
+('R270101125103', 'C6810241125419', '8', '2025-11-10 22:24:36', NULL),
+('R313101125211', 'C3410681125787', '8', '2025-11-10 22:22:28', NULL),
+('R340101125863', 'C2010511125894', '8', '2025-11-10 22:19:33', NULL),
+('R729101125387', 'C6510921125397', '8', '2025-11-10 22:27:24', NULL),
+('R882101125499', 'C8110331125965', '8', '2025-11-10 22:26:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_request_items`
+--
+
+DROP TABLE IF EXISTS `sts_request_items`;
+CREATE TABLE IF NOT EXISTS `sts_request_items` (
+  `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_requests_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_products_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_request_items`
+--
+
+INSERT INTO `sts_request_items` (`id`, `sts_requests_id`, `sts_products_id`, `quantity`, `created`, `modified`) VALUES
+('I140101125204', 'R270101125103', '2', 4, '2025-11-10 22:24:36', NULL),
+('I178101125966', 'R729101125387', '2', 4, '2025-11-10 22:27:25', NULL),
+('I273101125962', 'R340101125863', '2', 4, '2025-11-10 22:19:33', NULL),
+('I275101125507', 'R270101125103', '3', 4, '2025-11-10 22:24:36', NULL),
+('I409101125711', 'R313101125211', '3', 4, '2025-11-10 22:22:28', NULL),
+('I520101125360', 'R340101125863', '3', 4, '2025-11-10 22:19:33', NULL),
+('I532101125615', 'R729101125387', '3', 4, '2025-11-10 22:27:25', NULL),
+('I727101125909', 'R313101125211', '2', 4, '2025-11-10 22:22:28', NULL),
+('I834101125627', 'R882101125499', '3', 4, '2025-11-10 22:26:00', NULL),
+('I995101125383', 'R882101125499', '2', 4, '2025-11-10 22:26:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_users`
+--
+
+DROP TABLE IF EXISTS `sts_users`;
+CREATE TABLE IF NOT EXISTS `sts_users` (
+  `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_users`
+--
+
+INSERT INTO `sts_users` (`id`, `name`, `email`, `contact`, `created`, `modified`) VALUES
+('C2010511125894', 'Domingos', 'domkhepy123@gmail.com', '847610513', '2025-11-10 22:19:32', NULL),
+('C3010201125431', 'Domingos', 'domkhepy09@gmail.com', '847610513', '2025-11-10 22:18:14', NULL),
+('C3410681125787', 'Domingos', 'domkhepy321@gmail.com', '847610513', '2025-11-10 22:22:28', NULL),
+('C6510921125397', 'Domingos', 'domkhepy9870h@gmail.com', '847610513', '2025-11-10 22:27:24', NULL),
+('C6810241125419', 'Domingos', 'domkhepy6547@gmail.com', '847610513', '2025-11-10 22:24:36', NULL),
+('C8110331125965', 'Domingos', 'domkhep89y@gmail.com', '847610513', '2025-11-10 22:26:00', NULL),
+('C8210441125630', 'Domingos', 'domkhepy@gmail.com', '847610513', '2025-11-10 22:17:03', NULL);
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `adms_levels_forms`
+-- Constraints for table `adms_levels_forms`
 --
 ALTER TABLE `adms_levels_forms`
   ADD CONSTRAINT `adms_levels_forms_ibfk_1` FOREIGN KEY (`adms_access_level_id`) REFERENCES `adms_access_levels` (`id`);
 
 --
--- Limitadores para a tabela `adms_levels_pages`
+-- Constraints for table `adms_levels_pages`
 --
 ALTER TABLE `adms_levels_pages`
   ADD CONSTRAINT `adms_levels_pages_ibfk_1` FOREIGN KEY (`adms_items_menu_id`) REFERENCES `adms_items_menus` (`id`),
@@ -1564,7 +1727,7 @@ ALTER TABLE `adms_levels_pages`
   ADD CONSTRAINT `fk_adms_levels_pages_adms_pages1` FOREIGN KEY (`adms_page_id`) REFERENCES `adms_pages` (`id`);
 
 --
--- Limitadores para a tabela `adms_pages`
+-- Constraints for table `adms_pages`
 --
 ALTER TABLE `adms_pages`
   ADD CONSTRAINT `adms_pages_ibfk_1` FOREIGN KEY (`adms_groups_pgs_id`) REFERENCES `adms_groups_pgs` (`id`),
@@ -1572,19 +1735,19 @@ ALTER TABLE `adms_pages`
   ADD CONSTRAINT `adms_pages_ibfk_3` FOREIGN KEY (`adms_types_pgs_id`) REFERENCES `adms_types_pgs` (`id`);
 
 --
--- Limitadores para a tabela `adms_sits_pgs`
+-- Constraints for table `adms_sits_pgs`
 --
 ALTER TABLE `adms_sits_pgs`
   ADD CONSTRAINT `adms_sits_pgs_ibfk_1` FOREIGN KEY (`adms_color_id`) REFERENCES `adms_colors` (`id`);
 
 --
--- Limitadores para a tabela `adms_sits_users`
+-- Constraints for table `adms_sits_users`
 --
 ALTER TABLE `adms_sits_users`
   ADD CONSTRAINT `adms_sits_users_ibfk_1` FOREIGN KEY (`adms_color_id`) REFERENCES `adms_colors` (`id`);
 
 --
--- Limitadores para a tabela `adms_users`
+-- Constraints for table `adms_users`
 --
 ALTER TABLE `adms_users`
   ADD CONSTRAINT `adms_users_ibfk_1` FOREIGN KEY (`adms_sits_user_id`) REFERENCES `adms_sits_users` (`id`),

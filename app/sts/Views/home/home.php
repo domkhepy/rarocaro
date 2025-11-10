@@ -29,17 +29,6 @@ if (!defined('48b5t9')) {
                 ?>
 
 
-        <form method="POST" action=""  id="form_<?php echo $count;?>" hidden>
-            <input type="text" id="id" name="id" value="<?php echo $id; ?>">
-            <input type="text" id="name" name="name" value="<?php echo $name; ?>">
-            <input type="text" id="price" name="price" value="<?php echo $price; ?>">
-            <input type="text" id="image" name="image" value="<?php echo $image; ?>">
-
-            <button name="button_<?php echo $count;?>" type="submit" id="button_<?php echo $count;?>"
-                        class="btn btn-primary w-75 d-block mx-auto p-3 mt-3">Enviar</button>
-        </form>
-
-
         <div class="introduce">
             <div class="title"><?php echo $title;?></div>
             <div class="topic"><?php echo $name;?></div>

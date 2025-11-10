@@ -54,3 +54,56 @@ if (!defined('48b5t9')) {
         </div>
     </div>
 </div>
+
+ <!-- Modal de Checkout -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="checkoutForm" action="<?php echo URL?>request/index" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="contact" name="contact" required>
+                            <input type="text" class="form-control" id="total_quantity" name="total_quantity" value="0" hidden>
+                        </div>
+                        <div id="orderSummary" class="mb-3 p-3 bg-light rounded">
+                            <!-- Resumo do pedido será inserido aqui -->
+                        </div>
+                        <input type="hidden" id="orderDetails" name="orderDetails">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="checkoutForm" class="btn btn-success">Confirmar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="notification mt-5 ms-3 d-none p-1">
+        <div class="content p-1">
+            <i id="check" class="bi bi-check check"></i>
+
+            <div class="message p-1"> <?php if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+            }?>
+            </div>
+        </div>
+
+        <i class="bi bi-x-lg close"></i>
+
+        <div class="progress"></div>
+    </div>

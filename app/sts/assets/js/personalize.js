@@ -171,3 +171,47 @@ const btns = document.querySelectorAll('button');
       logoLayer.style.top = '42%';
       logoLayer.style.transform = 'translate(-50%,-50%)';
     });}
+
+
+      /*notification*/
+const  notification = document.querySelector(".notification"),
+ closebutton = document.querySelector(".close"),
+  message = document.querySelector(".message"),
+  msg = document.querySelector("#msg"),
+  check = document.querySelector("#check"),
+ progress = document.querySelector(".progress");
+
+ 
+ // Verifica se a div possui algum conteúdo (texto ou elementos)
+  if (message.innerHTML.trim() !== "") {
+
+    notification.classList.remove("d-none");
+
+if(msg.classList.contains('error')){
+    check.classList.add("bi-x-lg")
+    check.style.backgroundColor="red";
+    notification.style.borderLeft="0.4em solid red";
+    progress.style.backgroundColor="red";
+    msg.style.color="red";
+}else if(msg.classList.contains('success')){
+     check.classList.add("bi-check-circle")
+}else{
+    check.classList.add("bi-exclamation-triangle")
+    check.style.backgroundColor="#ee9624ff";
+    notification.style.borderLeft="0.4em solid #ee9624ff";
+    progress.style.backgroundColor="#ee9624ff";
+    msg.style.color="#ee9624ff";
+}
+  
+    notification.classList.add("active");
+    progress.classList.add("active");
+
+    setTimeout(() =>{
+        notification.classList.remove("active");
+    },5000);
+
+    setTimeout(() =>{
+        progress.classList.remove("active");
+        notification.classList.add("d-none");
+    },5400);
+ };

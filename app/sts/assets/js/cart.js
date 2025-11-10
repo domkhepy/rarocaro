@@ -4,9 +4,12 @@ function loadCart() {
   const cartDiv = document.getElementById('cartItems');
   const cartTotal = document.getElementById('cartTotal');
   const productNumber = document.getElementById('productNumber');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const total_quantity = document.getElementById('total_quantity');
 
   if (cart.length === 0) {
     cartDiv.innerHTML = "<p>Carrinho vazio</p>";
+     checkoutBtn.disabled = true;
     return;
   }
 
@@ -35,7 +38,9 @@ function loadCart() {
   html += `<button class="btn mt-4 btn-sm btn-danger  " onclick="clearCart()">Esvaziar carrinho</button>`;
 cartTotal.textContent = `MZN ${total.toFixed(2)}`;
 productNumber.textContent = count;
+total_quantity.value = count;
   cartDiv.innerHTML = html;
+   checkoutBtn.disabled = false;
 }
 
 // --- Adicionar item ao carrinho ---
@@ -67,6 +72,47 @@ function clearCart() {
   localStorage.removeItem('cart');
   loadCart();
 }
+
+ // Finalizar compra
+    checkoutBtn.addEventListener('click', function() {
+        let summaryHTML = '<h5>Resumo do Pedido</h5><ul class="list-group mb-3">';
+        let details = [];
+        let total = 0;
+         const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        
+        cart.forEach(item => {
+            const itemTotal = item.preco * item.quantidade;
+            total += itemTotal;
+            
+            summaryHTML += `
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>${item.produto} (${item.quantidade}x)</span>
+                    <span>MZN ${itemTotal.toFixed(2)}</span>
+                </li>
+            `;
+            
+            details.push({
+                id: item.id,
+                name: item.produto,
+                price: item.preco,
+                quantity: item.quantidade
+            });
+        });
+        
+        summaryHTML += `
+            </ul>
+            <div class="d-flex justify-content-between fw-bold">
+                <span>Total:</span>
+                <span>MZN ${total.toFixed(2)}</span>
+            </div>
+        `;
+        
+        orderSummary.innerHTML = summaryHTML;
+        orderDetails.value = JSON.stringify(details);
+        checkoutModal.show();
+    });
 
 // --- Carrega o carrinho automaticamente ao abrir a página ---
 window.onload = loadCart;
