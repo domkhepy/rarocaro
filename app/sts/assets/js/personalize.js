@@ -71,6 +71,7 @@ const btns = document.querySelectorAll('button');
     
 
     // logo upload
+    if(typeof fileInput != 'undefined' && fileInput != null){
     fileInput.addEventListener('change', (ev)=>{
       const f = ev.target.files && ev.target.files[0];
       if(!f) return;
@@ -84,18 +85,20 @@ const btns = document.querySelectorAll('button');
       logoLayer.style.transform = 'translate(-50%,-50%)';
       // make draggable
       makeDraggable(logoLayer);
-    });
+    });}
 
     // scale control
+       if(typeof logoScale != 'undefined' && logoScale != null){
     logoScale.addEventListener('input', ()=>{
       logoLayer.style.width = logoScale.value + '%';
-    });
+    });}
 
+   if(typeof fileInput != 'undefined' && fileInput != null){
     resetLogoBtn.addEventListener('click', ()=>{
       logoImg.src = '';
       logoLayer.style.display = 'none';
       fileInput.value = '';
-    });
+    });}
 
     // simple draggable implementation
     function makeDraggable(el){
@@ -150,10 +153,10 @@ const btns = document.querySelectorAll('button');
     }
 
     // initial color
-    setShirtColor(colors[0].value, colors[0].name);
+   // setShirtColor(colors[0].value, colors[0].name);
 
     // initial neck
-    neckSelect.dispatchEvent(new Event('change'));
+    //neckSelect.dispatchEvent(new Event('change'));
 
     // Accessibility: allow keyboard focus on swatches
     document.querySelectorAll('.swatch').forEach(s=>{
@@ -162,8 +165,9 @@ const btns = document.querySelectorAll('button');
     });
 
     // Optional: enable double-click to center logo
+       if(typeof logoLayer != 'undefined' && logoLayer != null){
     logoLayer.addEventListener('dblclick', ()=>{
       logoLayer.style.left = '50%';
       logoLayer.style.top = '42%';
       logoLayer.style.transform = 'translate(-50%,-50%)';
-    });
+    });}

@@ -8,11 +8,13 @@ if (!defined('48b5t9')) {
 //var_dump($this->dados['sts_homes']['products']);
 ?>
 <div class="carousel ">
-        <div class="list">
+    <div class="list">
 
 
-        
-            <?php if(isset($this->dados['sts_homes']['products']) and !empty($this->dados['sts_homes']['products'])){
+
+        <?php 
+        $count=0;
+        if(isset($this->dados['sts_homes']['products']) and !empty($this->dados['sts_homes']['products'])){
                 foreach($this->dados['sts_homes']['products'] as $products){
                     extract($products);
                     
@@ -25,30 +27,43 @@ if (!defined('48b5t9')) {
                 echo "<div class='item'><img src='".$image."'>";
 
                 ?>
-                <div class="introduce">
-                    <div class="title"><?php echo $title;?></div>
-                    <div class="topic"><?php echo $name;?></div>
-                    <div class="des">
-                        <!-- 20 lorem -->
-                        <?php echo $description;?>
-                    </div>
-                    <button class="seeMore">Detalhes &#8599</button>
-                    
+
+
+        <form method="POST" action=""  id="form_<?php echo $count;?>" hidden>
+            <input type="text" id="id" name="id" value="<?php echo $id; ?>">
+            <input type="text" id="name" name="name" value="<?php echo $name; ?>">
+            <input type="text" id="price" name="price" value="<?php echo $price; ?>">
+            <input type="text" id="image" name="image" value="<?php echo $image; ?>">
+
+            <button name="button_<?php echo $count;?>" type="submit" id="button_<?php echo $count;?>"
+                        class="btn btn-primary w-75 d-block mx-auto p-3 mt-3">Enviar</button>
+        </form>
+
+
+        <div class="introduce">
+            <div class="title"><?php echo $title;?></div>
+            <div class="topic"><?php echo $name;?></div>
+            <div class="des">
+                <!-- 20 lorem -->
+                <?php echo $description;?>
+            </div>
+            <button class="seeMore">Detalhes &#8599</button>
+
+        </div>
+        <div class="detail">
+            <div class="title"><?php echo $name;?></div>
+            <div class="des">
+                <?php echo $description;?></div>
+            <div class="specifications">
+                <div>
+                    <p>Tecido</p>
+                    <p><?php echo $type;?></p>
                 </div>
-                <div class="detail">
-                    <div class="title"><?php echo $name;?></div>
-                    <div class="des">
-                        <?php echo $description;?></div>
-                    <div class="specifications">
-                        <div>
-                            <p>Tecido</p>
-                            <p><?php echo $type;?></p>
+                <div>
+                            <p>Preço</p>
+                            <p><?php echo $price;?></p>
                         </div>
-                        <!--<div>
-                            <p>Charging port</p>
-                            <p>Type-C</p>
-                        </div>
-                        <div>
+                      <!--  <div>
                             <p>Compatible</p>
                             <p>Android</p>
                         </div>
@@ -60,21 +75,33 @@ if (!defined('48b5t9')) {
                             <p>Controlled</p>
                             <p>Touch</p>
                         </div>-->
-                    </div>
-                    <div class="checkout">
-                       <!-- <button>ADD TO CART</button>-->
-                        <a href="">REQUESITAR</a>
-                    </div>
-                </div>
             </div>
-           <?php   } 
-            }?>
-
-           
-        </div>
-        <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
-            <button id="back">Ver todos &#8599</button>
+            <div class="checkout">
+ <button id="addCart" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')">+ CARRINHO</button>
+                <button href="" id="request">REQUESITAR</button>
+            </div>
         </div>
     </div>
+    <?php   $count++;
+                } 
+            }?>
+
+
+</div>
+<div class="arrows">
+    <button id="prev">
+        < </button>
+            <button id="next">></button>
+            <button id="back">Ver todos &#8599</button>
+</div>
+</div>
+
+<script>
+const products = <?php echo json_encode($this->dados['sts_homes']['products']); ?>;
+
+
+//document.addEventListener('DOMContentLoaded', function() {
+// Initialize searchable select
+// initSearchableSelect(products);
+//});
+</script>

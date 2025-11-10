@@ -5,9 +5,19 @@ let listHTML = document.querySelector('.carousel .list');
 let seeMoreButtons = document.querySelectorAll('.seeMore');
 let backButton = document.getElementById('back');
 
+const navLinks = document.getElementById("nav-links");
+const menuBtn = document.getElementById("menu-btn");
+const menuBtnIcon = menuBtn.querySelector("i");
+
+const shopping_cart = document.getElementById("shopping-cart");
+const cart_sidebar = document.getElementById("cartSidebar");
+const close_cart = document.getElementById("close-cart");
+
+if(typeof nextButton !== 'undefined' && nextButton !== null ){
 nextButton.onclick = function(){
     showSlider('next');
 }
+
 prevButton.onclick = function(){
     showSlider('prev');
 }
@@ -40,3 +50,30 @@ seeMoreButtons.forEach((button) => {
 backButton.onclick = function(){
     carousel.classList.remove('showDetail');
 }
+}
+
+
+/*nav menu*/
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
+
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute(
+    "class",
+    isOpen ? "bi bi-x-lg" : "bi bi-list"
+  );
+});
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "bi bi-list");
+});
+
+
+/*carinha*/
+shopping_cart.addEventListener("click", (e) => {
+  cart_sidebar.classList.remove("d-none");
+});
+close_cart.addEventListener("click", (e) => {
+  cart_sidebar.classList.toggle("d-none");
+});

@@ -1,0 +1,38 @@
+.nav__links {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-image: var(--gradient-2);
+  transform: translateY(-100%);
+  transition: 0.5s;
+  z-index: -1;
+  top:10px;
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+.nav__links a {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.nav__links a:hover {
+  color: var(--white);
+}
+
+@media (width > 768px) {
+  .nav__links {
+    padding: 0;
+    width: unset;
+    position: static;
+    transform: none;
+    flex-direction: row;
+    background-image: none;
+  }}

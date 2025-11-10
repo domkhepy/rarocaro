@@ -76,7 +76,7 @@ class StsHome
 
     private function listProducts() {
         $viewDet = new \App\sts\Models\helper\StsRead();
-        $viewDet->fullRead("SELECT id, name, title, description, image, type
+        $viewDet->fullRead("SELECT id, name, title, description, image, type, price
                 FROM sts_products");
         $this->dataDet = $viewDet->getResult();
         $this->data['products'] = $this->dataDet;

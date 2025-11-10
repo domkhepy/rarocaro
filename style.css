@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fafafa;
+}
+
+.produto {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+button {
+  background: #6b42ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #5633d4;
+}
+
+.item {
+  margin-bottom: 10px;
+}

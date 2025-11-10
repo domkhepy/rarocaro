@@ -10,5 +10,6 @@ if (!defined('48b5t9')) {
   <script src="<?php echo URL."app/sts/assets/js/app.js";?>"></script>
   <script src="<?php echo URL."app/sts/assets/js/personalize.js";?>"></script>
   <script src="<?php echo URL."app/sts/assets/js/tshirt.js";?>"></script>
+  <script src="<?php echo URL."app/sts/assets/js/cart.js";?>"></script>
 </body>
 </html>
