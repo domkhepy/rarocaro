@@ -57,6 +57,15 @@ class AdmsAddProduct
             $this->resultado = false;
         }
     }
+
+     public function listCategories() {
+        $list = new \App\adms\Models\helper\AdmsRead();
+        $list->fullRead("SELECT id, name FROM sts_categories ORDER BY name ASC");
+        $registry['sit'] = $list->getResult();
+
+   
+        return $registry['sit'];
+    }
 /*
     public function listProductTypes() {
         $list = new \App\adms\Models\helper\AdmsRead();

@@ -116,6 +116,34 @@ if (isset($this->dados['form'][0])) {
                 </div>
             </div>
 
+            <div class="row form-group">
+                <div class="col-12 col-md-6">
+                    <label for="price"><span class="text-danger">*</span> Preço:</label>
+                    <input name="price" type="text" class="form-control" id="price" placeholder="Preço do  producto  "
+                        value="<?php
+                if (isset($valorForm['price'])) {
+                    echo $valorForm['price'];
+                }
+                ?>" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="ca_id"><span class="text-danger">*</span> Categoria</label>
+                    <select name="sts_categories_id" id="sts_categories_id" class="form-control">
+                        <option value="">Selecione</option>
+                        <?php
+                        foreach ($this->dados['categories'] as $sit) {
+                            extract($sit);
+                            if ((isset($valorForm['sts_categories_id'])) AND $valorForm['sts_categories_id'] == $id) {
+                                echo "<option value='$id' selected>$name</option>";
+                            } else {
+                                echo "<option value='$id'>$name</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório
             </p>

@@ -53,6 +53,9 @@ class EditProduct
         $listButton = new \App\adms\Models\helper\AdmsButton();
         $this->dados['button'] = $listButton->buttonPermission($button);
 
+         $listSelect = new \App\adms\Models\AdmsEditProduct();
+        $this->dados['categories'] = $listSelect->listCategories();
+
        /* $listProductsTypes = new \App\adms\Models\AdmsAddProduct();
         $this->dados['listProductsTypes'] = $listProductsTypes->listProductTypes();
 */

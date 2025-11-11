@@ -56,24 +56,53 @@ if (isset($this->dados['form'])) {
 
             <div class="row form-group">
                 <div class="col-12 col-md-6">
-                <label for="description"><span class="text-danger">*</span> Descrição:</label>
-                <input name="description" type="text" class="form-control" id="description"
-                    placeholder="Descrição do  producto  " value="<?php
+                    <label for="description"><span class="text-danger">*</span> Descrição:</label>
+                    <input name="description" type="text" class="form-control" id="description"
+                        placeholder="Descrição do  producto  " value="<?php
                 if (isset($valorForm['description'])) {
                     echo $valorForm['description'];
                 }
-                ?>" required></div>
+                ?>" required>
+                </div>
 
                 <div class="col-12 col-md-6">
                     <label for="type"><span class="text-danger">*</span> Tipo de produto:</label>
-                    <input name="type" type="text" class="form-control" id="type" placeholder="Tipo do produto"
-                        value="<?php
+                    <input name="type" type="text" class="form-control" id="type" placeholder="Tipo do produto" value="<?php
                 if (isset($valorForm['type'])) {
                     echo $valorForm['type'];
                 }
                 ?>" required autofocus>
                 </div>
             </div>
+
+            <div class="row form-group">
+                <div class="col-12 col-md-6">
+                    <label for="price"><span class="text-danger">*</span> Preço:</label>
+                    <input name="price" type="text" class="form-control" id="price" placeholder="Preço do  producto  "
+                        value="<?php
+                if (isset($valorForm['price'])) {
+                    echo $valorForm['price'];
+                }
+                ?>" required>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="ca_id"><span class="text-danger">*</span> Categoria</label>
+                    <select name="sts_categories_id" id="sts_categories_id" class="form-control">
+                        <option value="">Selecione</option>
+                        <?php
+                        foreach ($this->dados['categories'] as $sit) {
+                            extract($sit);
+                            if ((isset($valorForm['sts_categories_id'])) AND $valorForm['sts_categories_id'] == $id) {
+                                echo "<option value='$id' selected>$name</option>";
+                            } else {
+                                echo "<option value='$id'>$name</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+
 
             <div class="form-group row">
 

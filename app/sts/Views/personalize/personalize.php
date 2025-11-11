@@ -40,7 +40,7 @@ if (!defined('48b5t9')) {
         </aside>-->
 
         <!-- Preview area center -->
-        <main class="preview-area">
+        <main class="preview-area" >
             
             <div class="mockup-card">
                 <div class="shirt-stage" id="stage">
@@ -50,7 +50,7 @@ if (!defined('48b5t9')) {
                     
 
 
-                    <svg id="tshirtSVG" class="shirt" width="300" viewBox="0 0 730 796" xmlns="http://www.w3.org/2000/svg">
+                    <svg style="touch-action: none;" id="tshirtSVG" class="shirt" width="300" viewBox="0 0 730 796" xmlns="http://www.w3.org/2000/svg">
                         <g stroke-width="null">
                             <path
                                 d="m279.33 4.6667l20 37.333c18.667 16.444 39.333 34.222 64 41.333 23.333-3.5556 46.667-12.444 62-26.667l36.667-41.333-80.667 11.333-66-4.6667-36-17.333z"

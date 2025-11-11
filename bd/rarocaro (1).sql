@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 10, 2025 at 10:28 PM
+-- Generation Time: Nov 11, 2025 at 09:41 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `adms_levels_pages` (
   KEY `fk_adms_levels_pages_adms_access_levels1_idx` (`adms_access_level_id`),
   KEY `fk_adms_levels_pages_adms_pages1_idx` (`adms_page_id`),
   KEY `adms_items_menu_id` (`adms_items_menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=881 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=921 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_levels_pages`
@@ -1095,7 +1095,47 @@ INSERT INTO `adms_levels_pages` (`id`, `permission`, `order_level_page`, `print_
 (877, 2, 106, 2, 2, NULL, 15, 108, '2025-10-30 19:07:39', NULL),
 (878, 2, 107, 2, 2, NULL, 15, 109, '2025-10-30 19:07:39', NULL),
 (879, 2, 108, 2, 2, NULL, 15, 111, '2025-10-30 19:07:39', NULL),
-(880, 2, 109, 2, 2, NULL, 15, 112, '2025-10-30 19:07:39', NULL);
+(880, 2, 109, 2, 2, NULL, 15, 112, '2025-10-30 19:07:39', NULL),
+(881, 1, 110, 1, 1, 2, 1, 118, '2025-11-11 18:30:34', '2025-11-11 18:36:36'),
+(882, 1, 111, 2, 2, NULL, 1, 119, '2025-11-11 18:30:34', NULL),
+(883, 1, 112, 2, 2, NULL, 1, 120, '2025-11-11 18:30:34', NULL),
+(884, 1, 113, 2, 2, NULL, 1, 121, '2025-11-11 18:30:34', NULL),
+(885, 1, 114, 2, 2, NULL, 1, 122, '2025-11-11 18:30:34', NULL),
+(886, 2, 110, 2, 2, NULL, 2, 118, '2025-11-11 18:30:35', NULL),
+(887, 2, 111, 2, 2, NULL, 2, 119, '2025-11-11 18:30:35', NULL),
+(888, 2, 112, 2, 2, NULL, 2, 120, '2025-11-11 18:30:35', NULL),
+(889, 2, 113, 2, 2, NULL, 2, 121, '2025-11-11 18:30:35', NULL),
+(890, 2, 114, 2, 2, NULL, 2, 122, '2025-11-11 18:30:35', NULL),
+(891, 2, 110, 2, 2, NULL, 3, 118, '2025-11-11 18:30:36', NULL),
+(892, 2, 111, 2, 2, NULL, 3, 119, '2025-11-11 18:30:36', NULL),
+(893, 2, 112, 2, 2, NULL, 3, 120, '2025-11-11 18:30:36', NULL),
+(894, 2, 113, 2, 2, NULL, 3, 121, '2025-11-11 18:30:36', NULL),
+(895, 2, 114, 2, 2, NULL, 3, 122, '2025-11-11 18:30:36', NULL),
+(896, 2, 110, 2, 2, NULL, 4, 118, '2025-11-11 18:30:37', NULL),
+(897, 2, 111, 2, 2, NULL, 4, 119, '2025-11-11 18:30:37', NULL),
+(898, 2, 112, 2, 2, NULL, 4, 120, '2025-11-11 18:30:37', NULL),
+(899, 2, 113, 2, 2, NULL, 4, 121, '2025-11-11 18:30:37', NULL),
+(900, 2, 114, 2, 2, NULL, 4, 122, '2025-11-11 18:30:37', NULL),
+(901, 2, 110, 2, 2, NULL, 11, 118, '2025-11-11 18:30:38', NULL),
+(902, 2, 111, 2, 2, NULL, 11, 119, '2025-11-11 18:30:38', NULL),
+(903, 2, 112, 2, 2, NULL, 11, 120, '2025-11-11 18:30:38', NULL),
+(904, 2, 113, 2, 2, NULL, 11, 121, '2025-11-11 18:30:38', NULL),
+(905, 2, 114, 2, 2, NULL, 11, 122, '2025-11-11 18:30:38', NULL),
+(906, 2, 110, 2, 2, NULL, 13, 118, '2025-11-11 18:30:38', NULL),
+(907, 2, 111, 2, 2, NULL, 13, 119, '2025-11-11 18:30:39', NULL),
+(908, 2, 112, 2, 2, NULL, 13, 120, '2025-11-11 18:30:39', NULL),
+(909, 2, 113, 2, 2, NULL, 13, 121, '2025-11-11 18:30:39', NULL),
+(910, 2, 114, 2, 2, NULL, 13, 122, '2025-11-11 18:30:39', NULL),
+(911, 2, 110, 2, 2, NULL, 14, 118, '2025-11-11 18:30:39', NULL),
+(912, 2, 111, 2, 2, NULL, 14, 119, '2025-11-11 18:30:39', NULL),
+(913, 2, 112, 2, 2, NULL, 14, 120, '2025-11-11 18:30:39', NULL),
+(914, 2, 113, 2, 2, NULL, 14, 121, '2025-11-11 18:30:40', NULL),
+(915, 2, 114, 2, 2, NULL, 14, 122, '2025-11-11 18:30:40', NULL),
+(916, 2, 110, 2, 2, NULL, 15, 118, '2025-11-11 18:30:40', NULL),
+(917, 2, 111, 2, 2, NULL, 15, 119, '2025-11-11 18:30:40', NULL),
+(918, 2, 112, 2, 2, NULL, 15, 120, '2025-11-11 18:30:40', NULL),
+(919, 2, 113, 2, 2, NULL, 15, 121, '2025-11-11 18:30:40', NULL),
+(920, 2, 114, 2, 2, NULL, 15, 122, '2025-11-11 18:30:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -1123,7 +1163,7 @@ CREATE TABLE IF NOT EXISTS `adms_pages` (
   KEY `adms_groups_pgs_id` (`adms_groups_pgs_id`),
   KEY `adms_sits_pgs_id` (`adms_sits_pgs_id`),
   KEY `adms_types_pgs_id` (`adms_types_pgs_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_pages`
@@ -1238,7 +1278,12 @@ INSERT INTO `adms_pages` (`id`, `controller`, `metodo`, `menu_controller`, `menu
 (108, 'ViewProduct', 'index', 'view-product', 'index', 'Visualizar Produto', 2, '', '', 1, 1, 2, '2025-09-28 13:28:55', NULL),
 (109, 'DeleteProduct', 'index', 'delete-product', 'index', 'Apagar Produto', 2, '', '', 1, 1, 5, '2025-09-28 13:29:50', NULL),
 (111, 'ListProducts', 'index', 'list-products', 'index', 'Listar Produtos', 2, '', '', 1, 1, 1, '2025-09-28 13:32:20', NULL),
-(112, 'EditProductImage', 'index', 'edit-product-image', 'index', 'Editar Foto do Produto', 2, '', '', 1, 1, 4, '2020-11-17 22:22:40', NULL);
+(112, 'EditProductImage', 'index', 'edit-product-image', 'index', 'Editar Foto do Produto', 2, '', '', 1, 1, 4, '2020-11-17 22:22:40', NULL),
+(118, 'ListCategories', 'index', 'list-categories', 'index', 'Listar Categorias', 2, '', '', 1, 1, 1, '2025-08-06 08:23:32', '2025-08-06 08:45:14'),
+(119, 'AddCategories', 'index', 'add-categories', 'index', 'Cadastrar Categorias', 2, '', '', 1, 1, 3, '2025-08-06 08:24:38', '2025-08-06 09:03:48'),
+(120, 'EditCategories', 'index', 'edit-categories', 'index', 'Editar Categorias', 2, '', '', 1, 1, 4, '2025-08-06 08:25:53', NULL),
+(121, 'ViewCategories', 'index', 'view-categories', 'index', 'Visualizar Categories', 2, '', '', 1, 2, 2, '2025-08-06 08:27:58', NULL),
+(122, 'DeleteCategories', 'index', 'delete-categories', 'index', 'Apagar Categorias', 2, '', '', 1, 1, 5, '2025-08-06 09:49:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -1384,6 +1429,32 @@ INSERT INTO `sts_abouts_companies` (`id`, `title`, `description`, `image`, `sts_
 (2, 'Sobre empresa título 2', 'Maecenas tempor dapibus turpis quis auctor. Nam a convallis nulla. Praesent feugiat interdum dolor, ut ornare sapien vehicula vel. Vestibulum in risus cursus, scelerisque erat non, feugiat purus. Nulla luctus rhoncus elit, rhoncus ultricies velit elementum in.', 'about_company.jpg', 1, '2020-07-23 00:00:00', NULL),
 (3, 'Sobre empresa título 3', ' Quisque tempus leo lorem, nec laoreet augue tempor sagittis. Nulla facilisi. Ut malesuada odio ex, non pretium lorem porta eu. Quisque porta, nunc sit amet vehicula euismod, turpis sem fringilla nulla, vitae eleifend sapien lorem non quam. Aenean ullamcorper erat vel arcu varius, vel gravida tortor finibus.', 'about_company.jpg', 1, '2020-07-23 00:00:00', '2021-03-17 17:22:28'),
 (4, 'Sobre empresa título 4', 'Nullam bibendum elit eget lectus mollis, ac sollicitudin mauris congue. Integer porttitor nec risus nec interdum. Phasellus cursus consectetur erat, quis dignissim sem vulputate id. Proin felis risus, scelerisque vitae libero vitae, bibendum varius tortor. Sed tempor venenatis turpis.', 'about_company.jpg', 1, '2020-07-23 00:00:00', '2021-03-17 17:22:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_categories`
+--
+
+DROP TABLE IF EXISTS `sts_categories`;
+CREATE TABLE IF NOT EXISTS `sts_categories` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_categories`
+--
+
+INSERT INTO `sts_categories` (`id`, `name`, `image`, `created`, `modified`) VALUES
+(1, 'Camisa', NULL, '2020-10-23 00:00:00', '2025-11-11 18:42:06'),
+(2, 'Calça', NULL, '2020-10-23 00:00:00', '2025-11-11 18:43:21'),
+(3, 'Camiseta', NULL, '2020-10-23 00:00:00', '2025-11-11 18:41:52'),
+(4, 'Camisola', NULL, '2025-11-11 18:41:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -1604,19 +1675,21 @@ CREATE TABLE IF NOT EXISTS `sts_products` (
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double NOT NULL,
+  `sts_categories_id` int NOT NULL,
   `image` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sts_products`
 --
 
-INSERT INTO `sts_products` (`id`, `product_id`, `name`, `title`, `description`, `type`, `price`, `image`, `created`, `modified`) VALUES
-(2, 'P309971072624', 'Camiseta fixe a', 'asdasd 4a', 'amazingaa', 'asd 2', 100.5, 'edm.png', '2025-10-30 19:53:04', '2025-10-30 20:57:01'),
-(3, 'P309971072625', 'Nike t-shirt', 'asddlaksnd', 'Gestão de imagem e marca pessoal, estratégias de visibilidade e conexão com patrocinadores e parceiros comerciais.', 'E-commerce Seller', 200, '1750860231436-765624432-removebg-preview.png', '2025-10-30 20:53:46', '2025-10-30 20:57:53');
+INSERT INTO `sts_products` (`id`, `product_id`, `name`, `title`, `description`, `type`, `price`, `sts_categories_id`, `image`, `created`, `modified`) VALUES
+(2, 'P309971072624', 'Camiseta fixe a', 'asdasd 4a', 'amazingaa', 'asd 2', 100.5, 4, 'edm.png', '2025-10-30 19:53:04', '2025-11-11 21:33:58'),
+(3, 'P309971072625', 'Nike t-shirt', 'asddlaksnd', 'Gestão de imagem e marca pessoal, estratégias de visibilidade e conexão com patrocinadores e parceiros comerciais.', 'E-commerce Seller', 200, 1, '1750860231436-765624432-removebg-preview.png', '2025-10-30 20:53:46', '2025-10-30 20:57:53'),
+(4, 'P115381194525', 'Valoi', 'Valoi', 'Gestão de imagem e marca pessoal, estratégias de visibilidade e conexão com patrocinadores e parceiros comerciais.', 'asd 2', 10000, 2, 'contact-3.jpg', '2025-11-11 21:14:05', '2025-11-11 21:32:57');
 
 -- --------------------------------------------------------
 

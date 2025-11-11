@@ -8,7 +8,7 @@ if (!defined('48b5t9')) {
 //var_dump($this->dados['sts_homes']['products']);
 ?>
 <div class="carousel ">
-    <div class="list">
+    <div class="list" id="list" style="touch-action: none;">
 
 
 

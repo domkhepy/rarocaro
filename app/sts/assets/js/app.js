@@ -77,3 +77,65 @@ shopping_cart.addEventListener("click", (e) => {
 close_cart.addEventListener("click", (e) => {
   cart_sidebar.classList.toggle("d-none");
 });
+
+
+
+const list = document.getElementById('list');
+const nextImg = document.getElementById('next');
+const prevImg = document.getElementById('prev');
+
+  // Configuração básica
+    let index = 0;
+
+    // Lógica de swipe simples (left/right)
+    let startX = 0;
+    let isDragging = false;
+
+    const onPointerDown = (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      // Evita seleção de imagem durante o swipe
+      //viewer.style.cursor = 'grabbing';
+    };
+
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      // Podemos adicionar feedback visual aqui deslocando o slide atual/futuro
+    };
+
+    const onPointerUp = (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      const threshold = 60; // sensibilidade do swipe
+      if (dx < -threshold) {
+        // swipe left -> próxima foto
+        goNext();
+      } else if (dx > threshold) {
+        // swipe right -> foto anterior
+        goPrev();
+      }
+      isDragging = false;
+      //viewer.style.cursor = 'default';
+    };
+
+    const goNext = () => {
+      nextImg.click();
+    };
+
+    const goPrev = () => {
+      prevImg.click();
+    };    
+
+    // Event handlers
+    list.addEventListener('pointerdown', onPointerDown);
+    list.addEventListener('pointermove', onPointerMove);
+    list.addEventListener('pointerup', onPointerUp);
+
+    // Opcional: mover com teclado (arrow keys)
+    document.addEventListener('keydown', (e) => {
+     
+      if (e.key === 'ArrowLeft') goPrev();
+      if (e.key === 'ArrowRight') goNext();
+    });
+
+   

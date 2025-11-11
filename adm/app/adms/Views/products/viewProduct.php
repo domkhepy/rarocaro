@@ -89,6 +89,10 @@ if (!defined('R4F5CC')) {
                 <dd class="col-sm-9"><?php echo $description; ?></dd>
                 <dt class="col-sm-3">Tipo do produto</dt>
                 <dd class="col-sm-9"><?php echo $type; ?>
+                <dt class="col-sm-3">Preço</dt>
+                <dd class="col-sm-9"><?php echo $price; ?>
+                <dt class="col-sm-3">Categoria</dt>
+                <dd class="col-sm-9"><?php echo $category; ?>
                 </dd>
             </dl>
             <?php
