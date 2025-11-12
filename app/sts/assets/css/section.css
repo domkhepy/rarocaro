@@ -1,0 +1,287 @@
+/* car_ousel */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.car_ousel{
+    font-size: 12px;
+    font-family: Poppins;
+    height: 100vh;
+    margin-top: -50px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.car_ousel .li_st .it_em{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.car_ousel .li_st .it_em img{
+    width: 100%;
+    height: 100%;
+    
+}
+.car_ousel .li_st .it_em .conten_t{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+.car_ousel .li_st .it_em .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.car_ousel .li_st .it_em .title,
+.car_ousel .li_st .it_em .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.car_ousel .li_st .it_em .topic{
+    color: #f1683a;
+}
+.car_ousel .li_st .it_em .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.car_ousel .li_st .it_em .buttons button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.car_ousel .li_st .it_em .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-conten_t;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .it_em{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .it_em img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .it_em .conten_t{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .it_em .conten_t .title{
+    font-weight: 500;
+}
+.thumbnail .it_em .conten_t .description{
+    font-weight: 300;
+}
+/* arrow_s */
+.arrow_s{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-it_ems: center;
+}
+.arrow_s button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrow_s button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* animation */
+.car_ousel .li_st .it_em:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first it_em */
+
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .author,
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .title,
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .topic,
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .des,
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .title{
+    animation-delay: 1.2s!important;
+}
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .topic{
+    animation-delay: 1.4s!important;
+}
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .des{
+    animation-delay: 1.6s!important;
+}
+.car_ousel .li_st .it_em:nth-child(1) .conten_t .buttons{
+    animation-delay: 1.8s!important;
+}
+/* create animation when next click */
+.car_ousel.next .li_st .it_em:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.car_ousel.next .thumbnail .it_em:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.car_ousel.prev .li_st .it_em img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.car_ousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.car_ousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+.car_ousel.next .time,
+.car_ousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.car_ousel.prev .li_st .it_em:nth-child(2){
+    z-index: 2;
+}
+
+.car_ousel.prev .li_st .it_em:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.car_ousel.prev .thumbnail .it_em:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.car_ousel.next .arrow_s button,
+.car_ousel.prev .arrow_s button{
+    pointer-events: none;
+}
+.car_ousel.prev .li_st .it_em:nth-child(2) .conten_t .author,
+.car_ousel.prev .li_st .it_em:nth-child(2) .conten_t .title,
+.car_ousel.prev .li_st .it_em:nth-child(2) .conten_t .topic,
+.car_ousel.prev .li_st .it_em:nth-child(2) .conten_t .des,
+.car_ousel.prev .li_st .it_em:nth-child(2) .conten_t .buttons
+{
+    animation: conten_tOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes conten_tOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .car_ousel .li_st .it_em .conten_t{
+        padding-right: 0;
+    }
+    .car_ousel .li_st .it_em .conten_t .title{
+        font-size: 30px;
+    }
+}

@@ -11,7 +11,7 @@ if (!defined('48b5t9')) {
  *
  * @author Domingos
  */
-class Collection 
+class Section
 {
     /** @var array $dados Recebe os dados que devem ser enviados para VIEW */
     private array $dados;
@@ -22,15 +22,16 @@ class Collection
      * 
      * @return void
      */
-    public function index(): void {
+    public function index($id) {
 
-        $viewFooter = new \App\sts\Models\StsCollection();
-        $this->dados['collection'] = $viewFooter->index();
+        $viewFooter = new \App\sts\Models\StsSection();
+        $this->dados['products'] = $viewFooter->index($id);
 
         $viewFooter = new \App\sts\Models\StsFooter();
         $this->dados['footer'] = $viewFooter->view();
         
-        $carregarView = new \Core\ConfigView("sts/Views/collection/collection", $this->dados);
+        $carregarView = new \Core\ConfigView("sts/Views/section/section", $this->dados);
         $carregarView->renderizar();
     }
 }
+

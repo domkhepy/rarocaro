@@ -13,7 +13,7 @@
 .text-muted { color: #6c757d !important; }
 
 .card { border-radius: .75rem; }
-.card-img-top { height: 190px; object-fit: cover; }
+.card-img-top { height: 300px; object-fit: cover; }
 
 .section-title { margin-top: 1.5rem; }
 .footer { background: #111; color: #bbb; padding: 2rem 0; }
