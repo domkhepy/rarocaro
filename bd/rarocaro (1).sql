@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 11, 2025 at 09:41 PM
+-- Generation Time: Nov 13, 2025 at 03:24 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `adms_levels_pages` (
   KEY `fk_adms_levels_pages_adms_access_levels1_idx` (`adms_access_level_id`),
   KEY `fk_adms_levels_pages_adms_pages1_idx` (`adms_page_id`),
   KEY `adms_items_menu_id` (`adms_items_menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=921 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=929 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_levels_pages`
@@ -1135,7 +1135,15 @@ INSERT INTO `adms_levels_pages` (`id`, `permission`, `order_level_page`, `print_
 (917, 2, 111, 2, 2, NULL, 15, 119, '2025-11-11 18:30:40', NULL),
 (918, 2, 112, 2, 2, NULL, 15, 120, '2025-11-11 18:30:40', NULL),
 (919, 2, 113, 2, 2, NULL, 15, 121, '2025-11-11 18:30:40', NULL),
-(920, 2, 114, 2, 2, NULL, 15, 122, '2025-11-11 18:30:40', NULL);
+(920, 2, 114, 2, 2, NULL, 15, 122, '2025-11-11 18:30:40', NULL),
+(921, 1, 115, 2, 2, NULL, 1, 123, '2025-11-12 10:06:18', NULL),
+(922, 2, 115, 2, 2, NULL, 2, 123, '2025-11-12 10:06:20', NULL),
+(923, 2, 115, 2, 2, NULL, 3, 123, '2025-11-12 10:06:22', NULL),
+(924, 2, 115, 2, 2, NULL, 4, 123, '2025-11-12 10:06:24', NULL),
+(925, 2, 115, 2, 2, NULL, 11, 123, '2025-11-12 10:06:26', NULL),
+(926, 2, 115, 2, 2, NULL, 13, 123, '2025-11-12 10:06:27', NULL),
+(927, 2, 115, 2, 2, NULL, 14, 123, '2025-11-12 10:06:29', NULL),
+(928, 2, 115, 2, 2, NULL, 15, 123, '2025-11-12 10:06:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -1163,7 +1171,7 @@ CREATE TABLE IF NOT EXISTS `adms_pages` (
   KEY `adms_groups_pgs_id` (`adms_groups_pgs_id`),
   KEY `adms_sits_pgs_id` (`adms_sits_pgs_id`),
   KEY `adms_types_pgs_id` (`adms_types_pgs_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_pages`
@@ -1282,8 +1290,9 @@ INSERT INTO `adms_pages` (`id`, `controller`, `metodo`, `menu_controller`, `menu
 (118, 'ListCategories', 'index', 'list-categories', 'index', 'Listar Categorias', 2, '', '', 1, 1, 1, '2025-08-06 08:23:32', '2025-08-06 08:45:14'),
 (119, 'AddCategories', 'index', 'add-categories', 'index', 'Cadastrar Categorias', 2, '', '', 1, 1, 3, '2025-08-06 08:24:38', '2025-08-06 09:03:48'),
 (120, 'EditCategories', 'index', 'edit-categories', 'index', 'Editar Categorias', 2, '', '', 1, 1, 4, '2025-08-06 08:25:53', NULL),
-(121, 'ViewCategories', 'index', 'view-categories', 'index', 'Visualizar Categories', 2, '', '', 1, 2, 2, '2025-08-06 08:27:58', NULL),
-(122, 'DeleteCategories', 'index', 'delete-categories', 'index', 'Apagar Categorias', 2, '', '', 1, 1, 5, '2025-08-06 09:49:34', NULL);
+(121, 'ViewCategories', 'index', 'view-categories', 'index', 'Visualizar Categorias', 2, '', '', 1, 1, 2, '2025-08-06 08:27:58', '2025-11-12 09:47:05'),
+(122, 'DeleteCategories', 'index', 'delete-categories', 'index', 'Apagar Categorias', 2, '', '', 1, 1, 5, '2025-08-06 09:49:34', NULL),
+(123, 'EditCategoriesImage', 'index', 'edit-categories-image', 'index', 'Editar Imagem da Categoria', 2, '', '', 1, 1, 4, '2025-11-12 10:05:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -1440,21 +1449,21 @@ DROP TABLE IF EXISTS `sts_categories`;
 CREATE TABLE IF NOT EXISTS `sts_categories` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sts_categories`
 --
 
 INSERT INTO `sts_categories` (`id`, `name`, `image`, `created`, `modified`) VALUES
-(1, 'Camisa', NULL, '2020-10-23 00:00:00', '2025-11-11 18:42:06'),
-(2, 'Calça', NULL, '2020-10-23 00:00:00', '2025-11-11 18:43:21'),
-(3, 'Camiseta', NULL, '2020-10-23 00:00:00', '2025-11-11 18:41:52'),
-(4, 'Camisola', NULL, '2025-11-11 18:41:26', NULL);
+(1, 'Camisa', 'whatsapp-image-2025-05-20-at-9.02.24-am-1-removebg-preview.png', '2020-10-23 00:00:00', '2025-11-12 12:11:36'),
+(2, 'Calça', 'chatgpt-image-apr-3-2025-04-21-37-pm.png', '2020-10-23 00:00:00', '2025-11-12 12:17:08'),
+(3, 'Camiseta', 'chatgpt-image-apr-3-2025-04-16-33-pm.png', '2020-10-23 00:00:00', '2025-11-12 12:35:07'),
+(4, 'Camisola', 'chatgpt-image-apr-3-2025-04-29-42-pm.png', '2025-11-11 18:41:26', '2025-11-12 12:36:42');
 
 -- --------------------------------------------------------
 
@@ -1669,14 +1678,14 @@ INSERT INTO `sts_homes_tops` (`id`, `title_top`, `description_top`, `link_btn_to
 DROP TABLE IF EXISTS `sts_products`;
 CREATE TABLE IF NOT EXISTS `sts_products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `product_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double NOT NULL,
   `sts_categories_id` int NOT NULL,
-  `image` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -1699,9 +1708,9 @@ INSERT INTO `sts_products` (`id`, `product_id`, `name`, `title`, `description`, 
 
 DROP TABLE IF EXISTS `sts_requests`;
 CREATE TABLE IF NOT EXISTS `sts_requests` (
-  `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sts_users_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `total_quantity` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_users_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_quantity` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -1727,7 +1736,7 @@ INSERT INTO `sts_requests` (`id`, `sts_users_id`, `total_quantity`, `created`, `
 DROP TABLE IF EXISTS `sts_request_items`;
 CREATE TABLE IF NOT EXISTS `sts_request_items` (
   `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sts_requests_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_requests_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sts_products_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `quantity` int NOT NULL,
   `created` datetime NOT NULL,
@@ -1760,9 +1769,9 @@ INSERT INTO `sts_request_items` (`id`, `sts_requests_id`, `sts_products_id`, `qu
 DROP TABLE IF EXISTS `sts_users`;
 CREATE TABLE IF NOT EXISTS `sts_users` (
   `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contact` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)

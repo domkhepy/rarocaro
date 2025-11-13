@@ -25,9 +25,9 @@ class ConfigController extends Config
     private string $slugMetodo;
 	private array $format;
 	 /* @var string classe recebe a clasee*/
-	 private string $classe;
+	private string $classe;
 
-	 private string $rodizio;
+	private string $rodizio;
 
 	/**
 	 * Receber a URL do .htaccess
