@@ -46,10 +46,13 @@ seeMoreButtons.forEach((button) => {
         carousel.classList.remove('next', 'prev');
         carousel.classList.add('showDetail');
     }
-});
+});0
+
+if(typeof backButton !== 'undefined' && backButton !== null){
 backButton.onclick = function(){
     carousel.classList.remove('showDetail');
-}
+}   
+}   
 }
 
 
@@ -127,9 +130,10 @@ const prevImg = document.getElementById('prev');
     };    
 
     // Event handlers
+    if(typeof list !== 'undefined' && list !== null){
     list.addEventListener('pointerdown', onPointerDown);
     list.addEventListener('pointermove', onPointerMove);
-    list.addEventListener('pointerup', onPointerUp);
+    list.addEventListener('pointerup', onPointerUp);}
 
     // Opcional: mover com teclado (arrow keys)
     document.addEventListener('keydown', (e) => {

@@ -27,16 +27,15 @@ foreach($this->dados['products'] as $collection){
  <div class="it_em">
                 <img src="<?php echo $image;?>">
                 <div class="conten_t">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
+                    <div class="author">TOURICOTOURARO</div>
+                    <div class="title"><?php echo number_format($price, 2, ',', '.')."MZN";?></div>
+                    <div class="topic"><?php echo $name;?></div>
                     <div class="des">
-                        <!-- lorem 50 -->
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
+                    <?php echo $description;?>
+                 </div>
                     <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>SUBSCRIBE</button>
+                        <button onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')">+ CARINHO</button>
+                        <!--<button>SUBSCRIBE</button>-->
                     </div>
                 </div>
             </div>
@@ -45,114 +44,37 @@ foreach($this->dados['products'] as $collection){
             
             }
                 ?>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img1.png">
-                <div class="conten_t">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        <!-- lorem 50 -->
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img2.png">
-                <div class="conten_t">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">ARTICLES</div>
-                    <div class="topic">T-SHIRTS</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img3.png">
-                <div class="conten_t">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>SEE MORE</button>
-                        <button>SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img4.png">
-                <div class="conten_t">
-                    <div class="author">LUNDEV</div>
-                    <div class="title">DESIGN SLIDER</div>
-                    <div class="topic">ANIMAL</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button>+ CARRINHO</button>
-                        <button>SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div>
+           
         </div>
         <!-- li_st thumnail -->
+         
         <div class="thumbnail">
+             <?php
+
+foreach($this->dados['products'] as $collection){
+
+    extract($collection);
+    if (isset($image) AND (!empty($image)) AND (file_exists('./adm/app/adms/assets/image/products/' . $id . '/' . $image))) {
+                    $image = URLADM . 'app/adms/assets/image/products/' . $id . '/' . $image;
+                } else {
+                    $image = URLADM . 'app/adms/assets/image/products/product_icon.png';
+                }
+            ?>
             <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img1.png">
+                <img src="<?php echo $image;?>">
                 <div class="conten_t">
                     <div class="title">
-                        Name Slider
+                        <?php echo $name;?>
                     </div>
                     <div class="description">
-                        Description
+                        <?php echo $title;?>
                     </div>
                 </div>
             </div>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img2.png">
-                <div class="conten_t">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img3.png">
-                <div class="conten_t">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
-            <div class="it_em">
-                <img src="<?php echo URL;?>app/sts/assets/images/image/img4.png">
-                <div class="conten_t">
-                    <div class="title">
-                        Name Slider
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div>
+             <?php
+            
+            }
+                ?>
         </div>
         <!-- next prev -->
 

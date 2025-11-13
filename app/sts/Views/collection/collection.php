@@ -8,7 +8,7 @@ if (!defined('48b5t9')) {
 ?>
 
 
-<!-- Destaques -->
+<!-- Destaques 
 <section id="projetos" class="">
     <div class="container">
         <div class="text-center mb-4">
@@ -17,30 +17,30 @@ if (!defined('48b5t9')) {
         </div> 
 
         <div class="row g-4">
-            <!-- Projeto 1 -->
+           Projeto 1 
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="<?php echo URL."app/sts/assets/images/collection/t3.jpeg";?>" class="card-img-top" alt="Projeto 1" />
+                    <img src="<?php //echo URL."app/sts/assets/images/collection/t3.jpeg";?>" class="card-img-top" alt="Projeto 1" />
                     <div class="card-body">
                         <h5 class="card-title">Transporte de materiais de construção rodoviária</h5>
                         <p class="card-text text-muted">Transporte de materiais de construção rodoviária.</p>
                     </div>
                 </div>
             </div>
-            <!-- Projeto 2 -->
+            <!-- Projeto 2 
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="<?php echo URL."app/sts/assets/images/collection/t1.jpeg";?>" class="card-img-top" alt="Projeto 2" />
+                    <img src="<?php// echo URL."app/sts/assets/images/collection/t1.jpeg";?>" class="card-img-top" alt="Projeto 2" />
                     <div class="card-body">
                         <h5 class="card-title">Mining Equipment Relocation</h5>
                         <p class="card-text text-muted">Readequação de equipamentos de mineração com segurança.</p>
                     </div>
                 </div>
             </div>
-            <!-- Projeto 3 -->
+            <!-- Projeto 3 
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm">
-                    <img src="<?php echo URL."app/sts/assets/images/collection/t2.jpeg";?>" class="card-img-top" alt="Projeto 3" />
+                    <img src="<?php //echo URL."app/sts/assets/images/collection/t2.jpeg";?>" class="card-img-top" alt="Projeto 3" />
                     <div class="card-body">
                         <h5 class="card-title">Port to Site Distribution Network</h5>
                         <p class="card-text text-muted">Rede de distribuição portos->obras com eficiência.</p>
@@ -50,7 +50,7 @@ if (!defined('48b5t9')) {
 
         </div>
     </div>
-</section>
+</section>-->
 
 
 
