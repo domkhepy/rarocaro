@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 13, 2025 at 03:24 PM
+-- Generation Time: Nov 14, 2025 at 06:37 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `adms_levels_pages` (
   KEY `fk_adms_levels_pages_adms_access_levels1_idx` (`adms_access_level_id`),
   KEY `fk_adms_levels_pages_adms_pages1_idx` (`adms_page_id`),
   KEY `adms_items_menu_id` (`adms_items_menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=929 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=969 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_levels_pages`
@@ -1143,7 +1143,47 @@ INSERT INTO `adms_levels_pages` (`id`, `permission`, `order_level_page`, `print_
 (925, 2, 115, 2, 2, NULL, 11, 123, '2025-11-12 10:06:26', NULL),
 (926, 2, 115, 2, 2, NULL, 13, 123, '2025-11-12 10:06:27', NULL),
 (927, 2, 115, 2, 2, NULL, 14, 123, '2025-11-12 10:06:29', NULL),
-(928, 2, 115, 2, 2, NULL, 15, 123, '2025-11-12 10:06:31', NULL);
+(928, 2, 115, 2, 2, NULL, 15, 123, '2025-11-12 10:06:31', NULL),
+(929, 1, 116, 2, 2, NULL, 1, 124, '2025-11-14 16:47:35', NULL),
+(930, 1, 117, 1, 1, 2, 1, 125, '2025-11-14 16:47:35', '2025-11-14 17:10:33'),
+(931, 1, 118, 2, 2, NULL, 1, 126, '2025-11-14 16:47:35', NULL),
+(932, 1, 119, 2, 2, NULL, 1, 127, '2025-11-14 16:47:35', NULL),
+(933, 1, 120, 2, 2, NULL, 1, 128, '2025-11-14 16:47:36', NULL),
+(934, 2, 116, 2, 2, NULL, 2, 124, '2025-11-14 16:47:38', NULL),
+(935, 2, 117, 2, 2, NULL, 2, 125, '2025-11-14 16:47:38', NULL),
+(936, 2, 118, 2, 2, NULL, 2, 126, '2025-11-14 16:47:38', NULL),
+(937, 2, 119, 2, 2, NULL, 2, 127, '2025-11-14 16:47:38', NULL),
+(938, 2, 120, 2, 2, NULL, 2, 128, '2025-11-14 16:47:38', NULL),
+(939, 2, 116, 2, 2, NULL, 3, 124, '2025-11-14 16:47:40', NULL),
+(940, 2, 117, 2, 2, NULL, 3, 125, '2025-11-14 16:47:40', NULL),
+(941, 2, 118, 2, 2, NULL, 3, 126, '2025-11-14 16:47:40', NULL),
+(942, 2, 119, 2, 2, NULL, 3, 127, '2025-11-14 16:47:40', NULL),
+(943, 2, 120, 2, 2, NULL, 3, 128, '2025-11-14 16:47:40', NULL),
+(944, 2, 116, 2, 2, NULL, 4, 124, '2025-11-14 16:47:42', NULL),
+(945, 2, 117, 2, 2, NULL, 4, 125, '2025-11-14 16:47:42', NULL),
+(946, 2, 118, 2, 2, NULL, 4, 126, '2025-11-14 16:47:42', NULL),
+(947, 2, 119, 2, 2, NULL, 4, 127, '2025-11-14 16:47:42', NULL),
+(948, 2, 120, 2, 2, NULL, 4, 128, '2025-11-14 16:47:42', NULL),
+(949, 2, 116, 2, 2, NULL, 11, 124, '2025-11-14 16:47:44', NULL),
+(950, 2, 117, 2, 2, NULL, 11, 125, '2025-11-14 16:47:44', NULL),
+(951, 2, 118, 2, 2, NULL, 11, 126, '2025-11-14 16:47:44', NULL),
+(952, 2, 119, 2, 2, NULL, 11, 127, '2025-11-14 16:47:44', NULL),
+(953, 2, 120, 2, 2, NULL, 11, 128, '2025-11-14 16:47:44', NULL),
+(954, 2, 116, 2, 2, NULL, 13, 124, '2025-11-14 16:47:46', NULL),
+(955, 2, 117, 2, 2, NULL, 13, 125, '2025-11-14 16:47:46', NULL),
+(956, 2, 118, 2, 2, NULL, 13, 126, '2025-11-14 16:47:46', NULL),
+(957, 2, 119, 2, 2, NULL, 13, 127, '2025-11-14 16:47:47', NULL),
+(958, 2, 120, 2, 2, NULL, 13, 128, '2025-11-14 16:47:47', NULL),
+(959, 2, 116, 2, 2, NULL, 14, 124, '2025-11-14 16:47:48', NULL),
+(960, 2, 117, 2, 2, NULL, 14, 125, '2025-11-14 16:47:48', NULL),
+(961, 2, 118, 2, 2, NULL, 14, 126, '2025-11-14 16:47:49', NULL),
+(962, 2, 119, 2, 2, NULL, 14, 127, '2025-11-14 16:47:49', NULL),
+(963, 2, 120, 2, 2, NULL, 14, 128, '2025-11-14 16:47:49', NULL),
+(964, 2, 116, 2, 2, NULL, 15, 124, '2025-11-14 16:47:51', NULL),
+(965, 2, 117, 2, 2, NULL, 15, 125, '2025-11-14 16:47:51', NULL),
+(966, 2, 118, 2, 2, NULL, 15, 126, '2025-11-14 16:47:51', NULL),
+(967, 2, 119, 2, 2, NULL, 15, 127, '2025-11-14 16:47:51', NULL),
+(968, 2, 120, 2, 2, NULL, 15, 128, '2025-11-14 16:47:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -1171,7 +1211,7 @@ CREATE TABLE IF NOT EXISTS `adms_pages` (
   KEY `adms_groups_pgs_id` (`adms_groups_pgs_id`),
   KEY `adms_sits_pgs_id` (`adms_sits_pgs_id`),
   KEY `adms_types_pgs_id` (`adms_types_pgs_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_pages`
@@ -1292,7 +1332,12 @@ INSERT INTO `adms_pages` (`id`, `controller`, `metodo`, `menu_controller`, `menu
 (120, 'EditCategories', 'index', 'edit-categories', 'index', 'Editar Categorias', 2, '', '', 1, 1, 4, '2025-08-06 08:25:53', NULL),
 (121, 'ViewCategories', 'index', 'view-categories', 'index', 'Visualizar Categorias', 2, '', '', 1, 1, 2, '2025-08-06 08:27:58', '2025-11-12 09:47:05'),
 (122, 'DeleteCategories', 'index', 'delete-categories', 'index', 'Apagar Categorias', 2, '', '', 1, 1, 5, '2025-08-06 09:49:34', NULL),
-(123, 'EditCategoriesImage', 'index', 'edit-categories-image', 'index', 'Editar Imagem da Categoria', 2, '', '', 1, 1, 4, '2025-11-12 10:05:46', NULL);
+(123, 'EditCategoriesImage', 'index', 'edit-categories-image', 'index', 'Editar Imagem da Categoria', 2, '', '', 1, 1, 4, '2025-11-12 10:05:46', NULL),
+(124, 'ViewProvince', 'index', 'view-province', 'index', 'Visualizar Província', 2, '', '', 1, 1, 2, '2025-11-14 16:41:47', NULL),
+(125, 'ListProvinces', 'index', 'list-provinces', 'index', 'Listar Provincias', 2, '', '', 1, 1, 1, '2025-11-14 16:42:46', '2025-11-14 17:08:45'),
+(126, 'DeleteProvince', 'index', 'delete-province', 'index', 'Apagar Províncias', 2, '', '', 1, 1, 5, '2025-11-14 16:44:16', NULL),
+(127, 'EditProvince', 'index', 'edit-province', 'index', 'Editar Províncias', 2, '', '', 1, 1, 4, '2025-11-14 16:45:25', NULL),
+(128, 'AddProvince', 'index', 'add-province', 'index', 'Cadastrar Provincia', 2, '', '', 1, 1, 3, '2025-11-14 16:47:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -1453,7 +1498,7 @@ CREATE TABLE IF NOT EXISTS `sts_categories` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sts_categories`
@@ -1689,16 +1734,42 @@ CREATE TABLE IF NOT EXISTS `sts_products` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sts_products`
 --
 
 INSERT INTO `sts_products` (`id`, `product_id`, `name`, `title`, `description`, `type`, `price`, `sts_categories_id`, `image`, `created`, `modified`) VALUES
-(2, 'P309971072624', 'Camiseta fixe a', 'asdasd 4a', 'amazingaa', 'asd 2', 100.5, 4, 'edm.png', '2025-10-30 19:53:04', '2025-11-11 21:33:58'),
 (3, 'P309971072625', 'Nike t-shirt', 'asddlaksnd', 'Gestão de imagem e marca pessoal, estratégias de visibilidade e conexão com patrocinadores e parceiros comerciais.', 'E-commerce Seller', 200, 1, '1750860231436-765624432-removebg-preview.png', '2025-10-30 20:53:46', '2025-10-30 20:57:53'),
-(4, 'P115381194525', 'Valoi', 'Valoi', 'Gestão de imagem e marca pessoal, estratégias de visibilidade e conexão com patrocinadores e parceiros comerciais.', 'asd 2', 10000, 2, 'contact-3.jpg', '2025-11-11 21:14:05', '2025-11-11 21:32:57');
+(6, 'P142571143225', 'asdas', 'asdsa', 'asd', 'asd', 12, 2, 'whatsapp-image-2025-05-20-at-9.02.24-am-2-removebg-preview.png', '2025-11-14 09:20:55', '2025-11-14 09:22:02'),
+(7, 'P149841112325', 'ad', 'asd', 'asd', 'asd', 0, 2, 'whatsapp-image-2025-05-20-at-9.02.24-am-1-removebg-preview.png', '2025-11-14 09:21:08', '2025-11-14 09:21:39'),
+(8, 'P146801151525', 'Kilson Valoi', 'afsdf', 'Criação e distribuição de conteúdos multimédia para aumentar a visibilidade dos atletas e contar suas histórias inspiradoras.', 'E-commerce Seller', 10000, 2, NULL, '2025-11-14 11:41:52', NULL),
+(9, 'P144411192025', 'Belga Neves', 'asd', 'Ano passado assiste a cerimônia algo bem organizado a instituição se organizou muito bem e acredito que esse ano será muito mais melhor. Tinha o fotógrafo da instituição e os convites eram válidos para dois esse ano podem aumentar', 'asdyuiagd', 10000, 2, 'whatsapp-image-2025-05-20-at-9.02.25-am-2-removebg-preview.png', '2025-11-14 16:14:24', '2025-11-14 16:14:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_provinces`
+--
+
+DROP TABLE IF EXISTS `sts_provinces`;
+CREATE TABLE IF NOT EXISTS `sts_provinces` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_provinces`
+--
+
+INSERT INTO `sts_provinces` (`id`, `name`, `created`, `modified`) VALUES
+(1, 'Maputo', '2025-11-14 17:02:03', '2025-11-14 17:19:44'),
+(2, 'Gaza', '2025-11-14 17:12:48', NULL),
+(5, 'Inhambane', '2025-11-14 18:16:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -1721,6 +1792,7 @@ CREATE TABLE IF NOT EXISTS `sts_requests` (
 --
 
 INSERT INTO `sts_requests` (`id`, `sts_users_id`, `total_quantity`, `created`, `modified`) VALUES
+('R197141125313', 'C1914811125364', '4', '2025-11-14 18:34:05', NULL),
 ('R270101125103', 'C6810241125419', '8', '2025-11-10 22:24:36', NULL),
 ('R313101125211', 'C3410681125787', '8', '2025-11-10 22:22:28', NULL),
 ('R340101125863', 'C2010511125894', '8', '2025-11-10 22:19:33', NULL),
@@ -1753,6 +1825,7 @@ INSERT INTO `sts_request_items` (`id`, `sts_requests_id`, `sts_products_id`, `qu
 ('I178101125966', 'R729101125387', '2', 4, '2025-11-10 22:27:25', NULL),
 ('I273101125962', 'R340101125863', '2', 4, '2025-11-10 22:19:33', NULL),
 ('I275101125507', 'R270101125103', '3', 4, '2025-11-10 22:24:36', NULL),
+('I361141125533', 'R197141125313', '6', 4, '2025-11-14 18:34:05', NULL),
 ('I409101125711', 'R313101125211', '3', 4, '2025-11-10 22:22:28', NULL),
 ('I520101125360', 'R340101125863', '3', 4, '2025-11-10 22:19:33', NULL),
 ('I532101125615', 'R729101125387', '3', 4, '2025-11-10 22:27:25', NULL),
@@ -1770,7 +1843,8 @@ DROP TABLE IF EXISTS `sts_users`;
 CREATE TABLE IF NOT EXISTS `sts_users` (
   `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_provinces_id` int NOT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `contact` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
@@ -1781,14 +1855,15 @@ CREATE TABLE IF NOT EXISTS `sts_users` (
 -- Dumping data for table `sts_users`
 --
 
-INSERT INTO `sts_users` (`id`, `name`, `email`, `contact`, `created`, `modified`) VALUES
-('C2010511125894', 'Domingos', 'domkhepy123@gmail.com', '847610513', '2025-11-10 22:19:32', NULL),
-('C3010201125431', 'Domingos', 'domkhepy09@gmail.com', '847610513', '2025-11-10 22:18:14', NULL),
-('C3410681125787', 'Domingos', 'domkhepy321@gmail.com', '847610513', '2025-11-10 22:22:28', NULL),
-('C6510921125397', 'Domingos', 'domkhepy9870h@gmail.com', '847610513', '2025-11-10 22:27:24', NULL),
-('C6810241125419', 'Domingos', 'domkhepy6547@gmail.com', '847610513', '2025-11-10 22:24:36', NULL),
-('C8110331125965', 'Domingos', 'domkhep89y@gmail.com', '847610513', '2025-11-10 22:26:00', NULL),
-('C8210441125630', 'Domingos', 'domkhepy@gmail.com', '847610513', '2025-11-10 22:17:03', NULL);
+INSERT INTO `sts_users` (`id`, `name`, `sts_provinces_id`, `address`, `contact`, `created`, `modified`) VALUES
+('C1914811125364', 'Domingos', 1, 'Grant Lane Saint-Basile', '847610513', '2025-11-14 18:34:05', NULL),
+('C2010511125894', 'Domingos', 2, '', '847610513', '2025-11-10 22:19:32', NULL),
+('C3010201125431', 'Domingos', 0, '', '847610513', '2025-11-10 22:18:14', NULL),
+('C3410681125787', 'Domingos', 0, '', '847610513', '2025-11-10 22:22:28', NULL),
+('C6510921125397', 'Domingos', 0, '', '847610513', '2025-11-10 22:27:24', NULL),
+('C6810241125419', 'Domingos', 0, '', '847610513', '2025-11-10 22:24:36', NULL),
+('C8110331125965', 'Domingos', 0, '', '847610513', '2025-11-10 22:26:00', NULL),
+('C8210441125630', 'Domingos', 0, '', '847610513', '2025-11-10 22:17:03', NULL);
 
 --
 -- Constraints for dumped tables

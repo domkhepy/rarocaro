@@ -24,7 +24,15 @@ class StsFooter
                 FROM sts_footers
                 LIMIT :limit", "limit=1");
         $this->dataFooter = $viewFooter->getResult();
-        return $this->dataFooter[0];
+        $this->dataFooter[1]=$this->listProvinces();
+        return $this->dataFooter;
+    }
+
+    private function listProvinces() {
+        $viewFooter = new \App\sts\Models\helper\StsRead();
+        $viewFooter->fullRead("SELECT id, name FROM sts_provinces");
+        $dataFooter = $viewFooter->getResult();
+        return $dataFooter;
     }
 
 }

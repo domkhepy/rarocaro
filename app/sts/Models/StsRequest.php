@@ -48,7 +48,8 @@ class StsRequest
     public function create(array $dados = null) {
         $this->dados['id'] = 'C'.random_int(10, 99).date("d").random_int(10, 99).date("m").date("y").random_int(100, 999);
         $this->dados['name'] = $dados['name'];
-        $this->dados['email'] = $dados['email'];
+        $this->dados['sts_provinces_id'] = $dados['sts_provinces_id'];
+        $this->dados['address'] = $dados['address'];
         $this->dados['contact'] = $dados['contact'];
 
          $this->dadosRequest['id'] = $this->dados['id'];
@@ -61,7 +62,7 @@ class StsRequest
         $valCampoVazio->validarDados($this->dados);
         if ($valCampoVazio->getResultado()) {
             
-            $this->valInput();
+            $this->add();
         } else {
             $this->resultado = false;
         }
@@ -111,22 +112,7 @@ extract($value);
        
     }
 
-    /** Metodo privado, só pode ser chamado na classe
-     * Metodo usuado para validar campos especificos do formulário que devem ser únicos
-     */
-    private function valInput() {
-        $valEmail = new \App\sts\Models\helper\StsValEmail();
-        $valEmail->validarEmail($this->dados['email']);
-
-        $valEmailSingle = new \App\sts\Models\helper\StsValEmailSingle();
-        $valEmailSingle->validarEmailSingle($this->dados['email']);
-
-        if ($valEmail->getResultado() AND $valEmailSingle->getResultado()) {
-            $this->add();
-        } else {
-            $this->resultado = false;
-        }
-    }
+   
     
     /** Metodo privado, só pode ser chamado na classe
      * Metodo envia as informações recebidas do formulário para o banco de dados
