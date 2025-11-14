@@ -12,14 +12,14 @@ if (!defined('48b5t9')) {
     </div>
 
 
-    <nav class=" nav__links" id="nav-links">
+    <nav class="nav__links" id="nav-links">
         <a href="<?php echo URL."personalize"?>">PERSONALIZAR</a>
         <a href="<?php echo URL."collection"?>">COLEÇÃO</a>
         <a href="<?php echo URL."contact"?>">CONTACTO</a>
     </nav>
     <div class="nav-link text-light" style="cursor: pointer;" id="shopping-cart" aria-label="Carrinho"
         title="Carrinho de compras">
-        <i class="bi bi-cart3 text-dark"></i>
+        <i class="bi bi-cart3 text-dark " id="cart-icon"></i>
         <span id="productNumber" class="position-relative top-0 start-0 translate-middle badge rounded-pill bg-danger">
             0
         </span>

@@ -83,7 +83,7 @@ foreach($this->dados['collection'] as $collection){
                 }
             ?>
             <div class="col-12 col-sm-6 col-lg-4">
-                <a href="<?php echo URL."section/index/".$id?>">
+                <a href="<?php echo URL."section/index/".$id?>"  style="text-decoration: none !important;">
                 <div class="card h-100 shadow-sm">
                     <img src="<?php echo $image;?>"
                         class="card-img-top" alt="touricotouraro" />

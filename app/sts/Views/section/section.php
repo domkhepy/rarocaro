@@ -24,18 +24,19 @@ foreach($this->dados['products'] as $collection){
                     $image = URLADM . 'app/adms/assets/image/products/product_icon.png';
                 }
             ?>
- <div class="it_em">
-                <img src="<?php echo $image;?>">
+ <div class="it_em" >
+                
+                <img src="<?php echo $image;?>" >
                 <div class="conten_t">
                     <div class="author">TOURICOTOURARO</div>
                     <div class="title"><?php echo number_format($price, 2, ',', '.')."MZN";?></div>
                     <div class="topic"><?php echo $name;?></div>
                     <div class="des">
-                    <?php echo $description;?>
+                    <?php echo $title;?>
                  </div>
                     <div class="buttons">
                         <button onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')">+ CARINHO</button>
-                        <!--<button>SUBSCRIBE</button>-->
+                        <input type="number" min="1" id="requested_quantity_<?php echo $id?>" class="form-control w-100 requested_quantity" value="1" >
                     </div>
                 </div>
             </div>
@@ -85,3 +86,7 @@ foreach($this->dados['products'] as $collection){
         <!-- time running -->
         <div class="time"></div>
     </div>
+
+    <script>
+const check_section = true;
+</script>

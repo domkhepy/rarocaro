@@ -65,9 +65,10 @@ if (!defined('48b5t9')) {
                             <p>Touch</p>
                         </div>-->
             </div>
-            <div class="checkout">
+            <div class="checkout d-flex "  style="justify-content: flex-end">
  <button id="addCart" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')">+ CARRINHO</button>
-                <button href="" id="request">REQUESITAR</button>
+                
+                <input type="number" min="1" id="requested_quantity_<?php echo $id?>" class="form-control w-25 requested_quantity" value="1">
             </div>
         </div>
     </div>

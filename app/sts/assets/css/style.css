@@ -291,7 +291,7 @@ header nav a{
     width: 100%;
     border-top: 1px solid #5553;
     margin-top: 20px;
-    justify-content: flex-end
+    justify-content: flex-end;
     
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications div{
@@ -311,9 +311,9 @@ header nav a{
     letter-spacing: 2px;
     font-weight: 500;
 }
-.carousel.carousel.showDetail .list .item:nth-child(2) .checkout button:nth-child(2){
-    background-color: #693EFF;
-    color: #eee;
+.carousel.carousel.showDetail .list .item:nth-child(2) .checkout #quantity{
+
+    color: #693EFF;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail  .title,
 .carousel.showDetail .list .item:nth-child(2) .detail  .des,

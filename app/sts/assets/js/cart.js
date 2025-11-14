@@ -1,4 +1,6 @@
 // --- Função para carregar o carrinho ---
+  var requested_quantity = 0;
+  
 function loadCart() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartDiv = document.getElementById('cartItems');
@@ -7,11 +9,24 @@ function loadCart() {
   const checkoutBtn = document.getElementById('checkoutBtn');
   const total_quantity = document.getElementById('total_quantity');
 
+
+
+document.querySelectorAll('input[type="number"]').forEach(inp => {
+  inp.addEventListener('input', (e) => {
+    const valor = e.target.value;
+    requested_quantity=Number(valor);
+  });
+ 
+});
+
+
+
   if (cart.length === 0) {
     cartDiv.innerHTML = "<p>Carrinho vazio</p>";
      checkoutBtn.disabled = true;
     return;
   }
+
 
   let html = "";
   let total = 0;
@@ -50,9 +65,9 @@ function addToCart(id, produto, preco) {
   // Se o produto já estiver no carrinho, aumenta a quantidade
   const existing = cart.find(item => item.produto === produto);
   if (existing) {
-    existing.quantidade += 1;
+    existing.quantidade += requested_quantity;
   } else {
-    cart.push({ id, produto, preco, quantidade: 1 });
+    cart.push({ id, produto, preco, quantidade: requested_quantity });
   }
 
   localStorage.setItem('cart', JSON.stringify(cart));

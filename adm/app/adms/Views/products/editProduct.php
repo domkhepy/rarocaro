@@ -98,12 +98,12 @@ if (isset($this->dados['form'][0])) {
             <div class="row form-group">
                 <div class="col-12 col-md-6">
                 <label for="description"><span class="text-danger">*</span> Descrição:</label>
-                <input name="description" type="text" class="form-control" id="description"
-                    placeholder="Descrição do  producto  " value="<?php
+                
+                    <textarea id="msg" name="description"class="form-control" id="description" rows="6" cols="60" placeholder="Digite a descrição do produto"><?php
                 if (isset($valorForm['description'])) {
                     echo $valorForm['description'];
-                }
-                ?>" required></div>
+                }?></textarea>
+            </div>
 
                 <div class="col-12 col-md-6">
                     <label for="type"><span class="text-danger">*</span> Tipo de produto:</label>
@@ -113,10 +113,8 @@ if (isset($this->dados['form'][0])) {
                     echo $valorForm['type'];
                 }
                 ?>" required autofocus>
-                </div>
-            </div>
 
-            <div class="row form-group">
+                <div class="row form-group">
                 <div class="col-12 col-md-6">
                     <label for="price"><span class="text-danger">*</span> Preço:</label>
                     <input name="price" type="text" class="form-control" id="price" placeholder="Preço do  producto  "
@@ -143,6 +141,10 @@ if (isset($this->dados['form'][0])) {
                     </select>
                 </div>
             </div>
+                </div>
+            </div>
+
+            
 
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório

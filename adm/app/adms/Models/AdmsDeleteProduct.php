@@ -37,13 +37,14 @@ class AdmsDeleteProduct
 
         if ($this->viewProduct() ) {
             $deleteProduct = new \App\adms\Models\helper\AdmsDelete();
-            $deleteProduct->exeDelete("adms_products", "WHERE id =:id", "id={$this->id}");
+            $deleteProduct->exeDelete("sts_products", "WHERE id =:id", "id={$this->id}");
 
             if ($deleteProduct->getResult()) {
-                $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Tipo de produto apagado com sucesso!</div>";
+                $this->deleteImg();
+                $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Produto apagado com sucesso!</div>";
                 $this->resultado = true;
             } else {
-                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Tipo de produto não apagado com sucesso!</div>";
+                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Produto não apagado com sucesso!</div>";
                 $this->resultado = false;
             }
         } else {
@@ -56,7 +57,7 @@ class AdmsDeleteProduct
      */
     private function viewProduct() {
         $viewProduct = new \App\adms\Models\helper\AdmsRead();
-        $viewProduct->fullRead("SELECT id FROM adms_products
+        $viewProduct->fullRead("SELECT id, image FROM sts_products
                 WHERE id=:id
                 LIMIT :limit", "id={$this->id}&limit=1");
 
@@ -64,8 +65,23 @@ class AdmsDeleteProduct
         if ($this->resultadoBd) {
             return true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Tipo de produto não encontrada!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro:  Produto não encontrada!</div>";
             return false;
+        }
+    }
+
+     private function deleteImg() {
+        if ((!empty($this->resultadoBd[0]['image'])) OR ($this->resultadoBd[0]['image'] != null)) {
+            $this->delDiretorio = "app/adms/assets/image/products/" . $this->resultadoBd[0]['id'];
+            $this->delImg = $this->delDiretorio . "/" . $this->resultadoBd[0]['image'];
+
+            if (file_exists($this->delImg)) {
+                unlink($this->delImg);
+            }
+
+            if (file_exists($this->delDiretorio)) {
+                rmdir($this->delDiretorio);
+            }
         }
     }
 

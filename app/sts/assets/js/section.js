@@ -3,6 +3,7 @@ let nextDom = document.getElementById('next');
 let prevDom = document.getElementById('prev');
 
 let car_ouselDom = document.querySelector('.car_ousel');
+if(typeof car_ouselDom !== undefined && car_ouselDom !== null){
 let SliderDom = car_ouselDom.querySelector('.car_ousel .li_st');
 let thumbnailBorderDom = document.querySelector('.car_ousel .thumbnail');
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.it_em');
@@ -11,6 +12,11 @@ let timeDom = document.querySelector('.car_ousel .time');
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
 let timeAutoNext = 7000;
+
+if(check_section){
+ document.getElementById('nav-links').style.color="#fff";
+ document.getElementById('cart-icon').classList.remove("text-dark");
+}
 
 nextDom.onclick = function(){
     showSlider('next');    
@@ -46,4 +52,7 @@ function showSlider(type){
     runNextAuto = setTimeout(() => {
         next.click();
     }, timeAutoNext)
+
+    
+}
 }
