@@ -10,8 +10,8 @@ if (!defined('48b5t9')) {
 /**
  * Controller da página Home
  *
- * @author Celke
- */
+ * @author Domingos
+ */ 
 class Home
 {
 

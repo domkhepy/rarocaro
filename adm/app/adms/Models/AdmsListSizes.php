@@ -8,11 +8,11 @@ if(!defined('R4F5CC')){
 }
 
 /**
- * A classe AdmsListProvince Recebe as informações do nível de acesso que será listada na View
+ * A classe AdmsListSize Recebe as informações do nível de acesso que será listada na View
  *
  * @author Domingos
  */
-class AdmsListProvince 
+class AdmsListSizes 
 {
     /** @var $resultadoBd Recebe o resultado das informações que vieram do banco de dados */
     private $resultadoBd;
@@ -44,24 +44,24 @@ class AdmsListProvince
         return $this->resultPg;
     }
     
-    /** Metodo buscar as informações na tabela adms_province e fazer a paginação do resultado que será mostrado na View listar nível de acesso
+    /** Metodo buscar as informações na tabela adms_size e fazer a paginação do resultado que será mostrado na View listar nível de acesso
      * 
      * @param $pag Retorna a páginação
      */
-    public function listProvince($pag = null) {
+    public function listSize($pag = null) {
         
         $this->pag = (int) $pag;
-        $paginacao = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-provinces/index');
+        $paginacao = new \App\adms\Models\helper\AdmsPagination(URLADM . 'list-sizes/index');
         $paginacao->condition($this->pag, $this->limitResult);
-        $paginacao->pagination("SELECT COUNT(id) AS num_result FROM sts_provinces ");
+        $paginacao->pagination("SELECT COUNT(id) AS num_result FROM sts_sizes ");
         $this->resultPg = $paginacao->getResult();
 
-        $listProvince = new \App\adms\Models\helper\AdmsRead();
-        $listProvince->fullRead("SELECT id, name
-                FROM sts_provinces
+        $listSize = new \App\adms\Models\helper\AdmsRead();
+        $listSize->fullRead("SELECT id, name
+                FROM sts_sizes
                 LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$paginacao->getOffset()}");
 
-        $this->resultadoBd = $listProvince->getResult();
+        $this->resultadoBd = $listSize->getResult();
         if ($this->resultadoBd) {
             $this->resultado = true;
         } else {

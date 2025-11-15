@@ -29,4 +29,13 @@ class StsSection
                 ","sts_categories_id=$id");
         return $listSobreEmpresa->getResult();
     }
+
+      
+    public function listSizes() {
+        $viewDet = new \App\sts\Models\helper\StsRead();
+        $viewDet->fullRead("SELECT id, name
+                FROM sts_sizes");
+        $dataDet = $viewDet->getResult();
+        return $dataDet;
+    }
 }

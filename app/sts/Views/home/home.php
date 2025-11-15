@@ -50,7 +50,7 @@ if (!defined('48b5t9')) {
                 </div>
                 <div>
                             <p>Preço</p>
-                            <p><?php echo $price;?></p>
+                            <p><?php echo number_format($price, 2, ',', '.')."MZN";?></p>
                         </div>
                       <!--  <div>
                             <p>Compatible</p>
@@ -65,12 +65,35 @@ if (!defined('48b5t9')) {
                             <p>Touch</p>
                         </div>-->
             </div>
-            <div class="checkout d-flex "  style="justify-content: flex-end">
- <button id="addCart" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')">+ CARRINHO</button>
+            <div class="checkout d-flex "  style="justify-content: flex-end ; width: calc(100% + 50px);">
+ <button id="addCart" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i></button>
                 
-                <input type="number" min="1" id="requested_quantity_<?php echo $id?>" class="form-control w-25 requested_quantity" value="1">
+                <input type="number" min="1" id="requested_quantity_<?php echo $id?>" class="m-0 form-control requested_quantity" value="1">
+           
+           
+                        <select  data="size" class="form-control requested_size" >
+                            
+                            <?php
+                        foreach ($this->dados['sts_homes']['sizes'] as $sit) {
+                            extract($sit);
+                            
+                                echo "<option value='$id'>$name</option>";
+                            
+                        }
+                        ?>
+                        </select>
+                        <select  data="type" class="form-control requested_type" >
+                           
+    
+                                <option value='Normal' selected>Normal</option>
+                                <option value='Oversize'>OverSize</option>
+                            
+                        
+                        
+                        </select>
+                    
             </div>
-        </div>
+        </div> 
     </div>
     <?php   $count++;
                 } 
@@ -88,6 +111,8 @@ if (!defined('48b5t9')) {
 
 <script>
 const products = <?php echo json_encode($this->dados['sts_homes']['products']); ?>;
+const size = <?php echo json_encode($this->dados['sts_homes']['sizes'][0]['id']); ?>;
+const listSize = <?php echo json_encode($this->dados['sts_homes']['sizes']); ?>;
 
 
 //document.addEventListener('DOMContentLoaded', function() {

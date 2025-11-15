@@ -92,12 +92,15 @@ if (!defined('48b5t9')) {
                         ?>
                         </select>
                     </div>
-
+                    <input type="text"  class="form-control" id="sts_sizes_id" name="sts_sizes_id" hidden>
+                    <input type="text"  class="form-control" id="type" name="type" hidden>
                     <div class=" col-6">
                         <label for="bairro" class="form-label m-0">Endereço</label>
                         <input type="text" class="form-control" id="address" name="address" required>
                     </div>
                     </div>
+
+                    
                     <div class="mb-3">
                         <label for="contact" class="form-label">Telefone</label>
                         <input type="tel" class="form-control" id="contact" name="contact" required>

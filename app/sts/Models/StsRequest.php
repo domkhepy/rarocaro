@@ -98,6 +98,8 @@ extract($value);
             $dadoss['id']= 'I'.random_int(100, 999).date("d").date("m").date("y").random_int(100, 999);
             $dadoss['sts_requests_id'] = $sts_requests_id;
             $dadoss['sts_products_id'] = $id;
+            $dadoss['sts_sizes_id'] = $sts_sizes_id;
+            $dadoss['type'] = $type;
             $dadoss['quantity'] = $quantity;
             $dadoss['created'] = date("Y-m-d H:i:s"); 
             

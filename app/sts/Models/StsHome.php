@@ -35,9 +35,10 @@ class StsHome
         $this->viewAction();
         $this->viewDet();
         $this->listProducts();
+        $this->listSizes();
         return $this->data;
     }
-    
+     
     private function viewTop() {
         $viewTop = new \App\sts\Models\helper\StsRead();
         $viewTop->fullRead("SELECT id, title_top, description_top, link_btn_top, txt_btn_top, image
@@ -80,6 +81,15 @@ class StsHome
                 FROM sts_products");
         $this->dataDet = $viewDet->getResult();
         $this->data['products'] = $this->dataDet;
+    }
+
+    
+    private function listSizes() {
+        $viewDet = new \App\sts\Models\helper\StsRead();
+        $viewDet->fullRead("SELECT id, name
+                FROM sts_sizes");
+        $this->dataDet = $viewDet->getResult();
+        $this->data['sizes'] = $this->dataDet;
     }
 
 }

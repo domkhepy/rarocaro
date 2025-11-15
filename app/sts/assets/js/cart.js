@@ -1,5 +1,7 @@
 // --- Função para carregar o carrinho ---
-  var requested_quantity = 0;
+  var requested_quantity = 1;
+  var requested_size = typeof size !== 'undefined' ? size : '';
+  var requested_type = 'Normal';
   
 function loadCart() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -19,6 +21,24 @@ document.querySelectorAll('input[type="number"]').forEach(inp => {
  
 });
 
+document.querySelectorAll('select[data="size"]').forEach(inp => {
+  inp.addEventListener('change', (e) => {
+    const valor = e.target.value;
+    requested_size= Number(valor);
+
+  });
+ 
+});
+
+document.querySelectorAll('select[data="type"]').forEach(inp => {
+  inp.addEventListener('change', (e) => {
+    const valor = e.target.value;
+    requested_type=valor;
+
+  });
+ 
+});
+
 
 
   if (cart.length === 0) {
@@ -33,12 +53,15 @@ document.querySelectorAll('input[type="number"]').forEach(inp => {
   let count = 0;
 
   cart.forEach((item, index) => {
+
+var sizeItem =listSize.find(size => Number(size.id) === Number(item.sts_sizes_id));
+
     total += item.preco * item.quantidade;
     html += `
     
       <div class=" cart-item d-flex justify-content-between">
        <div>
-                        <h6 class="mb-1">${item.produto}</h6>
+                        <h6 class="mb-1">${item.produto}, ${sizeItem.name}, ${item.type}</h6>
                         <small class="text-muted">${item.quantidade} x MZN${item.preco}</small>
                     </div>
                     <div>
@@ -63,11 +86,14 @@ function addToCart(id, produto, preco) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   // Se o produto já estiver no carrinho, aumenta a quantidade
-  const existing = cart.find(item => item.produto === produto);
-  if (existing) {
+
+  const existing = cart.find(item => item.produto === produto &&  item.sts_sizes_id === requested_size &&  item.type === requested_type);
+ 
+
+  if (existing ) {
     existing.quantidade += requested_quantity;
   } else {
-    cart.push({ id, produto, preco, quantidade: requested_quantity });
+    cart.push({ id, produto, preco, quantidade: requested_quantity, sts_sizes_id: requested_size, type: requested_type });
   }
 
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -85,6 +111,8 @@ function removeFromCart(index) {
 // --- Esvaziar carrinho ---
 function clearCart() {
   localStorage.removeItem('cart');
+  document.getElementById('cartTotal').textContent = 'MZN 0,00';
+  document.getElementById('productNumber').textContent = '0';
   loadCart();
 }
 
@@ -100,10 +128,13 @@ function clearCart() {
         cart.forEach(item => {
             const itemTotal = item.preco * item.quantidade;
             total += itemTotal;
+
+            var sizeItem =listSize.find(size => size.id === item.sts_sizes_id);
+
             
             summaryHTML += `
                 <li class="list-group-item d-flex justify-content-between">
-                    <span>${item.produto} (${item.quantidade}x)</span>
+                    <span>${item.produto}, ${sizeItem.name}, ${item.type} (${item.quantidade}x)</span>
                     <span>MZN ${itemTotal.toFixed(2)}</span>
                 </li>
             `;
@@ -112,7 +143,9 @@ function clearCart() {
                 id: item.id,
                 name: item.produto,
                 price: item.preco,
-                quantity: item.quantidade
+                quantity: item.quantidade,
+                sts_sizes_id: item.sts_sizes_id,
+                type: item.type
             });
         });
         

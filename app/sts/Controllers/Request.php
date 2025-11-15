@@ -26,8 +26,7 @@ class Request
 
         $this->dadosForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-       
-        if(!empty($this->dadosForm)){
+       if(!empty($this->dadosForm)){
             $createNewUser = new \App\sts\Models\StsRequest();
             $createNewUser->create($this->dadosForm);
             if($createNewUser->getResultado()){
@@ -41,7 +40,7 @@ class Request
         }else{
              $urlDestino = URL ;
                 header("Location: $urlDestino");
-        }   
+        }    
     }
     
    
