@@ -135,4 +135,9 @@ if (!defined('48b5t9')) {
     <i class="bi bi-x-lg close"></i>
 
     <div class="progress"></div>
-</div>
+</div> 
+
+<script>
+    const listSize = <?php echo json_encode($this->dados['footer'][2]); ?>;
+const size = <?php echo json_encode($this->dados['footer'][2][0]['id']); ?>;
+</script>

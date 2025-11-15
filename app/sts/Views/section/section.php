@@ -111,8 +111,6 @@ if (!defined('48b5t9')) {
 
 <script>
 const products = <?php echo json_encode($this->dados['products']); ?>;
-const size = <?php echo json_encode($this->dados['sizes'][0]['id']); ?>;
-const listSize = <?php echo json_encode($this->dados['sizes']); ?>;
 
 
 //document.addEventListener('DOMContentLoaded', function() {

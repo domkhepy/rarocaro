@@ -25,12 +25,20 @@ class StsFooter
                 LIMIT :limit", "limit=1");
         $this->dataFooter = $viewFooter->getResult();
         $this->dataFooter[1]=$this->listProvinces();
+        $this->dataFooter[2]=$this->listSizes();
         return $this->dataFooter;
     }
 
     private function listProvinces() {
         $viewFooter = new \App\sts\Models\helper\StsRead();
         $viewFooter->fullRead("SELECT id, name FROM sts_provinces");
+        $dataFooter = $viewFooter->getResult();
+        return $dataFooter;
+    }
+
+    private function listSizes() {
+        $viewFooter = new \App\sts\Models\helper\StsRead();
+        $viewFooter->fullRead("SELECT id, name FROM sts_sizes");
         $dataFooter = $viewFooter->getResult();
         return $dataFooter;
     }
