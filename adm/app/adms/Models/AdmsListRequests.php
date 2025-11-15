@@ -57,14 +57,13 @@ class AdmsListRequests
         $this->resultPg = $paginacao->getResult();
 
         $listRequest = new \App\adms\Models\helper\AdmsRead();
-        $listRequest->fullRead("SELECT sr.id, sr.toral_quantity,
-        su.name, su.address,
-        sp.name AS province_name,
-        sp.name AS product_name
+        $listRequest->fullRead("SELECT sr.id, sr.total_quantity,
+        su.name, su.address,su.contact,
+        sp.name AS province
                 FROM sts_requests sr
                 INNER JOIN sts_users su ON su.id=sr.sts_users_id
                 INNER JOIN sts_provinces sp ON sp.id=su.sts_provinces_id
-                INNER JOIN sts_products sp ON sp.id=sr.product_id
+                ORDER BY sr.created DESC
                 LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$paginacao->getOffset()}");
 
         $this->resultadoBd = $listRequest->getResult();

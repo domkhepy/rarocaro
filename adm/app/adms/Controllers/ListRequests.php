@@ -23,7 +23,7 @@ class ListRequests
     /** Metodo para receber os dados da View e enviar para Models */
     public function index($pag = null) {
 
-        $this->pag = (int) $pag ? $pag : 1;
+        $this->pag = (int) $pag ? $pag : 1; 
 
         $listRequest = new \App\adms\Models\AdmsListRequests();
         $listRequest->listRequest($this->pag);
