@@ -54,7 +54,7 @@ class AdmsEditProduct
         if ($this->resultadoBd) {
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Cor não encontrada!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Produto não encontrada!</div>";
             $this->resultado = false;
         }
     }
@@ -84,10 +84,10 @@ class AdmsEditProduct
         $upColor->exeUpdate("sts_products", $this->dados, "WHERE id =:id", "id={$this->dados['id']}");
 
         if ($upColor->getResult()) {
-            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Tipo editado com sucesso!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Produto editado com sucesso!</div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Tipo editado não editada com sucesso!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Produto não editada com sucesso!</div>";
             $this->resultado = false;
         }
     }

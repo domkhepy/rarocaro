@@ -66,8 +66,7 @@ if (!defined('48b5t9')) {
                         </div>-->
             </div>
             <div class="checkout d-flex "  style="justify-content: flex-end ; width: calc(100% + 50px);">
- <button id="addCart" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i></button>
-                
+      
                 <input type="number" min="1" id="requested_quantity_<?php echo $id?>" class="m-0 form-control requested_quantity" value="1">
            
            
@@ -93,6 +92,10 @@ if (!defined('48b5t9')) {
                         </select>
                     
             </div>
+             <div class="checkout">
+                <button id="addCart" class="d-block m-auto mt-4" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
+        
+            </div>
         </div> 
     </div>
     <?php   $count++;
@@ -105,7 +108,7 @@ if (!defined('48b5t9')) {
     <button id="prev">
         < </button>
             <button id="next">></button>
-            <button id="back">Ver todos &#8599</button>
+            <button id="back">Todos &#8599</button>
 </div>
 </div>
 

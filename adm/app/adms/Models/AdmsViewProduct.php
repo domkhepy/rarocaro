@@ -40,7 +40,7 @@ class AdmsViewProduct
     public function viewProduct($id) {
         $this->id = (int) $id;
         $viewProduct = new \App\adms\Models\helper\AdmsRead();
-        $viewProduct->fullRead("SELECT prd.id, prd.name, prd.description, prd.title, prd.type, prd.image, prd.price,
+        $viewProduct->fullRead("SELECT prd.id, prd.name, prd.description, prd.title, prd.type, prd.image, prd.price, prd.sts_view_id,
                 cat.name AS category
                 FROM sts_products prd
                 INNER JOIN sts_categories cat ON cat.id=prd.sts_categories_id

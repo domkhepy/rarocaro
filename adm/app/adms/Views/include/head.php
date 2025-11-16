@@ -12,6 +12,7 @@ if(!defined('R4F5CC')){
         <link rel="icon" href="<?php echo URLADM; ?>app/adms/assets/image/icon/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/all.min.css">
         <link rel="stylesheet" href="<?php echo URLADM; ?>app/adms/assets/css/perso_adms.css">
     </head>

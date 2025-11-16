@@ -43,6 +43,7 @@ class AdmsAddProduct
      * Metodo envia as informações recebidas do formulário para o banco de dados
      */
     private function add() {
+        $this->dados['created'] = 0;
         $this->dados['created'] = date("Y-m-d H:i:s");
         $this->dados['product_id'] = "P".date("d").rand(100, 999).date("m").rand(100, 999).date("y");
         

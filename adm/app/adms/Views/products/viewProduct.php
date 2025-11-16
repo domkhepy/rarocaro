@@ -92,7 +92,29 @@ if (!defined('R4F5CC')) {
                 <dt class="col-sm-3">Preço</dt>
                 <dd class="col-sm-9"><?php echo $price; ?>
                 <dt class="col-sm-3">Categoria</dt>
-                <dd class="col-sm-9"><?php echo $category; ?>
+                <dd class="col-sm-9"><?php echo $category; ?></dd>
+                <dt class="col-sm-3">Acção Rápida</h5>
+                   
+                   <dd>
+                        <form id="edit_product" method="POST" action="<?php echo URLADM."edit-product/index/".$id?>>"
+                            enctype="multipart/form-data">
+                            <input type="text" name="id" value="<?php if(isset($id)){echo $id;} ?>" hidden>
+
+                            <input type="text" name="sts_view_id" value="<?php if($sts_view_id==0){
+                            $label="Publicar";
+                            $icon="fa-eye";
+                            $button="btn-outline-primary";
+                            echo 1;
+                         }else{
+                             $label="Ocultar";
+                            $icon="fa-eye-slash";
+                            $button="btn-outline-warning";
+                            echo 0;
+                         }?>" hidden>
+                            <button name="EditProduct" value="editProduct" type="submit" class="btn <?php echo $button;?> ">
+                                <i class="fas <?php echo $icon;?> me-1"></i> <?php echo $label;?></button>
+                        </form>
+                
                 </dd>
             </dl>
             <?php

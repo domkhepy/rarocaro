@@ -57,7 +57,7 @@ class AdmsListProducts
         $this->resultPg = $paginacao->getResult();
 
         $listProducts = new \App\adms\Models\helper\AdmsRead();
-        $listProducts->fullRead("SELECT id, name,  title
+        $listProducts->fullRead("SELECT id, name,  title, sts_view_id
                 FROM sts_products
                 ORDER BY id DESC
                 LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$paginacao->getOffset()}");

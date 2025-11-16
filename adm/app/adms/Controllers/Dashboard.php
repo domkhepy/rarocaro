@@ -10,7 +10,7 @@ if (!defined('R4F5CC')) {
 /**
  * A classe Dashboard contem as informações da página inicial do sistema
  *
- * @author Celke
+ * @author Domingos
  */
 class Dashboard
 {
@@ -21,6 +21,19 @@ class Dashboard
     public function index() {
         $this->dados['sidebarActive'] = "dashboard";
         
+        $listMenu = new \App\adms\Models\AdmsDashboard();
+        $listMenu->totalRequests();
+        $this->dados['totalRequests'] = $listMenu->getResultDb();
+        
+        $listMenu->totalProducts();
+        $this->dados['totalProducts'] = $listMenu->getResultDb();
+
+        $listMenu->totalRequestedItens();
+        $this->dados['totalRequestedItems'] = $listMenu->getResultDb();
+
+        $listMenu->totalCategories();
+        $this->dados['totalCategories'] = $listMenu->getResultDb();
+
         $listMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listMenu->itemMenu();
         
