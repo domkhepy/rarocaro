@@ -11,7 +11,6 @@ if (!defined('48b5t9')) {
     <div class="list" id="list" style="touch-action: none;">
 
 
-
         <?php 
         $count=0;
         if(isset($this->dados['sts_homes']['products']) and !empty($this->dados['sts_homes']['products'])){

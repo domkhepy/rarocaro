@@ -18,6 +18,7 @@ if (!defined('48b5t9')) {
         <link rel="stylesheet" href="<?php echo URL; ?>app/sts/assets/css/personalize.css">
         <link rel="stylesheet" href="<?php echo URL; ?>app/sts/assets/css/main.css">
         <link rel="stylesheet" href="<?php echo URL; ?>app/sts/assets/css/section.css">
+        <link rel="stylesheet" href="<?php echo URL; ?>app/sts/assets/css/navbar.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
     <body>
