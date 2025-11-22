@@ -24,13 +24,13 @@ if (!defined('48b5t9')) {
                 }
               
                 echo "<div class='item'><img src='".$image."'>";
-
+ $product_id=$id; 
                 ?>
 
 
         <div class="introduce">
             <div class="title"><?php echo $title;?></div>
-            <div class="topic"><?php echo $name;?></div>
+            <div class="topic"><?php $product_name=$name; echo $product_name;?></div>
             <div class="des">
                 <!-- 20 lorem -->
                 <?php echo $description;?>
@@ -92,7 +92,7 @@ if (!defined('48b5t9')) {
                     
             </div>
             <div class="checkout">
-                <button id="addCart" class="d-block m-auto mt-4" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
+                <button id="addCart" class="d-block m-auto mt-4" onclick="addToCart('<?php echo $product_id?>','<?php echo $product_name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
         
             </div>
         </div> 
@@ -107,7 +107,7 @@ if (!defined('48b5t9')) {
     <button id="prev">
         < </button>
             <button id="next">></button>
-            <button id="back">Todos &#8599</button>
+            <button id="back" class="d-none">Todos &#8599</button>
 </div>
 </div>
 

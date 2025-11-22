@@ -17,9 +17,10 @@ if (!defined('48b5t9')) {
 
 
     <nav class="nav__links" id="nav-links">
-        <a href="<?php echo URL."personalize"?>">PERSONALIZAR</a>
-        <a href="<?php echo URL."collection"?>">COLEÇÃO</a>
-        <a href="<?php echo URL."contact"?>">CONTACTO</a>
+        <a href="<?php echo URL?>" class="nav_button">HOME</a>
+        <a href="<?php echo URL."personalize"?>" class="selectedPg nav_button">PERSONALIZAR</a>
+        <a href="<?php echo URL."collection"?>" class="nav_button">COLEÇÃO</a>
+        <a href="<?php echo URL."contact"?>" class="nav_button">CONTACTO</a>
     </nav>
     <div class="nav-link text-light" style="cursor: pointer;" id="shopping-cart" aria-label="Carrinho"
         title="Carrinho de compras">

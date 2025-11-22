@@ -34,16 +34,21 @@ body{
     --item5-opacity: 0;
 }
 header{
-    width: 1140px;
-    max-width: 90%;
+    
+    position: fixed;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background: linear-gradient(45deg, #b894df, #fff);
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
     display: flex;
     justify-content: space-between;
     margin: auto;
     height: 50px;
     align-items: center;
-   z-index: 100;
-   
-    position: relative;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    
 }
 header .logo{
     font-weight: bold;
@@ -57,13 +62,83 @@ header nav a{
     
 }
 
+.nav__links {
+  list-style: none;
+  position: flex;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+ 
+}
+
+.nav__links.open {
+  transform: translateY(0);
+}
+
+    
+
+    .nav__links a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #000;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .nav__links a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background: #ff4d4f;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s;
+    }
+
+    .nav__links a:hover::after {
+      width: 100%;
+    }
+
+    .nav__links a:hover {
+      color: #fff;
+    }
+    
+
+.selectedPg {
+    border-bottom: 2px #ff4d4f solid;
+     
+    }
+    .selectedPg:hover {
+    border-bottom: unset;
+     
+    }
+
+    
+
+
+
+@media (width > 768px) {
+  .nav__links {
+    padding: 0;
+    width: unset;
+    position: static;
+    transform: none;
+    flex-direction: row;
+    background-image: none;
+  }}
+
+
+
 /* carousel */
 .carousel{
     z-index: 0;
     position: relative;
     height: 100%;
     overflow: hidden;
-    margin-top: -50px;
     padding-top: 50px;
 }
 .carousel .list{

@@ -25,7 +25,7 @@ if (!defined('48b5t9')) {
                 }
               
                 echo "<div class='item'><img src='".$image."'>";
-
+                $product_id=$id; 
                 ?>
 
 
@@ -40,7 +40,7 @@ if (!defined('48b5t9')) {
 
         </div>
         <div class="detail">
-            <div class="title"><?php echo $name;?></div>
+            <div class="title"><?php $product_name=$name; echo $product_name;?></div>
             <div class="des">
                 <?php echo $description;?></div>
             <div class="specifications">
@@ -93,7 +93,7 @@ if (!defined('48b5t9')) {
                     
             </div>
              <div class="checkout">
-                <button id="addCart" class="d-block m-auto mt-4" onclick="addToCart('<?php echo $id?>','<?php echo $name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
+                <button id="addCart" class="d-block m-auto mt-4" onclick="addToCart('<?php echo $product_id?>','<?php echo $product_name?>', '<?php echo $price?>')"><i class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
         
             </div>
         </div> 

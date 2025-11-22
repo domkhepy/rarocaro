@@ -1,6 +1,6 @@
 // --- Função para carregar o carrinho ---
   var requested_quantity = 1;
-  var requested_size = typeof size !== 'undefined' ? size : '';
+  var requested_size = typeof size !== 'undefined' ? Number(size) : '';
   var requested_type = 'Normal';
   
 function loadCart() {
@@ -95,7 +95,7 @@ function addToCart(id, produto, preco) {
   } else {
     cart.push({ id, produto, preco, quantidade: requested_quantity, sts_sizes_id: requested_size, type: requested_type });
   }
-
+console.log(cart);
   localStorage.setItem('cart', JSON.stringify(cart));
   loadCart();
 }

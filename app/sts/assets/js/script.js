@@ -127,3 +127,12 @@ navLinks.addEventListener("click", (e) => {
       if(e.key === 'ArrowRight'){ index = (index + 1) % depoimentos.length; render(index); }
     });
  
+  document.querySelectord('nav_button').addEventListener('click',()=>{
+    console.log( document.querySelectord('nav_button'));
+
+    array.forEach(element => {
+      
+    });
+  })
+
+  console.log( document.querySelectord('nav_button'));
