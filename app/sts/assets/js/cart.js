@@ -95,7 +95,7 @@ function addToCart(id, produto, preco) {
   } else {
     cart.push({ id, produto, preco, quantidade: requested_quantity, sts_sizes_id: requested_size, type: requested_type });
   }
-console.log(cart);
+
   localStorage.setItem('cart', JSON.stringify(cart));
   loadCart();
 }

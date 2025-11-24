@@ -4,6 +4,7 @@ let carousel = document.querySelector('.carousel');
 let listHTML = document.querySelector('.carousel .list');
 let seeMoreButtons = document.querySelectorAll('.seeMore');
 let backButton = document.getElementById('back');
+const nav = document.getElementById("nav-links");
 
 const navLinks = document.getElementById("nav-links");
 const menuBtn = document.getElementById("menu-btn");
@@ -58,6 +59,7 @@ backButton.onclick = function(){
 
 /*nav menu*/
 menuBtn.addEventListener("click", (e) => {
+
   navLinks.classList.toggle("open");
 
   const isOpen = navLinks.classList.contains("open");
@@ -65,6 +67,10 @@ menuBtn.addEventListener("click", (e) => {
     "class",
     isOpen ? "bi bi-x-lg" : "bi bi-list"
   );
+
+  isOpen ? nav.style.left="0px": nav.style.left="100%";
+
+
 });
 
 navLinks.addEventListener("click", (e) => {
@@ -142,4 +148,28 @@ const prevImg = document.getElementById('prev');
       if (e.key === 'ArrowRight') goNext();
     });
 
+
+
+     document.querySelectorAll('.nav_button').forEach(inp => {
+    
+inp.addEventListener('click', (e) => {
+    e.classList.add('selectedPg');
+  });
    
+  })
+
+   const currentPage = window.location.pathname.split("/").pop();
+
+
+    const pages = {
+      "": "home",
+      "personalize": "personalizacao",
+      "collection": "colecao",
+      "contact": "contact"
+    };
+
+
+
+    if (pages[currentPage]) {
+      document.getElementById(pages[currentPage]).classList.add("selectedPg");
+    }

@@ -1,9 +1,10 @@
-const nav = document.getElementById("navbar");
+const nav = document.getElementById("nav-links");
 const navLinks = document.getElementById("navbar-nav");
 const menuBtn = document.getElementById("menu-btn");
 const menuBtnIcon = menuBtn.querySelector("i");
 
 menuBtn.addEventListener("click", (e) => {
+  console.log("hello");
   navLinks.classList.toggle("open");
 
   const isOpen = navLinks.classList.contains("open");
@@ -11,10 +12,13 @@ menuBtn.addEventListener("click", (e) => {
     "class",
     isOpen ? "bi bi-x fa-2x" : "bi bi-list fa-2x"
   );
-  nav.setAttribute(
-    "class",
-    isOpen ? "navbar navbar-expand-lg navbar-light bg-secondary position-fixed w-100 shadow-sm sticky-top p-3" : "navbar navbar-expand-lg navbar-light bg-transparent position-fixed w-100 shadow-sm sticky-top p-3"
-  );
+
+   
+  
+  //nav.setAttribute(
+    //"class",
+    //isOpen ? "navbar navbar-expand-lg navbar-light bg-secondary position-fixed w-100 shadow-sm sticky-top p-3" : "navbar navbar-expand-lg navbar-light bg-transparent position-fixed w-100 shadow-sm sticky-top p-3"
+  //);
 });
 
 navLinks.addEventListener("click", (e) => {
@@ -127,12 +131,3 @@ navLinks.addEventListener("click", (e) => {
       if(e.key === 'ArrowRight'){ index = (index + 1) % depoimentos.length; render(index); }
     });
  
-  document.querySelectord('nav_button').addEventListener('click',()=>{
-    console.log( document.querySelectord('nav_button'));
-
-    array.forEach(element => {
-      
-    });
-  })
-
-  console.log( document.querySelectord('nav_button'));

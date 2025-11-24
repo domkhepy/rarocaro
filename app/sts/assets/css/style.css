@@ -34,7 +34,6 @@ body{
     --item5-opacity: 0;
 }
 header{
-    
     position: fixed;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     background: linear-gradient(45deg, #b894df, #fff);
@@ -74,7 +73,7 @@ header nav a{
 }
 
 .nav__links.open {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
     
@@ -129,7 +128,35 @@ header nav a{
     transform: none;
     flex-direction: row;
     background-image: none;
-  }}
+    
+  }
+}
+
+  @media (width < 768px) {
+  .nav__links {
+   position: absolute;
+    display: grid;
+    top: 50px;
+    width: 100%;
+    background: linear-gradient(45deg, #b894df, #fff);;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    left: 100%;
+    transition: 0.7s;
+  }
+.nav__links a{
+   text-align: center;
+   margin-left:0px;
+   
+  }
+header{
+    padding-left: 0px;
+   
+}
+.logo{
+    padding-left: 50px;
+}}
 
 
 
@@ -139,7 +166,7 @@ header nav a{
     position: relative;
     height: 100%;
     overflow: hidden;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 .carousel .list{
     position: absolute;
@@ -346,6 +373,7 @@ header nav a{
 }
 .carousel.showDetail .list .item:nth-child(2) img{
     right: 50%;
+    
 }
 .carousel.showDetail .list .item:nth-child(2) .detail{
     opacity: 1;
@@ -357,6 +385,26 @@ header nav a{
     text-align: right;
     pointer-events: auto;
 }
+
+@media (width < 775px) {
+  .carousel.showDetail .list .item:nth-child(2) img{
+    left: 0;
+    width: 100%;
+   
+}
+
+.carousel.showDetail .list .item:nth-child(2) .detail{
+    
+   pointer-events: auto;
+    top: 75%;
+    transform: translateY(-50%);
+    width: 100%;
+    
+}
+
+
+}
+
 .carousel.showDetail .list .item:nth-child(2) .detail .title{
     font-size: 4em;
 }
@@ -408,7 +456,7 @@ header nav a{
 }
 .arrows{
     position: absolute;
-    bottom: 100px;
+    bottom: 50px;
     width: 1140px;
     max-width: 90%;
     display: flex;
