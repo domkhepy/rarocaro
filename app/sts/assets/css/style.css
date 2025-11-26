@@ -355,7 +355,6 @@ header{
 /* detail  */
 .carousel .list .item .detail{
     opacity: 0;
-    pointer-events: none;
 }
 /* showDetail */
 .carousel.showDetail .list .item:nth-child(3),
@@ -383,25 +382,37 @@ header{
     top: 50%;
     transform: translateY(-50%);
     text-align: right;
-    pointer-events: auto;
 }
 
 @media (width < 775px) {
   .carousel.showDetail .list .item:nth-child(2) img{
+    position: absolute;
     left: 0;
     width: 100%;
-   
+   z-index: 0;
 }
 
 .carousel.showDetail .list .item:nth-child(2) .detail{
-    
-   pointer-events: auto;
+   
     top: 75%;
     transform: translateY(-50%);
     width: 100%;
+    background-color: #ddd;
+    z-index: 1;
+    
     
 }
+.arrows{
+    top: 100%;
+}
 
+
+#addCart{
+ 
+    background: #693EFF;
+    color: #fff;
+   
+}
 
 }
 
@@ -559,6 +570,7 @@ header{
     .carousel.showDetail .list .item:nth-child(2) .detail{
         backdrop-filter: blur(10px);
         font-size: small;
+        
     }
     .carousel .list .item:nth-child(2) .introduce .des,
     .carousel.showDetail .list .item:nth-child(2) .detail .des{
@@ -568,7 +580,7 @@ header{
     .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
         display: flex;
         width: max-content;
-        float: right;
+        margin: auto;
     }
 }
 

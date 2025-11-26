@@ -2,6 +2,8 @@
   var requested_quantity = 1;
   var requested_size = typeof size !== 'undefined' ? Number(size) : '';
   var requested_type = 'Normal';
+
+
   
 function loadCart() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -83,6 +85,7 @@ total_quantity.value = count;
 
 // --- Adicionar item ao carrinho ---
 function addToCart(id, produto, preco) {
+  console.log('clicando');
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   // Se o produto já estiver no carrinho, aumenta a quantidade
