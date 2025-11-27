@@ -130,6 +130,13 @@ header nav a{
     background-image: none;
     
   }
+  #maxmize{
+    display: none;
+  }
+
+  .detail{
+    display: block !important;
+  }
 }
 
   @media (width < 768px) {
@@ -414,6 +421,7 @@ header{
    
 }
 
+
 }
 
 .carousel.showDetail .list .item:nth-child(2) .detail .title{
@@ -542,6 +550,7 @@ header{
     }
     .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
         overflow: auto;
+        margin-top: 0px;
     }
     .carousel.showDetail .list .item:nth-child(2) .detail .title{
         font-size: 2em;

@@ -173,3 +173,21 @@ inp.addEventListener('click', (e) => {
     if (pages[currentPage]) {
       document.getElementById(pages[currentPage]).classList.add("selectedPg");
     }
+
+  document.getElementById('minimize').addEventListener('click',()=>{
+    
+    document.querySelectorAll('.detail').forEach(inp => {
+  inp.classList.add("d-none");
+});
+    
+document.getElementById('maxmize').classList.remove("d-none")
+  });
+
+  
+
+  document.getElementById('maxmize').addEventListener('click',()=>{
+    document.querySelectorAll('.detail').forEach(inp => {
+  inp.classList.remove("d-none");
+});
+document.getElementById('maxmize').classList.add("d-none")
+  })
