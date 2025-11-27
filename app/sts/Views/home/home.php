@@ -44,7 +44,7 @@ if (!defined('48b5t9')) {
         <div class="detail">
       
        
-        <span class="badge text-bg-danger d-badge d-md-none" id="minimize"><i class="bi bi-dash"></i></span>
+        <span class="badge text-bg-danger d-badge d-md-none minimize" ><i class="bi bi-dash"></i></span>
 
         
             <div class="title d-none d-md-block "><?php echo $name;?></div>

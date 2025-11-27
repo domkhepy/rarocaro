@@ -174,7 +174,9 @@ inp.addEventListener('click', (e) => {
       document.getElementById(pages[currentPage]).classList.add("selectedPg");
     }
 
-  document.getElementById('minimize').addEventListener('click',()=>{
+ document.querySelectorAll('.minimize').forEach( min => {
+  console.log(min);
+  min.addEventListener('click',()=>{
     
     document.querySelectorAll('.detail').forEach(inp => {
   inp.classList.add("d-none");
@@ -182,6 +184,11 @@ inp.addEventListener('click', (e) => {
     
 document.getElementById('maxmize').classList.remove("d-none")
   });
+ }
+
+ )
+
+
 
   
 

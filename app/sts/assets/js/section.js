@@ -4,9 +4,7 @@ let prevDom = document.getElementById('prev');
 
 let car_ouselDom = document.querySelector('.car_ousel');
 
-document.getElementById('addCart').addEventListener('click',(e)=>{
-    console.log(e);
-})
+
 
 if(typeof car_ouselDom !== undefined && car_ouselDom !== null){
 let SliderDom = car_ouselDom.querySelector('.car_ousel .li_st');
