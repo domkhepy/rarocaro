@@ -57,12 +57,16 @@ class AdmsListRequests
         $this->resultPg = $paginacao->getResult();
 
         $listRequest = new \App\adms\Models\helper\AdmsRead();
-        $listRequest->fullRead("SELECT sr.id, sr.total_quantity,
-        su.name, su.address,su.contact,
-        sp.name AS province
+        $listRequest->fullRead("SELECT sr.id, sr.total_quantity, sts_request_status_id,
+        su.name, su.address, su.contact,
+        sp.name AS province,
+        srs.name AS request_status,
+        ac.color 
                 FROM sts_requests sr
                 INNER JOIN sts_users su ON su.id=sr.sts_users_id
                 INNER JOIN sts_provinces sp ON sp.id=su.sts_provinces_id
+                INNER JOIN sts_request_status srs ON srs.id=sr.sts_request_status_id
+                INNER JOIN adms_colors ac ON ac.id=srs.adms_colors_id
                 ORDER BY sr.created DESC
                 LIMIT :limit OFFSET :offset", "limit={$this->limitResult}&offset={$paginacao->getOffset()}");
 
@@ -70,7 +74,7 @@ class AdmsListRequests
         if ($this->resultadoBd) {
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nenhuma categoria encontrada!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Nenhuma solicitação encontrada!</div>";
             $this->resultado = false;
         }
     }

@@ -40,7 +40,7 @@ class AdmsViewProduct
     public function viewProduct($id) {
         $this->id = (int) $id;
         $viewProduct = new \App\adms\Models\helper\AdmsRead();
-        $viewProduct->fullRead("SELECT prd.id, prd.name, prd.description, prd.title, prd.type, prd.image, prd.price, prd.sts_view_id,
+        $viewProduct->fullRead("SELECT prd.id, prd.name, prd.description, prd.title, prd.type, prd.image, prd.price, prd.sts_view_id, prd.modified, prd.created,
                 cat.name AS category
                 FROM sts_products prd
                 INNER JOIN sts_categories cat ON cat.id=prd.sts_categories_id
@@ -55,6 +55,19 @@ class AdmsViewProduct
             $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro: Produto não encontrada!</div>";
             $this->resultado = false;
         }
+    }
+
+
+    
+    public function listProductImages($id){
+        $this->id = (int) $id;
+        $listImage = new \App\adms\Models\helper\AdmsRead();
+        $listImage->fullRead("SELECT id img_id , name , sts_product_id as product_id
+        FROM sts_product_images
+        WHERE sts_product_id =:id ORDER BY id DESC","id=".$this->id);
+
+        return $listImage->getResult();
+       
     }
 
 }

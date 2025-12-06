@@ -380,6 +380,7 @@ header{
 .carousel.showDetail .list .item:nth-child(2) img{
     right: 50%;
     
+    
 }
 .carousel.showDetail .list .item:nth-child(2) .detail{
     opacity: 1;
@@ -404,9 +405,8 @@ header{
     top: 75%;
     transform: translateY(-50%);
     width: 100%;
-    background-color: #ddd;
+    background: transparent;
     z-index: 1;
-    
     
 }
 .arrows{
@@ -465,13 +465,13 @@ header{
     animation: showContent 0.5s 1s ease-in-out 1 forwards;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail  .des{
-    animation-delay: 1.2s;
+    animation-delay: .5s;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
-    animation-delay: 1.4s;
+    animation-delay: .5s;
 }
 .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
-    animation-delay: 1.6s;
+    animation-delay: 0.5s;
 }
 .arrows{
     position: absolute;
@@ -577,7 +577,7 @@ header{
         width: 40%;
     }
     .carousel.showDetail .list .item:nth-child(2) .detail{
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(1px);
         font-size: small;
         
     }

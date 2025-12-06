@@ -72,7 +72,7 @@ if (!defined('48b5t9')) {
                             <p>Touch</p>
                         </div>-->
 
-                        <span class="price d-block d-md-none m-auto title"><?php echo number_format($price, 2, ',', '.')."MZN";?></span>
+                        <span class="price d-block d-md-none m-auto title text-light"><?php echo number_format($price, 2, ',', '.')."MZN";?></span>
             </div>
             <div class="checkout d-flex " style="justify-content: flex-end ; width: 100% ;">
 

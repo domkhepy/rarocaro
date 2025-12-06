@@ -42,10 +42,14 @@ class AdmsViewRequest
         $viewRequest = new \App\adms\Models\helper\AdmsRead();
         $viewRequest->fullRead("SELECT sr.id, sr.total_quantity,
         su.name, su.address,su.contact,
-        sp.name AS province
+        sp.name AS province,
+        ss.name AS request_status,
+        ac.color
                 FROM sts_requests sr
                 INNER JOIN sts_users su ON su.id=sr.sts_users_id
                 INNER JOIN sts_provinces sp ON sp.id=su.sts_provinces_id
+                INNER JOIN sts_request_status ss ON ss.id=sts_request_status_id
+                INNER JOIN adms_colors ac ON ac.id=ss.adms_colors_id
                 WHERE sr.id=:id
                 LIMIT :limit", "id={$this->id}&limit=1");
                 

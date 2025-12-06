@@ -127,7 +127,6 @@ function clearCart() {
          const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        
         cart.forEach(item => {
             const itemTotal = item.preco * item.quantidade;
             total += itemTotal;

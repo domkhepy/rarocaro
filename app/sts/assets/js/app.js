@@ -175,7 +175,7 @@ inp.addEventListener('click', (e) => {
     }
 
  document.querySelectorAll('.minimize').forEach( min => {
-  console.log(min);
+ 
   min.addEventListener('click',()=>{
     
     document.querySelectorAll('.detail').forEach(inp => {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 16, 2025 at 05:52 PM
+-- Generation Time: Dec 06, 2025 at 09:16 AM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `adms_levels_pages` (
   KEY `fk_adms_levels_pages_adms_access_levels1_idx` (`adms_access_level_id`),
   KEY `fk_adms_levels_pages_adms_pages1_idx` (`adms_page_id`),
   KEY `adms_items_menu_id` (`adms_items_menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1049 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1097 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_levels_pages`
@@ -1263,7 +1263,55 @@ INSERT INTO `adms_levels_pages` (`id`, `permission`, `order_level_page`, `print_
 (1045, 2, 127, 2, 2, NULL, 15, 135, '2025-11-15 14:49:26', NULL),
 (1046, 2, 128, 2, 2, NULL, 15, 136, '2025-11-15 14:49:27', NULL),
 (1047, 2, 129, 2, 2, NULL, 15, 137, '2025-11-15 14:49:27', NULL),
-(1048, 2, 130, 2, 2, NULL, 15, 138, '2025-11-15 14:49:27', NULL);
+(1048, 2, 130, 2, 2, NULL, 15, 138, '2025-11-15 14:49:27', NULL),
+(1049, 1, 131, 2, 2, NULL, 1, 139, '2025-12-06 08:28:36', NULL),
+(1050, 1, 132, 2, 2, NULL, 1, 140, '2025-12-06 08:28:36', NULL),
+(1051, 1, 133, 2, 2, NULL, 1, 141, '2025-12-06 08:28:36', NULL),
+(1052, 1, 134, 2, 2, NULL, 1, 142, '2025-12-06 08:28:36', NULL),
+(1053, 1, 135, 2, 2, NULL, 1, 143, '2025-12-06 08:28:36', NULL),
+(1054, 1, 136, 2, 2, NULL, 1, 144, '2025-12-06 08:28:36', NULL),
+(1055, 2, 131, 2, 2, NULL, 2, 139, '2025-12-06 08:28:38', NULL),
+(1056, 2, 132, 2, 2, NULL, 2, 140, '2025-12-06 08:28:39', NULL),
+(1057, 2, 133, 2, 2, NULL, 2, 141, '2025-12-06 08:28:39', NULL),
+(1058, 2, 134, 2, 2, NULL, 2, 142, '2025-12-06 08:28:39', NULL),
+(1059, 2, 135, 2, 2, NULL, 2, 143, '2025-12-06 08:28:39', NULL),
+(1060, 2, 136, 2, 2, NULL, 2, 144, '2025-12-06 08:28:39', NULL),
+(1061, 2, 131, 2, 2, NULL, 3, 139, '2025-12-06 08:28:41', NULL),
+(1062, 2, 132, 2, 2, NULL, 3, 140, '2025-12-06 08:28:41', NULL),
+(1063, 2, 133, 2, 2, NULL, 3, 141, '2025-12-06 08:28:41', NULL),
+(1064, 2, 134, 2, 2, NULL, 3, 142, '2025-12-06 08:28:41', NULL),
+(1065, 2, 135, 2, 2, NULL, 3, 143, '2025-12-06 08:28:41', NULL),
+(1066, 2, 136, 2, 2, NULL, 3, 144, '2025-12-06 08:28:41', NULL),
+(1067, 2, 131, 2, 2, NULL, 4, 139, '2025-12-06 08:28:44', NULL),
+(1068, 2, 132, 2, 2, NULL, 4, 140, '2025-12-06 08:28:44', NULL),
+(1069, 2, 133, 2, 2, NULL, 4, 141, '2025-12-06 08:28:44', NULL),
+(1070, 2, 134, 2, 2, NULL, 4, 142, '2025-12-06 08:28:44', NULL),
+(1071, 2, 135, 2, 2, NULL, 4, 143, '2025-12-06 08:28:44', NULL),
+(1072, 2, 136, 2, 2, NULL, 4, 144, '2025-12-06 08:28:44', NULL),
+(1073, 2, 131, 2, 2, NULL, 11, 139, '2025-12-06 08:28:46', NULL),
+(1074, 2, 132, 2, 2, NULL, 11, 140, '2025-12-06 08:28:46', NULL),
+(1075, 2, 133, 2, 2, NULL, 11, 141, '2025-12-06 08:28:46', NULL),
+(1076, 2, 134, 2, 2, NULL, 11, 142, '2025-12-06 08:28:46', NULL),
+(1077, 2, 135, 2, 2, NULL, 11, 143, '2025-12-06 08:28:46', NULL),
+(1078, 2, 136, 2, 2, NULL, 11, 144, '2025-12-06 08:28:46', NULL),
+(1079, 2, 131, 2, 2, NULL, 13, 139, '2025-12-06 08:28:48', NULL),
+(1080, 2, 132, 2, 2, NULL, 13, 140, '2025-12-06 08:28:49', NULL),
+(1081, 2, 133, 2, 2, NULL, 13, 141, '2025-12-06 08:28:49', NULL),
+(1082, 2, 134, 2, 2, NULL, 13, 142, '2025-12-06 08:28:49', NULL),
+(1083, 2, 135, 2, 2, NULL, 13, 143, '2025-12-06 08:28:49', NULL),
+(1084, 2, 136, 2, 2, NULL, 13, 144, '2025-12-06 08:28:49', NULL),
+(1085, 2, 131, 2, 2, NULL, 14, 139, '2025-12-06 08:28:51', NULL),
+(1086, 2, 132, 2, 2, NULL, 14, 140, '2025-12-06 08:28:51', NULL),
+(1087, 2, 133, 2, 2, NULL, 14, 141, '2025-12-06 08:28:51', NULL),
+(1088, 2, 134, 2, 2, NULL, 14, 142, '2025-12-06 08:28:51', NULL),
+(1089, 2, 135, 2, 2, NULL, 14, 143, '2025-12-06 08:28:52', NULL),
+(1090, 2, 136, 2, 2, NULL, 14, 144, '2025-12-06 08:28:52', NULL),
+(1091, 2, 131, 2, 2, NULL, 15, 139, '2025-12-06 08:28:54', NULL),
+(1092, 2, 132, 2, 2, NULL, 15, 140, '2025-12-06 08:28:54', NULL),
+(1093, 2, 133, 2, 2, NULL, 15, 141, '2025-12-06 08:28:54', NULL),
+(1094, 2, 134, 2, 2, NULL, 15, 142, '2025-12-06 08:28:54', NULL),
+(1095, 2, 135, 2, 2, NULL, 15, 143, '2025-12-06 08:28:54', NULL),
+(1096, 2, 136, 2, 2, NULL, 15, 144, '2025-12-06 08:28:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -1291,7 +1339,7 @@ CREATE TABLE IF NOT EXISTS `adms_pages` (
   KEY `adms_groups_pgs_id` (`adms_groups_pgs_id`),
   KEY `adms_sits_pgs_id` (`adms_sits_pgs_id`),
   KEY `adms_types_pgs_id` (`adms_types_pgs_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=145 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `adms_pages`
@@ -1432,7 +1480,8 @@ INSERT INTO `adms_pages` (`id`, `controller`, `metodo`, `menu_controller`, `menu
 (140, 'ListStatus', 'index', 'list-status', 'index', 'Listar Status', 2, '', '', 1, 1, 1, '2025-11-14 16:42:46', '2025-11-14 17:08:45'),
 (141, 'DeleteStatu', 'index', 'delete-statu', 'index', 'Apagar Status', 2, '', '', 1, 1, 5, '2025-11-14 16:44:16', NULL),
 (142, 'EditStatu', 'index', 'edit-statu', 'index', 'Editar Status', 2, '', '', 1, 1, 4, '2025-11-14 16:45:25', NULL),
-(143, 'AddStatu', 'index', 'add-statu', 'index', 'Cadastrar Status', 2, '', '', 1, 1, 3, '2025-11-14 16:47:19', NULL);
+(143, 'AddStatu', 'index', 'add-statu', 'index', 'Cadastrar Status', 2, '', '', 1, 1, 3, '2025-11-14 16:47:19', NULL),
+(144, 'AddProductImages', 'index', 'add-product-images', 'index', 'Cadastrar Images do Produto', 2, '', '', 1, 1, 3, '2025-12-06 08:28:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -1841,7 +1890,33 @@ INSERT INTO `sts_products` (`id`, `product_id`, `name`, `title`, `description`, 
 (6, 'P142571143225', 'asdas', 'asdsa', 'asd', 'asd', 12, 1, 0, 'whatsapp-image-2025-05-20-at-9.02.24-am-2-removebg-preview.png', '2025-11-14 09:20:55', '2025-11-14 09:22:02'),
 (7, 'P149841112325', 'ad', 'asd', 'asd', 'asd', 0, 2, 0, 'whatsapp-image-2025-05-20-at-9.02.24-am-1-removebg-preview.png', '2025-11-14 09:21:08', '2025-11-14 09:21:39'),
 (8, 'P146801151525', 'Kilson Valoi', 'afsdf', 'Criação e distribuição de conteúdos multimédia para aumentar a visibilidade dos atletas e contar suas histórias inspiradoras.', 'E-commerce Seller', 10000, 2, 1, NULL, '2025-11-14 11:41:52', '2025-11-16 12:45:53'),
-(9, 'P144411192025', 'Belga Neves', 'asd', 'Ano passado assiste a cerimônia algo bem organizado a instituição se organizou muito bem e acredito que esse ano será muito mais melhor. Tinha o fotógrafo da instituição e os convites eram válidos para dois esse ano podem aumentar', 'asdyuiagd', 10000, 2, 1, 'whatsapp-image-2025-05-20-at-9.02.25-am-2-removebg-preview.png', '2025-11-14 16:14:24', '2025-11-16 12:50:07');
+(9, 'P144411192025', 'Lissa Domingos', 'asd', 'Ano passado assiste a cerimônia algo bem organizado a instituição se organizou muito bem e acredito que esse ano será muito mais melhor. Tinha o fotógrafo da instituição e os convites eram válidos para dois esse ano podem aumentar', 'asdyuiagd', 10000, 2, 1, 'whatsapp-image-2025-05-20-at-9.02.25-am-2-removebg-preview.png', '2025-11-14 16:14:24', '2025-12-06 08:18:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_product_images`
+--
+
+DROP TABLE IF EXISTS `sts_product_images`;
+CREATE TABLE IF NOT EXISTS `sts_product_images` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_product_id` int NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_product_images`
+--
+
+INSERT INTO `sts_product_images` (`id`, `name`, `sts_product_id`, `created`, `modified`) VALUES
+(11, '1827139197196709.jpeg', 9, '2025-12-06 08:40:51', NULL),
+(12, 'rarocaro.png', 9, '2025-12-06 08:40:51', NULL),
+(13, 'whatsapp-image-2025-10-09-at-1.16.05-pm.jpeg', 9, '2025-12-06 08:40:51', NULL),
+(14, 'whatsapp-image-2025-10-09-at-1.16.05-pm-removebg-preview.png', 9, '2025-12-06 08:40:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -1878,6 +1953,7 @@ CREATE TABLE IF NOT EXISTS `sts_requests` (
   `id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sts_users_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `total_quantity` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sts_request_status_id` int NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -1887,15 +1963,18 @@ CREATE TABLE IF NOT EXISTS `sts_requests` (
 -- Dumping data for table `sts_requests`
 --
 
-INSERT INTO `sts_requests` (`id`, `sts_users_id`, `total_quantity`, `created`, `modified`) VALUES
-('R197141125313', 'C1914811125364', '4', '2025-11-14 18:34:05', NULL),
-('R270101125103', 'C6810241125419', '8', '2025-11-10 22:24:36', NULL),
-('R313101125211', 'C3410681125787', '8', '2025-11-10 22:22:28', NULL),
-('R340101125863', 'C2010511125894', '8', '2025-11-10 22:19:33', NULL),
-('R404151125238', 'C6915171125738', '12', '2025-11-15 14:35:13', NULL),
-('R700151125468', 'C7715741125687', '2036', '2025-11-15 20:17:01', NULL),
-('R729101125387', 'C6510921125397', '8', '2025-11-10 22:27:24', NULL),
-('R882101125499', 'C8110331125965', '8', '2025-11-10 22:26:00', NULL);
+INSERT INTO `sts_requests` (`id`, `sts_users_id`, `total_quantity`, `sts_request_status_id`, `created`, `modified`) VALUES
+('R197141125313', 'C1914811125364', '4', 1, '2025-11-14 18:34:05', NULL),
+('R201211125126', 'C6921871125550', '29', 2, '2025-11-21 14:01:29', NULL),
+('R270101125103', 'C6810241125419', '8', 3, '2025-11-10 22:24:36', NULL),
+('R300211125816', 'C2821741125585', '38', 2, '2025-11-21 14:59:15', '2025-12-03 16:12:30'),
+('R313101125211', 'C3410681125787', '8', 2, '2025-11-10 22:22:28', NULL),
+('R340101125863', 'C2010511125894', '8', 3, '2025-11-10 22:19:33', NULL),
+('R404151125238', 'C6915171125738', '12', 1, '2025-11-15 14:35:13', NULL),
+('R700151125468', 'C7715741125687', '2036', 1, '2025-11-15 20:17:01', NULL),
+('R729101125387', 'C6510921125397', '8', 2, '2025-11-10 22:27:24', NULL),
+('R882101125499', 'C8110331125965', '8', 1, '2025-11-10 22:26:00', NULL),
+('R900211125671', 'C6621541125414', '29', 3, '2025-11-21 14:11:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -1909,7 +1988,7 @@ CREATE TABLE IF NOT EXISTS `sts_request_items` (
   `sts_requests_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sts_products_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sts_sizes_id` int NOT NULL,
-  `type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `quantity` int NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
@@ -1923,26 +2002,62 @@ CREATE TABLE IF NOT EXISTS `sts_request_items` (
 INSERT INTO `sts_request_items` (`id`, `sts_requests_id`, `sts_products_id`, `sts_sizes_id`, `type`, `quantity`, `created`, `modified`) VALUES
 ('I130151125318', 'R700151125468', '6', 2, 'Normal', 1006, '2025-11-15 20:17:04', NULL),
 ('I140101125204', 'R270101125103', '2', 0, '', 4, '2025-11-10 22:24:36', NULL),
+('I154211125264', 'R900211125671', '4', 2, 'Normal', 20, '2025-11-21 14:11:21', NULL),
 ('I178101125966', 'R729101125387', '2', 0, '', 4, '2025-11-10 22:27:25', NULL),
 ('I196151125589', 'R404151125238', '6', 2, 'Normal', 2, '2025-11-15 14:35:13', NULL),
 ('I222151125752', 'R700151125468', '6', 4, 'Oversize', 1, '2025-11-15 20:17:04', NULL),
 ('I273101125962', 'R340101125863', '2', 0, '', 4, '2025-11-10 22:19:33', NULL),
 ('I275101125507', 'R270101125103', '3', 0, '', 4, '2025-11-10 22:24:36', NULL),
+('I298211125321', 'R201211125126', '4', 1, 'Normal', 5, '2025-11-21 14:01:29', NULL),
+('I301211125851', 'R900211125671', '4', 4, 'Normal', 4, '2025-11-21 14:11:21', NULL),
 ('I338151125517', 'R404151125238', '6', 1, 'Oversize', 3, '2025-11-15 14:35:14', NULL),
 ('I361141125533', 'R197141125313', '6', 0, '', 4, '2025-11-14 18:34:05', NULL),
 ('I399151125205', 'R700151125468', '7', 1, 'Normal', 5, '2025-11-15 20:17:05', NULL),
+('I406211125312', 'R300211125816', '4', 4, 'Oversize', 12, '2025-11-21 14:59:15', NULL),
 ('I409101125711', 'R313101125211', '3', 0, '', 4, '2025-11-10 22:22:28', NULL),
+('I428211125993', 'R900211125671', '4', 1, 'Normal', 5, '2025-11-21 14:11:21', NULL),
+('I452211125654', 'R300211125816', '4', 4, 'Normal', 18, '2025-11-21 14:59:15', NULL),
 ('I461151125444', 'R700151125468', '7', 1, 'Oversize', 5, '2025-11-15 20:17:05', NULL),
+('I499211125397', 'R201211125126', '4', 4, 'Normal', 4, '2025-11-21 14:01:30', NULL),
+('I516211125655', 'R300211125816', '4', 2, 'Normal', 1, '2025-11-21 14:59:15', NULL),
 ('I517151125239', 'R700151125468', '6', 2, 'Oversize', 10, '2025-11-15 20:17:06', NULL),
 ('I520101125360', 'R340101125863', '3', 0, '', 4, '2025-11-10 22:19:33', NULL),
 ('I532101125615', 'R729101125387', '3', 0, '', 4, '2025-11-10 22:27:25', NULL),
 ('I586151125125', 'R700151125468', '6', 1, 'Normal', 9, '2025-11-15 20:17:02', NULL),
 ('I617151125943', 'R404151125238', '6', 1, 'Normal', 5, '2025-11-15 14:35:14', NULL),
 ('I643151125670', 'R404151125238', '6', 4, 'Normal', 2, '2025-11-15 14:35:13', NULL),
+('I650211125451', 'R300211125816', '4', 1, 'Normal', 1, '2025-11-21 14:59:15', NULL),
 ('I727101125909', 'R313101125211', '2', 0, '', 4, '2025-11-10 22:22:28', NULL),
 ('I769151125726', 'R700151125468', '6', 4, 'Normal', 1000, '2025-11-15 20:17:07', NULL),
 ('I834101125627', 'R882101125499', '3', 0, '', 4, '2025-11-10 22:26:00', NULL),
+('I845211125870', 'R300211125816', '4', 2, 'Oversize', 6, '2025-11-21 14:59:15', NULL),
+('I977211125341', 'R201211125126', '4', 2, 'Normal', 20, '2025-11-21 14:01:30', NULL),
 ('I995101125383', 'R882101125499', '2', 0, '', 4, '2025-11-10 22:26:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sts_request_status`
+--
+
+DROP TABLE IF EXISTS `sts_request_status`;
+CREATE TABLE IF NOT EXISTS `sts_request_status` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adms_colors_id` int NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sts_request_status`
+--
+
+INSERT INTO `sts_request_status` (`id`, `name`, `adms_colors_id`, `created`, `modified`) VALUES
+(1, 'Pending', 5, '2025-12-03 15:26:23', NULL),
+(2, 'In progress', 1, '2025-12-03 15:26:23', NULL),
+(3, 'closed', 3, '2025-12-03 15:26:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -1971,22 +2086,6 @@ INSERT INTO `sts_sizes` (`id`, `name`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sts_status_id`
---
-
-DROP TABLE IF EXISTS `sts_status_id`;
-CREATE TABLE IF NOT EXISTS `sts_status_id` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `adms_colors_id` int NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sts_users`
 --
 
@@ -2009,11 +2108,16 @@ CREATE TABLE IF NOT EXISTS `sts_users` (
 INSERT INTO `sts_users` (`id`, `name`, `sts_provinces_id`, `address`, `contact`, `created`, `modified`) VALUES
 ('C1914811125364', 'Domingos', 1, 'Grant Lane Saint-Basile', '847610513', '2025-11-14 18:34:05', NULL),
 ('C2010511125894', 'Domingos', 2, '', '847610513', '2025-11-10 22:19:32', NULL),
+('C2621811125418', 'asd', 1, 'asds', 'asdsad', '2025-11-21 14:15:44', NULL),
+('C2821741125585', 'Teste', 1, 'luiscabral', '877610513', '2025-11-21 14:59:14', NULL),
 ('C3010201125431', 'Domingos', 1, '', '847610513', '2025-11-10 22:18:14', NULL),
 ('C3410681125787', 'Domingos', 2, '', '847610513', '2025-11-10 22:22:28', NULL),
+('C6221221125755', 'asd', 2, 'asds', 'asds', '2025-11-21 14:16:00', NULL),
 ('C6510921125397', 'Domingos', 1, '', '847610513', '2025-11-10 22:27:24', NULL),
+('C6621541125414', 'asdsad', 5, 'sad', '878787', '2025-11-21 14:11:21', NULL),
 ('C6810241125419', 'Domingos', 1, '', '847610513', '2025-11-10 22:24:36', NULL),
 ('C6915171125738', 'Domingos', 1, 'Grant Lane Saint-Basile', '847610513', '2025-11-15 14:35:13', NULL),
+('C6921871125550', 'asdsad', 2, 'adsd', '877610513', '2025-11-21 14:01:29', NULL),
 ('C7715741125687', 'Domingos', 1, 'Grant Lane Saint-Basile', '847610513', '2025-11-15 20:16:59', NULL),
 ('C8110331125965', 'Domingos', 1, '', '847610513', '2025-11-10 22:26:00', NULL),
 ('C8210441125630', 'Domingos', 1, '', '847610513', '2025-11-10 22:17:03', NULL);

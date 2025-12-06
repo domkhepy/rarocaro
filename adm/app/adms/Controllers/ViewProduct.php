@@ -32,6 +32,7 @@ class ViewProduct
             $viewProduct->viewProduct($this->id);
             if ($viewProduct->getResultado()) {
                 $this->dados['viewProduct'] = $viewProduct->getResultadoBd();
+                $this->dados['listProductImages'] = $viewProduct->listProductImages($this->id);
                 $this->viewProduct();
             } else {
                 $urlDestino = URLADM . "list-products/index";

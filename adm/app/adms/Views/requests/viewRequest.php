@@ -72,6 +72,8 @@ if (!defined('R4F5CC')) {
                 <dd class="col-sm-9"><?php echo $province.", ".$address; ?></dd>
                 <dt class="col-sm-3">Total</dt>
                 <dd class="col-sm-9"><?php echo $total_quantity; ?></dd>
+                <dt class="col-sm-3">Status</dt>
+                <dd class="col-sm-9 text-<?php echo $color; ?>"><?php echo $request_status; ?></dd>
 
                
             </dl>

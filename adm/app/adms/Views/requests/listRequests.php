@@ -15,10 +15,10 @@ if (!defined('R4F5CC')) {
             </div>
             <div class="p-2">
                 <span class="d-none d-lg-block">
-                    <?php
+                   <?php /*
                     if ($this->dados['button']['add_request']) {
                         echo "<a href='" . URLADM . "add-request/index' class='btn btn-outline-success btn-sm'>Cadastrar</a> ";
-                    }
+                    }*/
                    
                     ?>
                 </span>
@@ -27,10 +27,10 @@ if (!defined('R4F5CC')) {
                         Ações
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                        <?php
+                        <?php/*
                         if ($this->dados['button']['add_request']) {
                             echo "<a class='dropdown-item' href='" . URLADM . "add-request/index'>Cadastrar</a>";
-                        }
+                        }*/
                        
                         ?>
                     </div>
@@ -52,6 +52,7 @@ if (!defined('R4F5CC')) {
                         <th>Nome</th>
                         <th>Contacto</th>
                         <th>Endereço</th>
+                        <th>Status</th>
                         <th class="text-center">Ações</th>
                     </tr>
                 </thead>
@@ -66,6 +67,7 @@ if (!defined('R4F5CC')) {
                             <td><?php echo $name; ?></td>
                             <td><?php echo $contact; ?></td>
                             <td><?php echo $province.", ".$address; ?></td>
+                            <td class="text-<?php echo $color; ?>"><?php echo $request_status; ?></td>
                             <td class="text-center">
                                 <span class="d-none d-lg-block">
                                     <?php
@@ -75,10 +77,10 @@ if (!defined('R4F5CC')) {
                                     }
                                     if ($this->dados['button']['edit_request']) {
                                         echo "<a href='" . URLADM . "edit-request/index/$id' class='btn btn-outline-warning btn-sm'>Editar</a> ";
-                                    }
+                                    }/*
                                     if ($this->dados['button']['delete_request']) {
                                         echo "<a href='" . URLADM . "delete-request/index/$id' class='btn btn-outline-danger btn-sm' data-confirm='Excluir'>Apagar</a> ";
-                                    }
+                                    }*/
                                     ?>                                     
                                 </span>
                                 <div class="dropdown d-block d-lg-none">
@@ -93,10 +95,10 @@ if (!defined('R4F5CC')) {
                                         }
                                         if ($this->dados['button']['edit_request']) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "edit-request/index/$id'>Editar</a>";
-                                        }
+                                        }/*
                                         if ($this->dados['button']['delete_request']) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "delete-request/index/$id' data-confirm='Excluir'>Apagar</a>";
-                                        }
+                                        }*/
                                         ?>
                                     </div>
                                 </div>
