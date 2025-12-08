@@ -121,6 +121,7 @@ header nav a{
 
 
 @media (width > 768px) {
+
   .nav__links {
     padding: 0;
     width: unset;
@@ -163,7 +164,14 @@ header{
 }
 .logo{
     padding-left: 50px;
-}}
+}
+.detail{
+
+    position:relative; 
+    top:100px;
+  }
+
+}
 
 
 
@@ -398,6 +406,7 @@ header{
     left: 0;
     width: 100%;
    z-index: 0;
+   top:45%;
 }
 
 .carousel.showDetail .list .item:nth-child(2) .detail{
@@ -522,7 +531,7 @@ header{
     opacity: 0;
     pointer-events: none;
 }
-.carousel::before{
+.carousel::before{ 
     width: 500px;
     height: 300px;
     content: '';
@@ -564,6 +573,7 @@ header{
     .carousel .list .item{
         width: 100%;
         font-size: 10px;
+        
     }
     
     .carousel .list{
@@ -578,7 +588,8 @@ header{
     }
     .carousel.showDetail .list .item:nth-child(2) .detail{
         backdrop-filter: blur(1px);
-        font-size: small;
+        font-size: small; 
+        top: calc(100% - 80px);
         
     }
     .carousel .list .item:nth-child(2) .introduce .des,
@@ -588,9 +599,12 @@ header{
     }
     .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
         display: flex;
-        width: max-content;
-        margin: auto;
+        
+        justify-content: space-between;
     }
+    
+   
+
 }
 
 
@@ -632,3 +646,30 @@ header{
             margin-right: 10px;
             color: var(--orange);
         }
+
+
+        .showImageDetail{
+            position: absolute;
+            display: flex;
+            flex-direction: column-reverse;
+            max-width: 80px;
+
+            top: 50px;
+            right: 0px;
+
+            background-color: rgba(0,0,0,0.2);
+            display: none !important;
+        }
+
+        .showImageDetailActive{
+            position: absolute;
+            display: flex;
+            flex-direction: column-reverse;
+            max-width: 51px;
+
+            top: 50px;
+            right: 0px;
+
+            z-index: 1000;
+        }
+

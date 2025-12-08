@@ -4,6 +4,7 @@ let carousel = document.querySelector('.carousel');
 let listHTML = document.querySelector('.carousel .list');
 let seeMoreButtons = document.querySelectorAll('.seeMore');
 let backButton = document.getElementById('back');
+let showImageDetail = document.getElementById('showImageDetail');
 const nav = document.getElementById("nav-links");
 
 const navLinks = document.getElementById("nav-links");
@@ -13,6 +14,8 @@ const menuBtnIcon = menuBtn.querySelector("i");
 const shopping_cart = document.getElementById("shopping-cart");
 const cart_sidebar = document.getElementById("cartSidebar");
 const close_cart = document.getElementById("close-cart");
+
+
 
 if(typeof nextButton !== 'undefined' && nextButton !== null ){
 nextButton.onclick = function(){
@@ -24,17 +27,33 @@ prevButton.onclick = function(){
 }
 let unAcceppClick;
 const showSlider = (type) => {
+  showImageDetail.innerHTML = '';
     nextButton.style.pointerEvents = 'none';
     prevButton.style.pointerEvents = 'none';
 
     carousel.classList.remove('next', 'prev');
+    
     let items = document.querySelectorAll('.carousel .list .item');
     if(type === 'next'){
         listHTML.appendChild(items[0]);
         carousel.classList.add('next');
+
+      relatedProductImages.forEach((image) => {
+        if(image.product_id == items[1].dataset.value){
+          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+        }
+        
+        });
     }else{
+
         listHTML.prepend(items[items.length - 1]);
         carousel.classList.add('prev');
+relatedProductImages.forEach((image) => {
+        if(image.product_id == items[items.length -1].dataset.value){
+          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+        }
+        
+        });
     }
     clearTimeout(unAcceppClick);
     unAcceppClick = setTimeout(()=>{
@@ -44,8 +63,19 @@ const showSlider = (type) => {
 }
 seeMoreButtons.forEach((button) => {
     button.onclick = function(){
+      
+ showImageDetail.innerHTML = '';
+      relatedProductImages.forEach((image) => {
+        if(image.product_id == button.value){
+          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+        }
+        
+        });
+       
         carousel.classList.remove('next', 'prev');
         carousel.classList.add('showDetail');
+        showImageDetail.classList.remove('showImageDetail');
+        showImageDetail.classList.add('showImageDetailActive');
     }
 });0
 
@@ -197,4 +227,16 @@ document.getElementById('maxmize').classList.remove("d-none")
   inp.classList.remove("d-none");
 });
 document.getElementById('maxmize').classList.add("d-none")
+  })
+
+
+
+
+
+     document.querySelectorAll('.imageDetailList').forEach(inp => {
+    
+inp.addEventListener('click', (e) => {
+    console.log(e.target.src);
+  });
+   
   })

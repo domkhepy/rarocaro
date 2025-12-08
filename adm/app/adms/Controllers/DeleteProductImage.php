@@ -12,7 +12,7 @@ if(!defined('R4F5CC')){
  *
  * @author Domingos
  */
-class DeleteProductImages
+class DeleteProductImage
 {
     /** @var $id Recebe o ID do usuário que será deletado do sistema*/
     private $id;
@@ -30,7 +30,7 @@ class DeleteProductImages
             $_SESSION['msg'] = "Erro: Necessário selecionar uma foto!";
         }
         
-        $urlDestino = URLADM . "view-products/index/".$this->dados[0]['product_id'];
+        $urlDestino = URLADM . "view-product/index/".$this->dados[0]['product_id'];
         header("Location: $urlDestino");
     }
 

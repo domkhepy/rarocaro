@@ -133,7 +133,7 @@ if (isset($_SESSION['msg'])) {
                                     <img src="<?php echo $name?>" alt="Imagem 1" class="img-thumbnail gallery-thumbnail"
                                         data-bs-toggle="modal" data-bs-target="#imageModal">
                                     <div class="edit">
-                                        <a href="<?php echo URLADM . 'delete-product-images/index/' . $product_id; ?>"
+                                        <a href="<?php echo URLADM . 'delete-product-image/index/' . $img_id; ?>"
                                             class="btn btn-outline-danger btn-sm" data-confirm='Excluir'>
                                             <i class="fas fa-cut"></i>
                                         </a>

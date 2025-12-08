@@ -36,6 +36,7 @@ class StsHome
         $this->viewDet();
         $this->listProducts();
         $this->listSizes();
+        $this->listRelatedProductImages();
         return $this->data;
     }
      
@@ -91,5 +92,14 @@ class StsHome
         $this->dataDet = $viewDet->getResult();
         $this->data['sizes'] = $this->dataDet;
     }
+
+    private function listRelatedProductImages() {
+        $viewDet = new \App\sts\Models\helper\StsRead();
+        $viewDet->fullRead("SELECT id, name, sts_product_id product_id
+                FROM sts_product_images ");
+        $this->dataDet = $viewDet->getResult();
+        $this->data['relatedProductImages'] = $this->dataDet;
+    }
+
 
 }

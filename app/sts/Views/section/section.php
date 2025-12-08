@@ -7,14 +7,17 @@ if (!defined('48b5t9')) {
 //A função extract é utilizado para extrair o array e imprimir através do nome da chave
 //var_dump($this->dados['products']);
 ?>
-<div class="carousel">
-    <div class="list" id="list" style="touch-action: none;">
 
+
+<div class="carousel">
+    
+    <div class="list" id="list" style="touch-action: none;">
+<span class="badge text-bg-success position-absolute d-none" id="maxmize" style="z-index:999; top:10%; right:0%;"><i class="bi bi-fullscreen"></i></span>
 
         <?php 
         $count=0;
-        if(isset($this->dados['sts_homes']['products']) and !empty($this->dados['sts_homes']['products'])){
-                foreach($this->dados['sts_homes']['products'] as $products){
+        if(isset($this->dados['products']) and !empty($this->dados['products'])){
+                foreach($this->dados['products'] as $products){
                     extract($products);
                     
                                if (isset($image) AND (!empty($image)) AND (file_exists('adm/app/adms/assets/image/products/' . $id . '/' . $image))) {
@@ -26,7 +29,7 @@ if (!defined('48b5t9')) {
                 echo "<div class='item'><img src='".$image."'>";
            $product_id=$id; 
                 ?>
-
+        
 
         <div class="introduce">
             <div class="title "><?php echo $title;?></div>
@@ -39,16 +42,21 @@ if (!defined('48b5t9')) {
 
         </div>
 
-        <div class="detail">
-            <div class="title d-none d-md-block"><?php echo $name;?></div>
+        <div class="detail" >
+      
+       
+         <span class="badge text-bg-danger d-badge d-md-none minimize" ><i class="bi bi-dash"></i></span>
+
+        
+            <div class="title d-none d-md-block "><?php echo $name;?></div>
              <div class="des d-none d-md-block">
                 <?php  echo $description;?></div>
-            <div class="specifications">
-                <div>
+            <div class="specifications ">
+                <div class="d-none d-md-block">
                     <p>Tecido</p>
                     <p><?php echo $type;?></p>
                 </div>
-                <div>
+                <div class="d-none d-md-block">
                     <p>Preço</p>
                     <p><?php echo number_format($price, 2, ',', '.')."MZN";?></p>
                 </div>
@@ -64,8 +72,10 @@ if (!defined('48b5t9')) {
                             <p>Controlled</p>
                             <p>Touch</p>
                         </div>-->
+
+                       
             </div>
-            <div class="checkout d-flex " style="justify-content: flex-end ; width: 100% ;">
+            <div class="checkout d-flex " style="justify-content: flex-end ; width: 100% ; ">
 
                 <input type="number" min="1" id="requested_quantity_<?php echo $id?>"
                     class="m-0 form-control requested_quantity" value="1">
@@ -74,7 +84,7 @@ if (!defined('48b5t9')) {
                 <select data="size" class="form-control requested_size">
 
                     <?php
-                        foreach ($this->dados['sts_homes']['sizes'] as $sit) {
+                        foreach ($this->dados['sizes'] as $sit) {
                             extract($sit);
                             
                                 echo "<option value='$id'>$name</option>";
@@ -93,8 +103,8 @@ if (!defined('48b5t9')) {
                 </select>
 
             </div>
-            <div class="checkout">
-                <button id="addCart" class="d-block m-auto mt-4"
+            <div class="checkout"><span class="price d-block d-md-none m-auto title text-primary display-1"><?php echo number_format($price, 2, ',', '.')."MZN";?></span>
+                <button id="addCart" class="d-block m-auto mt-2"
                     onclick="addToCart('<?php echo $product_id?>','<?php echo $product_name?>', '<?php echo $price?>')"><i
                         class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
 
