@@ -38,4 +38,12 @@ class StsSection
         $dataDet = $viewDet->getResult();
         return $dataDet;
     }
+
+     public function listRelatedProductImages() {
+        $viewDet = new \App\sts\Models\helper\StsRead();
+        $viewDet->fullRead("SELECT id, name, sts_product_id product_id
+                FROM sts_product_images ");
+        $dataDet = $viewDet->getResult();
+        return $dataDet;
+    }
 }

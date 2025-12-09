@@ -10,9 +10,10 @@ if (!defined('48b5t9')) {
 
 
 <div class="carousel">
-    
+<span class="badge text-bg-success position-absolute d-none" id="maxmize"
+            style="z-index:999; top:40%; right:0%; "><i class="bi bi-fullscreen"></i></span>
     <div class="list" id="list" style="touch-action: none;">
-<span class="badge text-bg-success position-absolute d-none" id="maxmize" style="z-index:999; top:10%; right:0%;"><i class="bi bi-fullscreen"></i></span>
+        
 
         <?php 
         $count=0;
@@ -26,10 +27,10 @@ if (!defined('48b5t9')) {
                     $image = URLADM . 'app/adms/assets/image/products/product_icon.png'; 
                 }
               
-                echo "<div class='item'><img src='".$image."'>";
+                echo "<div class='item' data-value='".$id."'><img src='".$image."' id='product_img_".$id."'>";
            $product_id=$id; 
                 ?>
-        
+
 
         <div class="introduce">
             <div class="title "><?php echo $title;?></div>
@@ -38,18 +39,18 @@ if (!defined('48b5t9')) {
                 <!-- 20 lorem -->
                 <?php echo $description;?>
             </div>
-            <button class="seeMore">Detalhes &#8599</button>
+            <button class="seeMore" value="<?php echo $id; ?>">Detalhes &#8599</button>
 
         </div>
 
-        <div class="detail" >
-      
-       
-         <span class="badge text-bg-danger d-badge d-md-none minimize" ><i class="bi bi-dash"></i></span>
+        <div class="detail">
 
-        
+
+            <span class="badge text-bg-danger d-badge d-md-none minimize"><i class="bi bi-dash"></i></span>
+
+
             <div class="title d-none d-md-block "><?php echo $name;?></div>
-             <div class="des d-none d-md-block">
+            <div class="des d-none d-md-block">
                 <?php  echo $description;?></div>
             <div class="specifications ">
                 <div class="d-none d-md-block">
@@ -73,7 +74,7 @@ if (!defined('48b5t9')) {
                             <p>Touch</p>
                         </div>-->
 
-                       
+
             </div>
             <div class="checkout d-flex " style="justify-content: flex-end ; width: 100% ; ">
 
@@ -103,7 +104,8 @@ if (!defined('48b5t9')) {
                 </select>
 
             </div>
-            <div class="checkout"><span class="price d-block d-md-none m-auto title text-primary display-1"><?php echo number_format($price, 2, ',', '.')."MZN";?></span>
+            <div class="checkout"><span
+                    class="price d-block d-md-none m-auto title text-primary display-1"><?php echo number_format($price, 2, ',', '.')."MZN";?></span>
                 <button id="addCart" class="d-block m-auto mt-2"
                     onclick="addToCart('<?php echo $product_id?>','<?php echo $product_name?>', '<?php echo $price?>')"><i
                         class="bi bi-cart3 text-dark " id="cart-icon"></i> CARRINHO</button>
@@ -113,6 +115,8 @@ if (!defined('48b5t9')) {
     </div>
     <?php   $count++;
                 } 
+
+                
             }?>
 
 
@@ -125,8 +129,41 @@ if (!defined('48b5t9')) {
 </div>
 </div>
 
+<div class="text-center d-block d-md-none pt-2 showImageDetail" id="showImageDetail"
+     >
+  
+
+    <?php
+    
+    
+
+
+  if(isset($this->dados['relatedProductImages']) and !empty($this->dados['relatedProductImages'])){
+                foreach($this->dados['relatedProductImages'] as $products){
+                    extract($products);
+                    
+                               if (isset($name) AND (!empty($name)) AND (file_exists('adm/app/adms/assets/image/products/' . $product_id . '/' . $name))) {
+                    $image = URLADM . 'app/adms/assets/image/products/' . $product_id . '/' . $name;
+                } else {
+                    $image = URLADM . 'app/adms/assets/image/products/product_icon.png'; 
+                }
+              
+                echo "<img src='".$image." ' class='rounded mb-1' width='40px' >";
+           $product_id=$id; 
+                ?>
+
+    <?php } }
+       
+        
+        ?>
+</div>
+
+
 <script>
 const products = <?php echo json_encode($this->dados['products']); ?>;
+const relatedProductImages = <?php echo json_encode($this->dados['relatedProductImages']); ?>;
+const URLADM = "<?php echo URLADM; ?>";
+const URL = "<?php echo URL; ?>";
 
 
 //document.addEventListener('DOMContentLoaded', function() {

@@ -27,6 +27,7 @@ class Section
         $viewFooter = new \App\sts\Models\StsSection();
         $this->dados['products'] = $viewFooter->index($id);
         $this->dados['sizes'] = $viewFooter->listSizes();
+        $this->dados['relatedProductImages'] = $viewFooter->listRelatedProductImages();
 
         $viewFooter = new \App\sts\Models\StsFooter();
         $this->dados['footer'] = $viewFooter->view();

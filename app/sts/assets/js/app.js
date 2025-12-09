@@ -17,6 +17,8 @@ const close_cart = document.getElementById("close-cart");
 
 
 
+
+
 if(typeof nextButton !== 'undefined' && nextButton !== null ){
 nextButton.onclick = function(){
     showSlider('next');
@@ -37,23 +39,53 @@ const showSlider = (type) => {
     if(type === 'next'){
         listHTML.appendChild(items[0]);
         carousel.classList.add('next');
-
       relatedProductImages.forEach((image) => {
-        if(image.product_id == items[1].dataset.value){
-          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+        if(image.product_id == items[2].dataset.value){
+          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' value='${image.product_id}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+       
         }
         
+
         });
+
+        document.querySelectorAll('.imageDetailList').forEach(inp => {
+
+   
+    
+inp.addEventListener('click', (e) => {
+  const currentImg = document.getElementById('product_img_'+e.target.getAttribute('value')).src;
+
+  document.getElementById('product_img_'+e.target.getAttribute('value')).src = e.target.src;
+  e.target.src = currentImg;
+
+  
+
+  });
+   
+  })
     }else{
 
         listHTML.prepend(items[items.length - 1]);
+
+       
         carousel.classList.add('prev');
 relatedProductImages.forEach((image) => {
-        if(image.product_id == items[items.length -1].dataset.value){
-          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+        if(image.product_id == items[0].dataset.value){
+          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}'  value='${image.product_id}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
         }
         
         });
+
+         document.querySelectorAll('.imageDetailList').forEach(inp => {
+    
+inp.addEventListener('click', (e) => {
+  const currentImg = document.getElementById('product_img_'+e.target.getAttribute('value')).src;
+
+  document.getElementById('product_img_'+e.target.getAttribute('value')).src = e.target.src;
+  e.target.src = currentImg;
+  });
+   
+  })
     }
     clearTimeout(unAcceppClick);
     unAcceppClick = setTimeout(()=>{
@@ -67,17 +99,31 @@ seeMoreButtons.forEach((button) => {
  showImageDetail.innerHTML = '';
       relatedProductImages.forEach((image) => {
         if(image.product_id == button.value){
-          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+          showImageDetail.innerHTML += `<img src='${URLADM}app/adms/assets/image/products/${image.product_id}/${image.name}'   value='${image.product_id}' class='rounded mb-1 imageDetailList' width='40px' alt='Product Image'>`;
+        
+        
         }
         
         });
+
+         document.querySelectorAll('.imageDetailList').forEach(inp => {
+    
+inp.addEventListener('click', (e) => {
+  const currentImg = document.getElementById('product_img_'+e.target.getAttribute('value')).src;
+
+  document.getElementById('product_img_'+e.target.getAttribute('value')).src = e.target.src;
+  e.target.src = currentImg;
+  
+  });
+   
+  })
        
         carousel.classList.remove('next', 'prev');
         carousel.classList.add('showDetail');
         showImageDetail.classList.remove('showImageDetail');
         showImageDetail.classList.add('showImageDetailActive');
     }
-});0
+});
 
 if(typeof backButton !== 'undefined' && backButton !== null){
 backButton.onclick = function(){
@@ -233,10 +279,5 @@ document.getElementById('maxmize').classList.add("d-none")
 
 
 
-     document.querySelectorAll('.imageDetailList').forEach(inp => {
-    
-inp.addEventListener('click', (e) => {
-    console.log(e.target.src);
-  });
-   
-  })
+     
+

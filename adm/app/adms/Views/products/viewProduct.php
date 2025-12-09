@@ -90,7 +90,7 @@ if (isset($_SESSION['msg'])) {
                             <img src="<?php echo $image?>" alt="Imagem principal"
                                 class="img-fluid rounded products-image w-100 mb-3">
                             <div class="edit">
-                                <a href="<?php echo URLADM . 'edit-products-image/index/' . $id; ?>"
+                                <a href="<?php echo URLADM . 'edit-product-image/index/' . $id; ?>"
                                     class="btn btn-outline-warning btn-sm">
                                     <i class="far fa-edit"></i>
                                 </a>

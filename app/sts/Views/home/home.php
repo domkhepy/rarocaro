@@ -9,10 +9,10 @@ if (!defined('48b5t9')) {
 ?>
 
 <div class="carousel">
-
-    <div class="list" id="list" style="touch-action: none;">
-        <span class="badge text-bg-success position-absolute d-none" id="maxmize"
+<span class="badge text-bg-success position-absolute d-none" id="maxmize"
             style="z-index:999; top:40%; right:0%; "><i class="bi bi-fullscreen"></i></span>
+    <div class="list" id="list" style="touch-action: none;">
+        
 
         <?php 
         $count=0;
@@ -26,7 +26,7 @@ if (!defined('48b5t9')) {
                     $image = URLADM . 'app/adms/assets/image/products/product_icon.png'; 
                 }
               
-                echo "<div class='item' data-value='".$id."'><img src='".$image."'>";
+                echo "<div class='item' data-value='".$id."'><img src='".$image."' id='product_img_".$id."'>";
            $product_id=$id; 
                 ?>
 
