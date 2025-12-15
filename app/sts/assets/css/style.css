@@ -589,7 +589,7 @@ header{
     .carousel.showDetail .list .item:nth-child(2) .detail{
         backdrop-filter: blur(1px);
         font-size: small; 
-        top: calc(100% - 80px);
+        top: 85%;
         
     }
     .carousel .list .item:nth-child(2) .introduce .des,

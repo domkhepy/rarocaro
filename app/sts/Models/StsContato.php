@@ -34,17 +34,17 @@ class StsContato
         $createContactMsg->exeCreate("sts_contacts_msgs", $this->data);
 
         if ($createContactMsg->getResult()) {
-            $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Mensagem enviada com sucesso!</div>";
+            $_SESSION['msg'] = "<div class='success' id='msg'>Mensagem enviada com sucesso!</div>";
             return true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Mensagem não enviada com sucesso!</div>";
+            $_SESSION['msg'] = "<div class='error' id='msg'>Mensagem não enviada com sucesso!</div>";
             return false;
         }
     }
     
     public function view() {
         $viewContact = new \App\sts\Models\helper\StsRead();
-        $viewContact->fullRead("SELECT title_opening_hours, opening_hours, title_address, address, address_two, phone
+        $viewContact->fullRead("SELECT title_opening_hours, opening_hours, title_address, address, address_two, phone, contact_email, contact_whatsapp, image
                 FROM sts_contacts
                 LIMIT :limit", "limit=1");
         $this->dataContact = $viewContact->getResult();

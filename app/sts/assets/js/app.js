@@ -95,7 +95,9 @@ inp.addEventListener('click', (e) => {
 }
 seeMoreButtons.forEach((button) => {
     button.onclick = function(){
-      
+
+       document.getElementById('return').classList.remove('d-none');
+
  showImageDetail.innerHTML = '';
       relatedProductImages.forEach((image) => {
         if(image.product_id == button.value){
@@ -277,7 +279,18 @@ document.getElementById('maxmize').classList.add("d-none")
 
 
 
+document.getElementById('return').addEventListener('click',()=>{
+   carousel.classList.add('next', 'prev');
+        carousel.classList.remove('showDetail');
+        showImageDetail.classList.add('showImageDetail');
+        showImageDetail.classList.remove('showImageDetailActive');
 
-
+        document.getElementById('return').classList.add('d-none');
+        document.getElementById('maxmize').classList.add('d-none');
+        document.querySelectorAll('.detail').forEach(inp => {
+  inp.classList.remove("d-none");
+});
+        
+  })
      
 

@@ -30,14 +30,15 @@ class Contact
             unset($this->dataForm['CreatContMsg']);
             $createContactMsg = new \App\sts\Models\StsContato();
             if($createContactMsg->create($this->dataForm)){
-                
+               $urlDestino = URL."contact"; 
+                header("Location: $urlDestino");
             }else{
                 $this->data['form'] = $this->dataForm;
             }
         }
         
         $viewContact = new \App\sts\Models\StsContato();
-        $this->data['address'] = $viewContact->view();
+        $this->data['contact'] = $viewContact->view(); 
         
         $viewFooter = new \App\sts\Models\StsFooter();
         $this->data['footer'] = $viewFooter->view();

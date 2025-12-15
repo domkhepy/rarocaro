@@ -60,6 +60,10 @@ if (!defined('R4F5CC')) {
 
                 <dt class="col-sm-3">Telefone</dt>
                 <dd class="col-sm-9"><?php echo $phone; ?></dd>
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9"><?php echo $contact_email; ?></dd>
+                <dt class="col-sm-3">Whatsapp</dt>
+                <dd class="col-sm-9"><?php echo $contact_whatsapp; ?></dd>
             </dl>          
             <?php
         }

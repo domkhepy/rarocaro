@@ -114,6 +114,22 @@ if (isset($this->dados['form'][0])) {
                 }
                 ?>" required>
             </div>
+            <div class="form-group">
+                <label for="contact_email"><span class="text-danger">*</span> E-mail:</label>
+                <input name="contact_email" type="text" class="form-control" id="contact_email" placeholder="Email"  value="<?php
+                if (isset($valorForm['contact_email'])) {
+                    echo $valorForm['contact_email'];
+                }
+                ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_whatsapp"><span class="text-danger">*</span> Whatsapp:</label>
+                <input name="contact_whatsapp" type="text" class="form-control" id="contact_whatsapp" placeholder="Whatsapp"  value="<?php
+                if (isset($valorForm['contact_whatsapp'])) {
+                    echo $valorForm['contact_whatsapp'];
+                }
+                ?>" required>
+            </div>
 
             <p>
                 <span class="text-danger">*</span> Campo Obrigatório

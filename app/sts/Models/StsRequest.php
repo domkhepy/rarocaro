@@ -45,7 +45,7 @@ class StsRequest
     /** 
      * Método para validar os campos a serem preenchidos
      * @param array $dados Recebe as informações que serão cadastradas no banco de dados*/
-    public function create(array $dados = null) {
+    public function create(array $dados) {
         $this->dados['id'] = 'C'.random_int(10, 99).date("d").random_int(10, 99).date("m").date("y").random_int(100, 999);
         $this->dados['name'] = $dados['name'];
         $this->dados['sts_provinces_id'] = $dados['sts_provinces_id'];
@@ -66,7 +66,7 @@ class StsRequest
         } else {
             $this->resultado = false;
         }
-    }
+    } 
 
 
      private function addRequest($dados) {
@@ -76,6 +76,7 @@ class StsRequest
             $this->dadosRequestItems['sts_requests_id']=$dadoss['id'];
             $dadoss['sts_users_id']=$dados['id'];
             $dadoss['total_quantity']=$dados['total_quantity'];
+            $dadoss['sts_request_status_id']=2;
             $dadoss['created'] = date("Y-m-d H:i:s"); 
 
             $this->dadosRequest= $dadoss;
@@ -142,62 +143,8 @@ extract($value);
         }
     }
     
-    /** Metodo privado, só pode ser chamado na classe
-     * Metodo para enviar e-mail de confirmação para o usuário após ter se feito o cadastro
-     */
-    private function sendEmail() {
-        $sendEmail = new \App\sts\Models\helper\StsSendEmail();
-        $this->emailHtml();
-        $this->emailText();
-        $sendEmail->sendEmail($this->emailData, 2);
-        if ($sendEmail->getResultado()) {
-            $_SESSION['msg'] = "<div class='success' id='msg'>Solicitação da subscrição feita com sucesso. Necessário acessar a caixa de e-mail para confimar o e-mail!</div>";
-            $this->resultado = true;
-        } else {
-            $this->fromEmail = $sendEmail->getFromEmail();
-            $_SESSION['msg'] = "<div class='warning' id='msg'>Usuário cadastrado com sucesso. Houve erro ao enviar o e-mail de confirmação, entre em contado com " . $this->fromEmail . " para mais informações!</div>";
-            $this->resultado = true;
-        }
-    }
-    
-    /** Metodo privado, só pode ser chamado na classe
-     * Metodo contendo as informações que serão enviadas no e-mail para o usuário, com tags em HTML
-     */
-    private function emailHtml() {
-        $name = explode(" ", $this->dados['name']);
-        $this->firstName = $name[0];
-
-        $this->emailData['toEmail'] = $this->dados['email'];
-        $this->emailData['toName'] = $this->firstName;
-        $this->emailData['subject'] = "Confirmação do e-mail";
-        $url = URL . "conf-email/index?chave=" . $this->dados['conf_email'];
-
-        $this->emailData['contentHtml'] = "Prezado(a) {$this->firstName}<br><br>";
-        $this->emailData['contentHtml'] .= "A solicitação de subscrição em nosso plataforma foi feita com sucesso!<br>";
-       
-        $this->emailData['contentHtml'] .= "Para que possamos liberar a sua subscrição em nosso sistema, solicitamos a confirmação do e-mail clicando abaixo: <br><br>";
-        $this->emailData['contentHtml'] .= "<a style='color:green;' href='" . $url . "'>Link de Confirmação</a><br><br>";
-        $this->emailData['contentHtml'] .= "Este procedimento é necessário para validar a sua subscrição.<br><br>";
-        $this->emailData['contentHtml'] .= "Informamos que esta mensagem foi enviada automaticamente pela equipe de administração. <br>
-        Você está registrado no banco de dados da empresa Olamuhk. <br>
-        Nenhum e-mail de confirmação foi enviado por terceiros, e o preenchimento de senha ou fornecimento de informações adicionais não é solicitado por essa mensagem.<br>
-Caso haja alguma dúvida ou necessidade de suporte, estamos à disposição.<br><br>";
-    }
- 
-    /** Metodo privado, só pode ser chamado na classe
-     * Metodo contendo as informações que serão enviadas no e-mail para o usuário, apenas com o texto
-     */
-    private function emailText() {
-        $url = URL. "conf-email/index?chave=" . $this->dados['conf_email'];
-        $this->emailData['contentText'] = "Prezado(a) {$this->firstName}\n\n";
-        $this->emailData['contentText'] .= "A solicitação de subscrição em nosso plataforma foi feita com sucesso!\n\n";
-        $this->emailData['contentText'] .= "Para que possamos liberar o seu cadastro em nosso sistema, solicitamos a confirmação do e-mail clicanco no link abaixo ou cole o link no navegador: \n\n";
-        $this->emailData['contentText'] .= $url . "\n\n";
-        $this->emailData['contentText'] .= "Informamos que esta mensagem foi enviada automaticamente pela equipe de administração. <r>
-        Você está registrado no banco de dados da empresa Olamuhk. Nenhum e-mail de confirmação foi enviado por terceiros, e o preenchimento de senha ou fornecimento de informações adicionais não é solicitado por essa mensagem.
-Caso haja alguma dúvida ou necessidade de suporte, estamos à disposição.\n\n";
-    }
-
+  
+   
    
 
 }

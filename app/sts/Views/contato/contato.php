@@ -8,6 +8,11 @@ if (isset($this->dados['form'])) {
     $valueForm = $this->dados['form'];
     extract($valueForm);
 }
+
+if (isset($this->dados['contact'])) {
+    $value = $this->dados['contact'];
+    extract($value);
+}
 ?>
 
 <div class="jumbotron head-contato py-5 bg-olamuhk-blue ">
@@ -18,14 +23,10 @@ if (isset($this->dados['form'])) {
             <div class="row g-0  overflow-hidden flex-md-row mb-4  position-relative">
                 <div class="col-12 col-md-6 p-4 d-flex flex-column position-static"> <strong
                         class="mb-2 text-olamuhk-orange">
-                        <h1 class="display-3 fw-bold">Contacto</h1>
+                        <h1 class="display-3 fw-bold"><?php if(isset($title_opening_hours)) echo $title_opening_hours; ?></h1>
                     </strong>
 
-                    <p class="card-text mb-auto text-dark">Este é o espaço ideal para partilhar as suas dúvidas,
-                        sugestões ou até
-                        mesmo solicitar ajuda. Preencha o formulário abaixo ou entre em contacto através dos nossos
-                        canais de atendimento. A nossa equipa está pronta para oferecer um atendimento de excelência e
-                        garantir a sua total satisfação.<br>
+                    <p class="card-text mb-auto text-dark"><?php if(isset($opening_hours)) echo $opening_hours; ?><br>
                         <a href="#contact-form" class="btn btn-outline-success mt-4">
                             Contacte-nos >>>
                         </a>
@@ -39,7 +40,7 @@ if (isset($this->dados['form'])) {
     </div>
 </div>
 
-<h1 class="title-hero text-center  fw-bold"> Os Nossos Contactos </h1>
+<h1 class="title-hero text-center  fw-bold"> <?php if(isset($title_address)) echo $title_address; ?> </h1>
 <section class="container my-5 shadow rounded-3">
     <div class="contact-card p-4">
         <div class="row g-0 align-items-center py-0 ">
@@ -50,7 +51,7 @@ if (isset($this->dados['form'])) {
                     <div class="contact-icon rounded-circle text-success "><i class="bi bi-whatsapp display-5 "></i></div>
                     <div class="flex-grow-1">
                         <div class="fw-bold text-dark">WhatsApp</div>
-                        <div class="text-muted small">+258 (84/87) 1234567</div>
+                        <div class="text-muted small"><?php if(isset($contact_whatsapp)) echo $contact_whatsapp; ?></div>
                     </div>
                 </div>
             </div>
@@ -59,7 +60,7 @@ if (isset($this->dados['form'])) {
                     <div class="contact-icon " aria-label="Email"><i class="bi bi-envelope display-5"></i></div>
                     <div class="flex-grow-1 ">
                         <div class="fw-bold text-dark ">Email</div>
-                        <div class="text-muted small">info@racocaro.com</div>
+                        <div class="text-muted small"><?php if(isset($contact_email)) echo $contact_email; ?></div>
                     </div>
                 </div>
             </div>
@@ -68,7 +69,7 @@ if (isset($this->dados['form'])) {
                     <div class="contact-icon" aria-label="Telefone"><i class="bi bi-telephone display-5"></i></div>
                     <div class="flex-grow-1">
                         <div class="fw-bold text-dark">Telefone</div>
-                        <div class="text-muted small">+258 (84/87) 1234567</div>
+                        <div class="text-muted small"><?php if(isset($phone)) echo $phone; ?></div>
                     </div>
                 </div>
             </div>
@@ -81,7 +82,7 @@ if (isset($this->dados['form'])) {
         <div class="row featurette  rounded-5" >
             
             <?php
-            extract($this->dados['address']);
+            //extract($this->dados['address']);
             ?>
             <div class="col-md-6 ">
                 <img class="w-100 h-100 d-block rounded-5 mx-auto "

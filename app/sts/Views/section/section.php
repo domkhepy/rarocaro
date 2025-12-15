@@ -10,8 +10,11 @@ if (!defined('48b5t9')) {
 
 
 <div class="carousel">
-<span class="badge text-bg-success position-absolute d-none" id="maxmize"
-            style="z-index:999; top:40%; right:0%; "><i class="bi bi-fullscreen"></i></span>
+    <span class="badge text-bg-success position-absolute d-none" id="maxmize"
+            style="z-index:999; top:20%; left:2%; "><i class="bi bi-fullscreen"></i></span>
+<span class="badge position-absolute d-none" id="return"
+            style="z-index:999; top:10%; left:2%; color:#000; font-size:24px"><i class="bi bi-arrow-left"></i></span>
+
     <div class="list" id="list" style="touch-action: none;">
         
 

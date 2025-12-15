@@ -18,7 +18,7 @@ class Request
     private array $dados;
     
     /** @var $dadosForm Recebe as informações que serão usadas no formulário */
-    private $dadosForm;
+    private array $dadosForm;
 
     /** Metodo para receber os dados da View e enviar para Models */
     public function index() {
@@ -26,7 +26,7 @@ class Request
 
         $this->dadosForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-       if(!empty($this->dadosForm)){
+       if(!empty($this->dadosForm) && is_array($this->dadosForm)){
             $createNewUser = new \App\sts\Models\StsRequest();
             $createNewUser->create($this->dadosForm);
             if($createNewUser->getResultado()){

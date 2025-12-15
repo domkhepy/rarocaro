@@ -90,7 +90,7 @@ if (!defined('48b5t9')) {
                                 echo "<option value='$id'>$name</option>";
                             }
                         }
-                        ?>
+                        $name=""?>
                         </select>
                     </div>
                     <input type="text"  class="form-control" id="sts_sizes_id" name="sts_sizes_id" hidden>
