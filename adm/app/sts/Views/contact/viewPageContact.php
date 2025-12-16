@@ -41,7 +41,27 @@ if (!defined('R4F5CC')) {
         if (!empty($this->dados['viewPageContact'][0])) {
             extract($this->dados['viewPageContact'][0]);
             ?>
-            <dl class="row">
+            <dl class="row"> 
+
+             <?php
+                if (isset($image) AND (!empty($image)) AND (file_exists('app/sts/assets/image/contact_page/' . $id . '/' . $image))) {
+                    $image = URLADM . 'app/sts/assets/image/contact_page/' . $id . '/' . $image;
+                } else {
+                    $image = URLADM . 'app/sts/assets/image/contact_page/icon_contact_page.jpg';
+                }
+                ?>
+
+                <dt class="col-sm-3">Imagem</dt>
+                <dd class="col-sm-9 mb-4">
+                    <div class="img-edit">
+                        <img src="<?php echo $image; ?>" alt="ContactImage" class="img-thumbnail view-img-size">
+                        <div class="edit">
+                            <a href="<?php echo URLADM . 'edit-contact-page-img/index/' . $id; ?>" class="btn btn-outline-warning btn-sm">
+                                <i class="far fa-edit"></i>
+                            </a>
+                        </div>
+                    </div>
+                </dd>
 
                 <dt class="col-sm-3">Título do Horário</dt>
                 <dd class="col-sm-9"><?php echo $title_opening_hours; ?></dd>
